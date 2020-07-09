@@ -718,3 +718,8 @@ dmypy.json
 .history
 
 # End of https://www.toptal.com/developers/gitignore/api/redis,jetbrains+all,java,scala,python,pycharm+all,intellij+all,intellij,intellij+iml,pycharm+iml,pycharm,jetbrains,jetbrains+iml,visualstudiocode
+
+
+
+# LJUPCHo
+xmlProject.pem
