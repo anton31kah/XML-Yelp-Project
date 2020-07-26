@@ -6,9 +6,14 @@ scalaVersion := "2.12.8"
 
 val sparkVersion = "3.0.0"
 val sparkAwsVersion = "3.0.0"
-val redisClientVersion = "3.30"
 
-val mode = "redis"
+val redisClientVersion = "3.30"
+val memcachedClientVersion = "1.10.0"
+val riakClientVersion = "2.1.1"
+val dynamoDbClientVersion = "1.0.0-M12-1"
+
+val mode = "local"
+
 mode match {
   case "local" => libraryDependencies ++= Seq(
     "org.apache.spark" %% "spark-core" % sparkVersion,
@@ -21,9 +26,12 @@ mode match {
     //    "org.apache.hadoop" % "hadoop-client" % "2.7.0",
     //    "org.apache.hadoop" % "hadoop-aws" % "2.7.0",
   )
-  case "redis" => libraryDependencies ++= Seq(
-    "org.apache.spark" %% "spark-core" % sparkVersion,
-    "org.apache.spark" %% "spark-sql" % sparkVersion,
-    "net.debasishg" %% "redisclient" % redisClientVersion
-  )
 }
+
+libraryDependencies ++= Seq(
+  "net.debasishg" %% "redisclient" % redisClientVersion,
+  "io.monix" %% "shade" % memcachedClientVersion,
+  "com.basho.riak" % "riak-client" % riakClientVersion
+  //  "org.scanamo" %% "scanamo" % dynamoDbClientVersion,
+  //  "org.scanamo" %% "scanamo-testkit" % dynamoDbClientVersion,
+)
