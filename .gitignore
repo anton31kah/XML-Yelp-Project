@@ -723,3 +723,4 @@ dmypy.json
 
 # LJUPCHo
 xmlProject.pem
+!spark-cluster/env/
