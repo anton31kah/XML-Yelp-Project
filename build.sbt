@@ -6,9 +6,9 @@ scalaVersion := "2.12.8"
 
 val sparkVersion = "3.0.0"
 val sparkAwsVersion = "3.0.0"
+val redisClientVersion = "3.30"
 
-val mode = "aws"
-
+val mode = "redis"
 mode match {
   case "local" => libraryDependencies ++= Seq(
     "org.apache.spark" %% "spark-core" % sparkVersion,
@@ -17,8 +17,13 @@ mode match {
   case "aws" => libraryDependencies ++= Seq(
     "org.apache.spark" %% "spark-core" % sparkAwsVersion % "provided",
     "org.apache.spark" %% "spark-sql" % sparkAwsVersion % "provided",
-//    "org.apache.hadoop" % "hadoop-common" % "2.7.0",
-//    "org.apache.hadoop" % "hadoop-client" % "2.7.0",
-//    "org.apache.hadoop" % "hadoop-aws" % "2.7.0",
+    //    "org.apache.hadoop" % "hadoop-common" % "2.7.0",
+    //    "org.apache.hadoop" % "hadoop-client" % "2.7.0",
+    //    "org.apache.hadoop" % "hadoop-aws" % "2.7.0",
+  )
+  case "redis" => libraryDependencies ++= Seq(
+    "org.apache.spark" %% "spark-core" % sparkVersion,
+    "org.apache.spark" %% "spark-sql" % sparkVersion,
+    "net.debasishg" %% "redisclient" % redisClientVersion
   )
 }
