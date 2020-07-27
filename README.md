@@ -102,3 +102,6 @@ bash test-aws.sh
     - That means that file can be found on the driver's node.
     - But... it's empty.
     - Why? well it merges files which aren't on the driver's node, the files are on the executors' nodes.
+- Another thing you can find in the Spark UI is the following:
+	- In the driver worker node, the application is shown as an application, a whole thing, which when completes, shows the FINISHED status.
+	- In the executor worker node, the application is shown as jobs (or tasks), which when complete, show the KILLED state.
