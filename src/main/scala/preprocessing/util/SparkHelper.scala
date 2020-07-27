@@ -1,7 +1,12 @@
 package preprocessing.util
 
-import org.apache.hadoop.fs.{FileSystem, FileUtil, Path}
+import java.io.IOException
+
+import scala.util.Try
+import org.apache.hadoop.conf.Configuration
+import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.hadoop.io.compress.CompressionCodec
+import org.apache.hadoop.io.IOUtils
 import org.apache.spark.sql.DataFrame
 
 // Copied https://stackoverflow.com/a/48712134/6877477
@@ -33,14 +38,48 @@ object SparkHelper {
 
       // Merge the folder of resulting part-xxxxx into one file:
       hdfs.delete(new Path(path), true) // to make sure it's not there already
-      FileUtil.copyMerge(
+      LegacyFileUtil.copyMerge(
         hdfs, new Path(s"$path.tmp"),
         hdfs, new Path(path),
-        true, rdd.sparkContext.hadoopConfiguration, null
+        deleteSource = true, rdd.sparkContext.hadoopConfiguration
       )
       // Working with Hadoop 3?: https://stackoverflow.com/a/50545815/9297144
 
       hdfs.delete(new Path(s"$path.tmp"), true)
+    }
+  }
+
+  // https://stackoverflow.com/a/50545815/6877477
+  private object LegacyFileUtil {
+    def copyMerge(
+                   srcFS: FileSystem, srcDir: Path,
+                   dstFS: FileSystem, dstFile: Path,
+                   deleteSource: Boolean, conf: Configuration
+                 ): Boolean = {
+
+      if (dstFS.exists(dstFile))
+        throw new IOException(s"Target $dstFile already exists")
+
+      // Source path is expected to be a directory:
+      if (srcFS.getFileStatus(srcDir).isDirectory) {
+
+        val outputFile = dstFS.create(dstFile)
+        Try {
+          srcFS
+            .listStatus(srcDir)
+            .sortBy(_.getPath.getName)
+            .collect {
+              case status if status.isFile =>
+                val inputFile = srcFS.open(status.getPath)
+                Try(IOUtils.copyBytes(inputFile, outputFile, conf, false))
+                inputFile.close()
+            }
+        }
+        outputFile.close()
+
+        if (deleteSource) srcFS.delete(srcDir, true) else true
+      }
+      else false
     }
   }
 }
