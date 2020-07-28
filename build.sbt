@@ -14,6 +14,8 @@ val memcachedClientVersion = "1.10.0"
 val riakClientVersion = "2.1.1"
 val dynamoDbClientVersion = "1.0.0-M12-1"
 
+val zioVersion = "1.0.0-RC21-2"
+
 val mode = "local"
 
 // // // //
@@ -48,4 +50,11 @@ libraryDependencies ++= Seq(
   "com.basho.riak" % "riak-client" % riakClientVersion
   //  "org.scanamo" %% "scanamo" % dynamoDbClientVersion,
   //  "org.scanamo" %% "scanamo-testkit" % dynamoDbClientVersion,
+)
+
+//  // //
+// Zio //
+//  // //
+libraryDependencies ++= Seq(
+  "dev.zio" %% "zio" % zioVersion
 )
