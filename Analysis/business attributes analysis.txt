@@ -1,0 +1,183 @@
+# # # # # # # #
+# printSchema #
+# # # # # # # #
+
+root
+ |-- attributes: struct (nullable = true)
+ |    |-- AcceptsInsurance: string (nullable = true)
+ |    |-- AgesAllowed: string (nullable = true)
+ |    |-- Alcohol: string (nullable = true)
+ |    |-- Ambience: string (nullable = true)
+ |    |-- BYOB: string (nullable = true)
+ |    |-- BYOBCorkage: string (nullable = true)
+ |    |-- BestNights: string (nullable = true)
+ |    |-- BikeParking: string (nullable = true)
+ |    |-- BusinessAcceptsBitcoin: string (nullable = true)
+ |    |-- BusinessAcceptsCreditCards: string (nullable = true)
+ |    |-- BusinessParking: string (nullable = true)
+ |    |-- ByAppointmentOnly: string (nullable = true)
+ |    |-- Caters: string (nullable = true)
+ |    |-- CoatCheck: string (nullable = true)
+ |    |-- Corkage: string (nullable = true)
+ |    |-- DietaryRestrictions: string (nullable = true)
+ |    |-- DogsAllowed: string (nullable = true)
+ |    |-- DriveThru: string (nullable = true)
+ |    |-- GoodForDancing: string (nullable = true)
+ |    |-- GoodForKids: string (nullable = true)
+ |    |-- GoodForMeal: string (nullable = true)
+ |    |-- HairSpecializesIn: string (nullable = true)
+ |    |-- HappyHour: string (nullable = true)
+ |    |-- HasTV: string (nullable = true)
+ |    |-- Music: string (nullable = true)
+ |    |-- NoiseLevel: string (nullable = true)
+ |    |-- Open24Hours: string (nullable = true)
+ |    |-- OutdoorSeating: string (nullable = true)
+ |    |-- RestaurantsAttire: string (nullable = true)
+ |    |-- RestaurantsCounterService: string (nullable = true)
+ |    |-- RestaurantsDelivery: string (nullable = true)
+ |    |-- RestaurantsGoodForGroups: string (nullable = true)
+ |    |-- RestaurantsPriceRange2: string (nullable = true)
+ |    |-- RestaurantsReservations: string (nullable = true)
+ |    |-- RestaurantsTableService: string (nullable = true)
+ |    |-- RestaurantsTakeOut: string (nullable = true)
+ |    |-- Smoking: string (nullable = true)
+ |    |-- WheelchairAccessible: string (nullable = true)
+ |    |-- WiFi: string (nullable = true)
+
+# # # # #  #
+# analysis #
+# # # # #  #
+
+AcceptsInsurance: True|False|None
+
+AgesAllowed: None|18plus|21plus|allages|19plus
+
+Alcohol: None|beer_and_wine|full_bar
+
+Ambience: {
+	casual: True|False|None,
+	classy: True|False|None,
+	divey: True|False|None,
+	hipster: True|False|None,
+	intimate: True|False|None,
+	romantic: True|False|None,
+	touristy: True|False|None,
+	trendy: True|False|None,
+	upscale: True|False|None
+}
+
+BYOB: True|False|None
+
+BYOBCorkage: None|no|yes_corkage|yes_free
+
+BestNights: {
+	monday: True|False,
+	tuesday: True|False,
+	friday: True|False,
+	wednesday: True|False,
+	thursday: True|False,
+	sunday: True|False,
+	saturday: True|False
+}
+
+BikeParking: True|False|None
+
+BusinessAcceptsBitcoin: True|False|None
+
+BusinessAcceptsCreditCards: True|False|None
+
+BusinessParking: {
+	garage: True|False|None,
+	street: True|False|None,
+	validated: True|False|None,
+	lot: True|False|None,
+	valet: True|False|None
+}
+
+ByAppointmentOnly: True|False|None
+
+Caters: True|False|None
+
+CoatCheck: True|False|None
+
+Corkage: True|False|None
+
+DietaryRestrictions: {
+	dairy-free: True|False|None,
+	gluten-free: True|False|None,
+	halal: True|False|None,
+	kosher: True|False|None,
+	soy-free: True|False|None,
+	vegan: True|False|None,
+	vegetarian: True|False|None
+}
+
+DogsAllowed: True|False|None
+
+DriveThru: True|False|None
+
+GoodForDancing: True|False|None
+
+GoodForKids: True|False|None
+
+GoodForMeal: {
+	breakfast: True|False|None,
+	brunch: True|False|None,
+	dessert: True|False|None,
+	dinner: True|False|None,
+	latenight: True|False|None,
+	lunch: True|False|None
+}
+
+HairSpecializesIn: {
+	africanamerican: True|False|None,
+	asian: True|False|None,
+	coloring: True|False|None,
+	curly: True|False|None,
+	extensions: True|False|None,
+	kids: True|False|None,
+	perms: True|False|None,
+	straightperms: True|False|None
+}
+
+HappyHour: True|False|None
+
+HasTV: True|False|None
+
+Music: {
+	background_music: True|False|None,
+	dj: True|False|None,
+	jukebox: True|False|None,
+	karaoke: True|False|None,
+	live: True|False|None,
+	no_music: True|False|None,
+	video: True|False|None
+}
+
+NoiseLevel: average|loud|quiet|very_loud|None
+
+Open24Hours: True|False|None
+
+OutdoorSeating: True|False|None
+
+RestaurantsAttire: casual|dressy|formal|None
+
+RestaurantsCounterService: True|False|None
+
+RestaurantsDelivery: True|False|None
+
+RestaurantsGoodForGroups: True|False|None
+
+RestaurantsPriceRange2: 1|2|3|4|None
+
+RestaurantsReservations: True|False|None
+
+RestaurantsTableService: True|False|None
+
+RestaurantsTakeOut: True|False|None
+
+Smoking: no|outdoor|yes|None
+
+WheelchairAccessible: True|False|None
+
+WiFi: free|no|paid|None
