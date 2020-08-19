@@ -105,3 +105,16 @@ bash test-aws.sh
 - Another thing you can find in the Spark UI is the following:
 	- In the driver worker node, the application is shown as an application, a whole thing, which when completes, shows the FINISHED status.
 	- In the executor worker node, the application is shown as jobs (or tasks), which when complete, show the KILLED state.
+
+## Redis Cluster
+We have 3 t3.small instances and on each instance we run 2 redis nodes (1 master and 1 slave)
+The master is running on ports 6379 and 16379 and the slave is running on ports 6479 and 16479 on all instances
+
+- Starting the redis nodes
+    - The shell scripts that start both the master and the slave are located at the home directory of the root user. 
+    - **All of the redis nodes need to be started in order to create the cluster**
+    - The shell script that start the cluster is located on XMLProject-RedisMaster EC2 instance. After you run the script you will get prompted to check if everything is fine with the cluster (ip addresses and etc) type **yes**.
+    - In order to check if everything is working properly go into /root/redis-5.0.5/src of the XMLProject-RedisMaster EC2 instance and type **redis-cli -c** in order to get in the redis node (if you want to get into the other node type **redis-cli -c -p 6479**) and type **cluster nodes** to check if everything is connected and active. The other command that gives more information about the cluster is **cluster info**.
+- Ressetting the redis cluster
+    - You have to connect to every redis node type this **redis-cli -c -p 6479** or **redis-cli -c -p 6379**. After you got into the node you need to ented this command in order to reset the cluster **cluster reset hard**
+    - Change the script or other configurations if needed and run the **create_cluster.sh** shell script to start the cluster again
