@@ -1,0 +1,40 @@
+Deploying templates with AWS CLI
+
+Deploying VPC
+aws --profile ljupcho cloudformation deploy --template-file ./vpc_template.json\
+ --stack-name XMLProject-VPC\
+ --parameter-overrides VPCCIDRBlock=10.0.0.0/16\
+ PublicSubnet1CIDRBlock=10.0.0.0/24 PublicSubnet2CIDRBlock=10.0.1.0/24\
+ --tags XMLProject=VPC
+
+Deploying BastionHost
+aws --profile ljupcho cloudformation deploy --template-file ./bastionhost_template.json\
+ --stack-name XMLProject-BastionHost\
+ --parameter-overrides NetworkStackName=XMLProject-VPC\
+ InstanceType=t3.micro KeyName=xmlProject\
+ SSHLocation=77.28.218.95/32\
+ --tags XMLProject=BastionHost
+
+Deploying RedisMaster
+aws --profile ljupcho cloudformation deploy --template-file ./redis_master_template.json\
+ --stack-name XMLProject-RedisMaster\
+ --parameter-overrides NetworkStackName=XMLProject-VPC\
+ InstanceType=t3.micro KeyName=xmlProject\
+ SSHLocation=10.0.0.0/16\
+ --tags XMLProject=RedisMaster
+
+Deploying RedisSlave1
+aws --profile ljupcho cloudformation deploy --template-file ./redis_slave_template.json\
+ --stack-name XMLProject-RedisSlave1\
+ --parameter-overrides NetworkStackName=XMLProject-VPC\
+ InstanceType=t3.micro KeyName=xmlProject\
+ SSHLocation=10.0.0.0/16\
+ --tags XMLProject=RedisSlave1
+
+ Deploying RedisSlave1
+aws --profile ljupcho cloudformation deploy --template-file ./redis_slave_template.json\
+ --stack-name XMLProject-RedisSlave2\
+ --parameter-overrides NetworkStackName=XMLProject-VPC\
+ InstanceType=t3.micro KeyName=xmlProject\
+ SSHLocation=10.0.0.0/16\
+ --tags XMLProject=RedisSlave2
