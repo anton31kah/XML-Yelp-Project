@@ -4,7 +4,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd "$DIR"
 
-SPARK_APPLICATION_JAR_LOCATION="/opt/spark-apps/xmlyelpproject_2.12-0.1.jar"
+SPARK_APPLICATION_JAR_LOCATION="/opt/spark-apps/XMLYelpProject-assembly-0.1.jar"
+#SPARK_APPLICATION_JAR_LOCATION="/opt/spark-apps/xmlyelpproject_2.12-0.1.jar"
 SPARK_APPLICATION_MAIN_CLASS="preprocessing.jobs.TestAws"
 
 docker run --network xml-yelp-spark-cluster_default \

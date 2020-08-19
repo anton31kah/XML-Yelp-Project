@@ -3,6 +3,7 @@ package preprocessing.util
 object Paths {
   object SampleData {
     private val parent = "/opt/spark-data/sample-data"
+//    private val parent = "spark-cluster/spark-data/sample-data"
 
     val business = s"$parent/business.json"
     val checkin = s"$parent/checkin.json"
