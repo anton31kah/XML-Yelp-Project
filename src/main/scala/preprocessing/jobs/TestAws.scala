@@ -1,5 +1,10 @@
 package preprocessing.jobs
 
+import java.nio.file.Files
+import java.util.Properties
+
+import java.nio.file.{Paths => JavaPaths}
+
 import org.apache.spark.sql.{Row, SparkSession}
 import preprocessing.models.json.Business
 import preprocessing.util.Paths
@@ -11,9 +16,13 @@ object TestAws {
   def main(args: Array[String]): Unit = {
     println("$$$$$ before spark session create")
 
+    val propertiesJava = new Properties()
+    propertiesJava.load(Files.newBufferedReader(JavaPaths.get(Paths.properties)))
+    val properties = propertiesJava.asScala
+
     val sparkSession = SparkSession.builder
       .appName("Simple Application")
-      .master("spark://spark-master:7077")
+      .master(properties("spark.url"))
 //       .master("local[*]")
       .getOrCreate()
 
@@ -74,12 +83,12 @@ object TestAws {
 
       val cluster = new JedisCluster(
         Set(
-          new HostAndPort("15.161.125.18", 6379),
-          new HostAndPort("15.161.125.18", 6479),
-          new HostAndPort("15.161.90.71", 6379),
-          new HostAndPort("15.161.90.71", 6479),
-          new HostAndPort("15.161.95.163", 6379),
-          new HostAndPort("15.161.95.163", 6479)
+          new HostAndPort(properties("redis.cluster.master1.host"), properties("redis.cluster.master1.port").toInt),
+          new HostAndPort(properties("redis.cluster.slave1.host"), properties("redis.cluster.slave1.port").toInt),
+          new HostAndPort(properties("redis.cluster.master2.host"), properties("redis.cluster.master2.port").toInt),
+          new HostAndPort(properties("redis.cluster.slave2.host"), properties("redis.cluster.slave2.port").toInt),
+          new HostAndPort(properties("redis.cluster.master3.host"), properties("redis.cluster.master3.port").toInt),
+          new HostAndPort(properties("redis.cluster.slave3.host"), properties("redis.cluster.slave3.port").toInt)
         ).asJava
       )
 

@@ -44,6 +44,7 @@ sbt package
 # cd to project root dir
 cd spark-cluster/spark-submit
 bash fetch-jar.sh
+bash fetch-properties.sh
 bash test-aws.sh
 ```
 

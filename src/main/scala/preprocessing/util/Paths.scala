@@ -1,6 +1,9 @@
 package preprocessing.util
 
 object Paths {
+//  val properties = "src/main/resources/app.properties"
+  val properties = "/opt/spark-data/app.properties"
+
   object SampleData {
     private val parent = "/opt/spark-data/sample-data"
 //    private val parent = "spark-cluster/spark-data/sample-data"
