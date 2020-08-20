@@ -14,7 +14,7 @@ services:
   spark-worker:
     image: anton31kah/spark-worker:3.0.0
     ports:
-      - "8081-8084:8081"
+      - "8081-8082:8081"
     depends_on:
       - spark-master
     environment:
