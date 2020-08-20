@@ -23,12 +23,12 @@ case class Business(business_id: String,
                     address: Option[String],
                     city: Option[String],
                     state: Option[String],
-                    postal_code: Option[String],
+                    // postal_code
                     latitude: Option[String],
                     longitude: Option[String],
                     stars: Option[String],
                     review_count: Option[String],
                     is_open: Option[String],
-//                    attributes: Option[Map[String, Any]],
+                    // attributes:
                     categories: Option[String],
                     hours: Option[Hours])

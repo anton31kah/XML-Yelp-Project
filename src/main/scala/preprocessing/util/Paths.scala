@@ -20,8 +20,8 @@ object Paths {
 
   object RealData {
     private val antonDirectory = "C:/Users/anton/Downloads/yelp_dataset"
-    private val awsDirectory = ""
-    private val parent = antonDirectory
+    private val awsDirectory = "/opt/spark-data/real-data"
+    private val parent = awsDirectory
     private val prefix = "yelp_academic_dataset"
 
     val business = s"$parent/${prefix}_business.json"
