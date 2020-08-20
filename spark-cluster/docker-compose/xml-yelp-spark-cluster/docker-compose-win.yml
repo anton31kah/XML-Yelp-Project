@@ -11,6 +11,8 @@ services:
       - ../../spark-data:/opt/spark-data
     environment:
       - "SPARK_LOCAL_IP=spark-master"
+    networks:
+      - xmlyelpsparkcluster
   spark-worker:
     image: anton31kah/spark-worker:3.0.0
     ports:
@@ -27,3 +29,8 @@ services:
     volumes:
       - ../../spark-apps:/opt/spark-apps
       - ../../spark-data:/opt/spark-data
+    networks:
+      - xmlyelpsparkcluster
+
+networks:
+  - xmlyelpsparkcluster
