@@ -1,6 +1,7 @@
 package preprocessing.jobs
 
 import java.nio.file.{Files, Paths => JavaPaths}
+import java.time.Instant
 import java.util.Properties
 
 import org.apache.spark.sql.SparkSession
@@ -13,7 +14,7 @@ import scala.collection.JavaConverters._
 
 object InsertingModel1Redis {
   def main(args: Array[String]): Unit = {
-    println("before spark session create")
+    println(s"before spark session create at ${Instant.now()}")
 
     val propertiesJava = new Properties()
     propertiesJava.load(Files.newBufferedReader(JavaPaths.get(Paths.properties)))
@@ -26,31 +27,33 @@ object InsertingModel1Redis {
 
     import sparkSession.implicits._
 
-    println("spark session created")
+    println(s"spark session created at ${Instant.now()}")
 
     val minYear = 2019
 
-    val businessDf = sparkSession.read.json(Paths.SampleData.business)
+    val businessDf = sparkSession.read.json(Paths.RealData.business)
       .drop("attributes", "postal_code")
       .as[Business]
       .filter(_.business_id != null)
 
-    val reviewDf = sparkSession.read.json(Paths.SampleData.review)
+    val reviewDf = sparkSession.read.json(Paths.RealData.review)
       .filter(year(to_date($"date", "yyyy-MM-dd HH:mm:ss")) >= minYear)
       .drop("funny", "cool")
       .as[Review]
       .filter(_.review_id != null)
 
-    val userDf = sparkSession.read.json(Paths.SampleData.user)
+    val userDf = sparkSession.read.json(Paths.RealData.user)
       .filter(year(to_date($"yelping_since", "yyyy-MM-dd HH:mm:ss")) >= minYear)
       .drop("useful", "funny", "cool", "elite", "fans")
       .as[User]
       .filter(_.user_id != null)
 
-    println("dataframe created")
+    println(s"dataframe created at ${Instant.now()}")
+
+    println(s"before business foreachPartition at ${Instant.now()}")
 
     businessDf.foreachPartition((rows: Iterator[Business]) => {
-      println("business before cluster")
+      println(s"before business cluster at ${Instant.now()}")
 
       val cluster = new JedisCluster(
         Set(
@@ -63,7 +66,7 @@ object InsertingModel1Redis {
         ).asJava
       )
 
-      println(s"business rows of type = ${rows.getClass.getName}")
+      println(s"before business foreach at ${Instant.now()}")
 
       rows.foreach(business => {
         cluster.hmset(s"business:${business.business_id}", Map(
@@ -92,10 +95,16 @@ object InsertingModel1Redis {
           )
         }
       })
+
+      println(s"after business foreach at ${Instant.now()}")
     })
 
+    println(s"after business foreachPartition at ${Instant.now()}")
+
+    println(s"before user foreachPartition at ${Instant.now()}")
+
     userDf.foreachPartition((rows: Iterator[User]) => {
-      println("user before cluster")
+      println(s"before user cluster at ${Instant.now()}")
 
       val cluster = new JedisCluster(
         Set(
@@ -108,7 +117,7 @@ object InsertingModel1Redis {
         ).asJava
       )
 
-      println(s"user rows of type = ${rows.getClass.getName}")
+      println(s"before user foreach at ${Instant.now()}")
 
       rows.foreach(user => {
         cluster.hmset(s"user:${user.user_id}", Map(
@@ -127,10 +136,16 @@ object InsertingModel1Redis {
           )
         }
       })
+
+      println(s"after user foreach at ${Instant.now()}")
     })
 
+    println(s"after user foreachPartition at ${Instant.now()}")
+
+    println(s"before review foreachPartition at ${Instant.now()}")
+
     reviewDf.foreachPartition((rows: Iterator[Review]) => {
-      println("review before cluster")
+      println(s"before review cluster at ${Instant.now()}")
 
       val cluster = new JedisCluster(
         Set(
@@ -143,7 +158,7 @@ object InsertingModel1Redis {
         ).asJava
       )
 
-      println(s"review rows of type = ${rows.getClass.getName}")
+      println(s"before review foreach at ${Instant.now()}")
 
       rows.foreach(review => {
         cluster.hmset(s"review:${review.review_id}", Map(
@@ -158,12 +173,18 @@ object InsertingModel1Redis {
         cluster.lpush(s"business:${review.business_id}:reviews", review.review_id)
         cluster.lpush(s"user:${review.user_id}:reviews", review.review_id)
       })
+
+      println(s"after review foreach at ${Instant.now()}")
     })
 
-    println("will stop spark session")
+    println(s"after review foreachPartition at ${Instant.now()}")
+
+    println(s"done with inserting dataframes at ${Instant.now()}")
+
+    println(s"will stop spark session at ${Instant.now()}")
 
     sparkSession.stop()
 
-    println("stopped spark session")
+    println(s"stopped spark session at ${Instant.now()}")
   }
 }
