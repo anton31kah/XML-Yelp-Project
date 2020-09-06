@@ -51,4 +51,4 @@ services:
       - xmlyelpsparkcluster
 
 networks:
-  - xmlyelpsparkcluster
+  xmlyelpsparkcluster:
