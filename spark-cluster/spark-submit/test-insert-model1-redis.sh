@@ -10,7 +10,7 @@ bash fetch-properties.sh
 SPARK_APPLICATION_JAR_LOCATION="/opt/spark-apps/XMLYelpProject-assembly-0.1.jar"
 SPARK_APPLICATION_MAIN_CLASS="preprocessing.jobs.InsertingModel1Redis"
 
-docker run --network xmlyelpsparkcluster \
+docker run --network xmlyelpsparkcluster_xmlyelpsparkcluster \
   -v "`pwd`/../spark-apps:/opt/spark-apps" \
   --env SPARK_APPLICATION_JAR_LOCATION=$SPARK_APPLICATION_JAR_LOCATION \
   --env SPARK_APPLICATION_MAIN_CLASS=$SPARK_APPLICATION_MAIN_CLASS \
