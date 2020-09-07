@@ -15,111 +15,84 @@ import scala.collection.JavaConverters._
 // $ redis-cli
 
 object Model1 {
-  case class Business(
-      id: Int,
-      name: String,
-      address: String,
-      city: String,
-      state: String,
-      latitude: Double,
-      longitude: Double,
-      stars: Int,
-      review_count: Int,
-      is_open: Boolean,
-      categories: Vector[String],
-      hours: Map[String, String],
-      reviews: Vector[Int]
-  )
 
-  case class Review(
-      id: Int,
-      user_id: Int,
-      business_id: Int,
-      stars: Int,
-      date: String,
-      text: String,
-      useful: Int
-  )
+  case class Business(id: Int,
+                      name: String,
+                      address: String,
+                      city: String,
+                      state: String,
+                      latitude: Double,
+                      longitude: Double,
+                      stars: Int,
+                      review_count: Int,
+                      is_open: Boolean,
+                      categories: Vector[String],
+                      hours: Map[String, String],
+                      reviews: Vector[Int])
 
-  case class User(
-      id: Int,
-      name: String,
-      review_count: Int,
-      yelping_since: String,
-      friends: Vector[Int],
-      compliments: Int,
-      average_stars: Double,
-      reviews: Vector[Int]
-  )
+  case class Review(id: Int,
+                    user_id: Int,
+                    business_id: Int,
+                    stars: Int,
+                    date: String,
+                    text: String,
+                    useful: Int)
+
+  case class User(id: Int,
+                  name: String,
+                  review_count: Int,
+                  yelping_since: String,
+                  friends: Vector[Int],
+                  compliments: Int,
+                  average_stars: Double,
+                  reviews: Vector[Int])
+
 }
 
 object Model2 {
-  case class Business(
-      id: Int,
-      name: String,
-      address: String,
-      city: String,
-      state: String,
-      latitude: Double,
-      longitude: Double,
-      stars: Int,
-      review_count: Int,
-      is_open: Boolean,
-      categories: Vector[String],
-      hours: Map[String, String],
-      reviews: Vector[Review]
-  )
 
-  case class Review(
-      id: Int,
-      user_id: Int,
-      stars: Int,
-      date: String,
-      text: String,
-      useful: Int
-  )
+  case class Business(id: Int,
+                      name: String,
+                      address: String,
+                      city: String,
+                      state: String,
+                      latitude: Double,
+                      longitude: Double,
+                      stars: Int,
+                      review_count: Int,
+                      is_open: Boolean,
+                      categories: Vector[String],
+                      hours: Map[String, String],
+                      reviews: Vector[Review])
 
-  case class User(
-      id: Int,
-      name: String,
-      review_count: Int,
-      yelping_since: String,
-      friends: Vector[Int],
-      compliments: Int,
-      average_stars: Double,
-      reviews: Map[Int, Int]
-  )
+  case class Review(id: Int,
+                    user_id: Int,
+                    stars: Int,
+                    date: String,
+                    text: String,
+                    useful: Int)
+
+  case class User(id: Int,
+                  name: String,
+                  review_count: Int,
+                  yelping_since: String,
+                  friends: Vector[Int],
+                  compliments: Int,
+                  average_stars: Double,
+                  reviews: Map[Int, Int])
+
 }
 
 object SampleData {
+
   object Model1Data {
     val businesses = Vector(
-      Model1.Business(
-        1,
-        "Silbo",
-        "Partizanska",
-        "Skopje",
-        "Skopje",
-        1.1,
-        2.2,
-        5,
-        2,
-        true,
+      Model1.Business(1, "Silbo", "Partizanska", "Skopje", "Skopje", 1.1, 2.2, 5, 2, true,
         Vector("kolbasi", "burek", "gevrek", "blago"),
         Map("Monday" -> "00:00-24:00", "Wednesday" -> "00:00-24:00"),
         Vector(1, 2)
       ),
-      Model1.Business(
-        2,
-        "Silbo2",
-        "Aerodrom",
-        "Skopje",
-        "Skopje",
-        1.1,
-        2.2,
-        5,
-        2,
-        false,
+      Model1.Business(2, "Silbo2", "Aerodrom", "Skopje", "Skopje", 1.1, 2.2, 5, 2, false,
         Vector("kolbasi", "burek", "gevrek", "blago"),
         Map("Monday" -> "00:00-24:00", "Wednesday" -> "00:00-24:00"),
         Vector(3)
@@ -133,14 +106,12 @@ object SampleData {
     )
 
     val users = Vector(
-      Model1
-        .User(1, "Anton", 1, "10/10/2018", Vector(2, 3), 10, 4.5, Vector(1)),
-      Model1
-        .User(2, "Ljupcho", 1, "10/10/2017", Vector(1, 3), 10, 4.5, Vector(2)),
-      Model1
-        .User(3, "Nikola", 1, "10/10/2016", Vector(1, 2), 10, 4.5, Vector(3))
+      Model1.User(1, "Anton", 1, "10/10/2018", Vector(2, 3), 10, 4.5, Vector(1)),
+      Model1.User(2, "Ljupcho", 1, "10/10/2017", Vector(1, 3), 10, 4.5, Vector(2)),
+      Model1.User(3, "Nikola", 1, "10/10/2016", Vector(1, 2), 10, 4.5, Vector(3))
     )
   }
+
 }
 
 object ClusterTest {
@@ -198,10 +169,10 @@ object WriteSampleData {
       cluster.hmset(
         s"user:${user.id}",
         Map(
-          "name"          -> user.name,
-          "review_count"  -> user.review_count,
+          "name" -> user.name,
+          "review_count" -> user.review_count,
           "yelping_since" -> user.yelping_since,
-          "compliments"   -> user.compliments,
+          "compliments" -> user.compliments,
           "average_stars" -> user.average_stars
         ).mapValues(_.toString).asJava
       )
@@ -213,12 +184,12 @@ object WriteSampleData {
       cluster.hmset(
         s"review:${review.id}",
         Map(
-          "user_id"     -> review.user_id,
+          "user_id" -> review.user_id,
           "business_id" -> review.business_id,
-          "stars"       -> review.stars,
-          "date"        -> review.date,
-          "text"        -> review.text,
-          "useful"      -> review.useful
+          "stars" -> review.stars,
+          "date" -> review.date,
+          "text" -> review.text,
+          "useful" -> review.useful
         ).mapValues(_.toString).asJava
       )
 

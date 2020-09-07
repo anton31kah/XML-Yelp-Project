@@ -8,4 +8,14 @@ case class Review(review_id: String,
                   // funny: Option[String],
                   // cool: Option[String],
                   text: Option[String],
-                  date: Option[String])
+                  date: Option[String]) extends RedisModel {
+
+  override def toMap: Map[String, String] = Map(
+    "user_id" -> Some(user_id),
+    "business_id" -> Some(business_id),
+    "stars" -> stars,
+    "date" -> date,
+    "text" -> text,
+    "useful" -> useful
+  ).filter(_._2.isDefined).mapValues(_.get)
+}

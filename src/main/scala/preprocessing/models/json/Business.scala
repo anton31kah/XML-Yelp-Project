@@ -6,8 +6,8 @@ case class Hours(monday: Option[String],
                  thursday: Option[String],
                  friday: Option[String],
                  saturday: Option[String],
-                 sunday: Option[String]) {
-  def toMap: Map[String, String] = Map(
+                 sunday: Option[String]) extends RedisModel {
+  override def toMap: Map[String, String] = Map(
     "monday" -> monday,
     "tuesday" -> tuesday,
     "wednesday" -> wednesday,
@@ -31,4 +31,16 @@ case class Business(business_id: String,
                     is_open: Option[String],
                     // attributes:
                     categories: Option[String],
-                    hours: Option[Hours])
+                    hours: Option[Hours]) extends RedisModel {
+  override def toMap: Map[String, String] = Map(
+    "name" -> name,
+    "address" -> address,
+    "city" -> city,
+    "state" -> state,
+    "latitude" -> latitude,
+    "longitude" -> longitude,
+    "stars" -> stars,
+    "review_count" -> review_count,
+    "is_open" -> is_open
+  ).filter(_._2.isDefined).mapValues(_.get)
+}

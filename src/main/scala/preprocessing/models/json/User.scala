@@ -23,7 +23,7 @@ case class User(user_id: String,
                 compliment_cool: Option[String],
                 compliment_funny: Option[String],
                 compliment_writer: Option[String],
-                compliment_photos: Option[String]) {
+                compliment_photos: Option[String]) extends RedisModel {
   def parseDouble(s: String): Double = Try { s.toDouble }.toOption.getOrElse(0)
 
   val compliments: Double = Vector(
@@ -39,4 +39,13 @@ case class User(user_id: String,
     compliment_writer,
     compliment_photos,
   ).filter(_.isDefined).map(c => parseDouble(c.get)).sum
+
+  override def toMap: Map[String, String] = Map(
+    "name" -> name,
+    "review_count" -> review_count,
+    "yelping_since" -> yelping_since,
+    "friends" -> friends,
+    "average_stars" -> average_stars,
+    "compliments" -> Some(compliments.toString)
+  ).filter(_._2.isDefined).mapValues(_.get)
 }
