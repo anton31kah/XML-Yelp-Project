@@ -26,20 +26,20 @@ object InsertingModel1Redis {
     val minYear = 2019
 
     val businessDf = sparkSession.read
-      .json(Paths.SampleData.business)
+      .json(Paths.RealData.business)
       .drop("attributes", "postal_code")
       .as[Business]
       .filter(_.business_id != null)
 
     val reviewDf = sparkSession.read
-      .json(Paths.SampleData.review)
+      .json(Paths.RealData.review)
       .filter(year(to_date($"date", "yyyy-MM-dd HH:mm:ss")) >= minYear)
       .drop("funny", "cool")
       .as[Review]
       .filter(_.review_id != null)
 
     val userDf = sparkSession.read
-      .json(Paths.SampleData.user)
+      .json(Paths.RealData.user)
       .filter(year(to_date($"yelping_since", "yyyy-MM-dd HH:mm:ss")) >= minYear)
       .drop("useful", "funny", "cool", "elite", "fans")
       .as[User]
