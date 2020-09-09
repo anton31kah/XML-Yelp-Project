@@ -1,5 +1,6 @@
 package preprocessing.util
 
+
 object Paths {
 //  val properties = "src/main/resources/app.properties"
   val properties = "/opt/spark-data/app.properties"
@@ -33,6 +34,11 @@ object Paths {
     val tip = s"$parent/${prefix}_tip.json"
     val user = s"$parent/${prefix}_user.json"
 
+    val businessIds = s"$parent/businessIds.txt"
+    val checkinIds = s"$parent/checkinIds.txt"
+    val reviewIds = s"$parent/reviewIds.txt"
+    val tipIds = s"$parent/tipIds.txt"
+    val userIds = s"$parent/userIds.txt"
 
     val businessAttributes = s"$parent/${prefix}_business_attributes.json"
     val tips2019 = s"$parent/${prefix}_tip_2019.json"

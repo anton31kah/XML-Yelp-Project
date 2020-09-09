@@ -23,10 +23,10 @@ object InsertingModel1RedisIds {
     val minYear = 2019
 
     sparkSession.read
-      .json(Paths.SampleData.business)
+      .json(Paths.RealData.business)
       .filter($"business_id".isNotNull)
       .select($"business_id")
-      .write.text(Paths.SampleData.businessIds)
+      .write.text(Paths.RealData.businessIds)
 
     // hgetall business:id
     // lrange business:id:categories
@@ -34,18 +34,18 @@ object InsertingModel1RedisIds {
     // lrange business:id:reviews
 
     sparkSession.read
-      .json(Paths.SampleData.review)
+      .json(Paths.RealData.review)
       .filter($"review_id".isNotNull and year(to_date($"date", "yyyy-MM-dd HH:mm:ss")) >= minYear)
       .select($"review_id")
-      .write.text(Paths.SampleData.reviewIds)
+      .write.text(Paths.RealData.reviewIds)
 
     // hgetall review:id
 
     sparkSession.read
-      .json(Paths.SampleData.user)
+      .json(Paths.RealData.user)
       .filter($"user_id".isNotNull and year(to_date($"yelping_since", "yyyy-MM-dd HH:mm:ss")) >= minYear)
       .select($"user_id")
-      .write.text(Paths.SampleData.userIds)
+      .write.text(Paths.RealData.userIds)
 
     // hgetall user:id
     // lrange user:id:friends
