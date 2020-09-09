@@ -14,8 +14,11 @@ object Paths {
     val tip = s"$parent/tip.json"
     val user = s"$parent/user.json"
 
-    val tipOutputWriteJson = "/tip_output_WriteJson.json"
-    val tipOutputToJsonWriteText = "/tip_output_ToJsonWriteText.json"
+    val businessIds = s"$parent/businessIds.txt"
+    val checkinIds = s"$parent/checkinIds.txt"
+    val reviewIds = s"$parent/reviewIds.txt"
+    val tipIds = s"$parent/tipIds.txt"
+    val userIds = s"$parent/userIds.txt"
   }
 
   object RealData {

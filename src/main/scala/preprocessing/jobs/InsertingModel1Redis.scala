@@ -1,40 +1,14 @@
 package preprocessing.jobs
 
-import java.nio.file.{Files, Paths => JavaPaths}
-import java.time.Instant
-import java.util.Properties
-
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.{to_date, year}
 import preprocessing.models.json.{Business, Review, User}
+import preprocessing.util.JedisHelper._
 import preprocessing.util.Paths
-import redis.clients.jedis.{HostAndPort, JedisCluster}
 
 import scala.collection.JavaConverters._
 
 object InsertingModel1Redis {
-  private def createCluster(implicit properties: Map[String, String]) = {
-    def lookup(props: Map[String, String], key: String) = props.find(_._1 endsWith key).map(_._2)
-
-    new JedisCluster(
-      properties
-        .filter(_._1 startsWith "redis.cluster")
-        .groupBy(_._1.split('.')(2))
-        .values
-        .map(p => lookup(p, "host") -> lookup(p, "port"))
-        .flatMap(p => for { host <- p._1; port <- p._2 } yield new HostAndPort(host, port.toInt))
-        .toSet.asJava
-    )
-  }
-
-  private def log(message: String): Unit = println(s"$message at ${Instant.now()}")
-
-  private def readProperties = {
-    val properties = new Properties()
-    properties.load(Files.newBufferedReader(JavaPaths.get(Paths.properties)))
-    properties.asScala.toMap
-  }
-
   def main(args: Array[String]): Unit = {
     log("before spark session create")
 
