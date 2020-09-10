@@ -1,0 +1,12 @@
+before spark session create at 2020-09-10T17:48:04.275Z
+spark session created at 2020-09-10T17:48:06.646Z
+dataframe created at 2020-09-10T18:02:11.861Z
+before business foreachPartition at 2020-09-10T18:02:11.862Z
+after business foreachPartition at 2020-09-10T18:03:40.965Z
+before user foreachPartition at 2020-09-10T18:03:40.965Z
+after user foreachPartition at 2020-09-10T18:04:32.251Z
+before review foreachPartition at 2020-09-10T18:04:32.251Z
+after review foreachPartition at 2020-09-10T18:11:18.726Z
+done with inserting dataframes at 2020-09-10T18:11:18.726Z
+will stop spark session at 2020-09-10T18:11:18.726Z
+stopped spark session at 2020-09-10T18:11:18.871Z

@@ -1,0 +1,225 @@
+before business cluster at 2020-09-10T18:02:14.086Z
+before business foreach at 2020-09-10T18:02:14.219Z
+after business foreach (count = 107517) at 2020-09-10T18:02:58.484Z
+before business cluster at 2020-09-10T18:02:58.551Z
+before business foreach at 2020-09-10T18:02:58.564Z
+after business foreach (count = 101876) at 2020-09-10T18:03:40.959Z
+before user cluster at 2020-09-10T18:03:42.185Z
+before user foreach at 2020-09-10T18:03:42.211Z
+after user foreach (count = 0) at 2020-09-10T18:03:43.510Z
+before user cluster at 2020-09-10T18:03:43.545Z
+before user foreach at 2020-09-10T18:03:43.572Z
+after user foreach (count = 0) at 2020-09-10T18:03:44.430Z
+before user cluster at 2020-09-10T18:03:44.455Z
+before user foreach at 2020-09-10T18:03:44.469Z
+after user foreach (count = 0) at 2020-09-10T18:03:45.329Z
+before user cluster at 2020-09-10T18:03:45.351Z
+before user foreach at 2020-09-10T18:03:45.377Z
+after user foreach (count = 0) at 2020-09-10T18:03:46.348Z
+before user cluster at 2020-09-10T18:03:46.375Z
+before user foreach at 2020-09-10T18:03:46.388Z
+after user foreach (count = 0) at 2020-09-10T18:03:47.234Z
+before user cluster at 2020-09-10T18:03:47.272Z
+before user foreach at 2020-09-10T18:03:47.291Z
+after user foreach (count = 5005) at 2020-09-10T18:03:50.426Z
+before user cluster at 2020-09-10T18:03:50.448Z
+before user foreach at 2020-09-10T18:03:50.468Z
+after user foreach (count = 0) at 2020-09-10T18:03:51.306Z
+before user cluster at 2020-09-10T18:03:51.329Z
+before user foreach at 2020-09-10T18:03:51.344Z
+after user foreach (count = 0) at 2020-09-10T18:03:52.184Z
+before user cluster at 2020-09-10T18:03:52.206Z
+before user foreach at 2020-09-10T18:03:52.221Z
+after user foreach (count = 5719) at 2020-09-10T18:03:55.340Z
+before user cluster at 2020-09-10T18:03:55.368Z
+before user foreach at 2020-09-10T18:03:55.383Z
+after user foreach (count = 0) at 2020-09-10T18:03:56.213Z
+before user cluster at 2020-09-10T18:03:56.232Z
+before user foreach at 2020-09-10T18:03:56.245Z
+after user foreach (count = 9661) at 2020-09-10T18:04:00.458Z
+before user cluster at 2020-09-10T18:04:00.484Z
+before user foreach at 2020-09-10T18:04:00.497Z
+after user foreach (count = 0) at 2020-09-10T18:04:01.429Z
+before user cluster at 2020-09-10T18:04:01.446Z
+before user foreach at 2020-09-10T18:04:01.463Z
+after user foreach (count = 1572) at 2020-09-10T18:04:03.022Z
+before user cluster at 2020-09-10T18:04:03.049Z
+before user foreach at 2020-09-10T18:04:03.061Z
+after user foreach (count = 6879) at 2020-09-10T18:04:06.269Z
+before user cluster at 2020-09-10T18:04:06.287Z
+before user foreach at 2020-09-10T18:04:06.310Z
+after user foreach (count = 0) at 2020-09-10T18:04:07.136Z
+before user cluster at 2020-09-10T18:04:07.157Z
+before user foreach at 2020-09-10T18:04:07.178Z
+after user foreach (count = 8320) at 2020-09-10T18:04:11.097Z
+before user cluster at 2020-09-10T18:04:11.115Z
+before user foreach at 2020-09-10T18:04:11.134Z
+after user foreach (count = 0) at 2020-09-10T18:04:11.966Z
+before user cluster at 2020-09-10T18:04:11.982Z
+before user foreach at 2020-09-10T18:04:12.035Z
+after user foreach (count = 7412) at 2020-09-10T18:04:15.612Z
+before user cluster at 2020-09-10T18:04:15.629Z
+before user foreach at 2020-09-10T18:04:15.648Z
+after user foreach (count = 0) at 2020-09-10T18:04:16.530Z
+before user cluster at 2020-09-10T18:04:16.555Z
+before user foreach at 2020-09-10T18:04:16.573Z
+after user foreach (count = 6258) at 2020-09-10T18:04:19.626Z
+before user cluster at 2020-09-10T18:04:19.650Z
+before user foreach at 2020-09-10T18:04:19.694Z
+after user foreach (count = 686) at 2020-09-10T18:04:20.868Z
+before user cluster at 2020-09-10T18:04:20.892Z
+before user foreach at 2020-09-10T18:04:20.926Z
+after user foreach (count = 5750) at 2020-09-10T18:04:23.942Z
+before user cluster at 2020-09-10T18:04:23.959Z
+before user foreach at 2020-09-10T18:04:23.973Z
+after user foreach (count = 6989) at 2020-09-10T18:04:27.167Z
+before user cluster at 2020-09-10T18:04:27.196Z
+before user foreach at 2020-09-10T18:04:27.214Z
+after user foreach (count = 1479) at 2020-09-10T18:04:28.727Z
+before user cluster at 2020-09-10T18:04:28.747Z
+before user foreach at 2020-09-10T18:04:28.767Z
+after user foreach (count = 9998) at 2020-09-10T18:04:32.247Z
+before review cluster at 2020-09-10T18:04:32.660Z
+before review foreach at 2020-09-10T18:04:32.693Z
+after review foreach (count = 0) at 2020-09-10T18:04:34.310Z
+before review cluster at 2020-09-10T18:04:34.321Z
+before review foreach at 2020-09-10T18:04:34.337Z
+after review foreach (count = 0) at 2020-09-10T18:04:35.372Z
+before review cluster at 2020-09-10T18:04:35.387Z
+before review foreach at 2020-09-10T18:04:35.408Z
+after review foreach (count = 9469) at 2020-09-10T18:04:39.455Z
+before review cluster at 2020-09-10T18:04:39.466Z
+before review foreach at 2020-09-10T18:04:39.482Z
+after review foreach (count = 54234) at 2020-09-10T18:04:56.699Z
+before review cluster at 2020-09-10T18:04:56.711Z
+before review foreach at 2020-09-10T18:04:56.738Z
+after review foreach (count = 54108) at 2020-09-10T18:05:14.018Z
+before review cluster at 2020-09-10T18:05:14.030Z
+before review foreach at 2020-09-10T18:05:14.047Z
+after review foreach (count = 0) at 2020-09-10T18:05:15.053Z
+before review cluster at 2020-09-10T18:05:15.068Z
+before review foreach at 2020-09-10T18:05:15.086Z
+after review foreach (count = 3) at 2020-09-10T18:05:16.101Z
+before review cluster at 2020-09-10T18:05:16.113Z
+before review foreach at 2020-09-10T18:05:16.133Z
+after review foreach (count = 22337) at 2020-09-10T18:05:23.508Z
+before review cluster at 2020-09-10T18:05:23.519Z
+before review foreach at 2020-09-10T18:05:23.542Z
+after review foreach (count = 79139) at 2020-09-10T18:05:46.978Z
+before review cluster at 2020-09-10T18:05:46.992Z
+before review foreach at 2020-09-10T18:05:47.012Z
+after review foreach (count = 22599) at 2020-09-10T18:05:54.841Z
+before review cluster at 2020-09-10T18:05:54.851Z
+before review foreach at 2020-09-10T18:05:54.873Z
+after review foreach (count = 0) at 2020-09-10T18:05:55.930Z
+before review cluster at 2020-09-10T18:05:55.943Z
+before review foreach at 2020-09-10T18:05:55.965Z
+after review foreach (count = 277) at 2020-09-10T18:05:57.053Z
+before review cluster at 2020-09-10T18:05:57.063Z
+before review foreach at 2020-09-10T18:05:57.092Z
+after review foreach (count = 40417) at 2020-09-10T18:06:10.189Z
+before review cluster at 2020-09-10T18:06:10.200Z
+before review foreach at 2020-09-10T18:06:10.223Z
+after review foreach (count = 79586) at 2020-09-10T18:06:34.379Z
+before review cluster at 2020-09-10T18:06:34.398Z
+before review foreach at 2020-09-10T18:06:34.424Z
+after review foreach (count = 0) at 2020-09-10T18:06:35.469Z
+before review cluster at 2020-09-10T18:06:35.485Z
+before review foreach at 2020-09-10T18:06:35.527Z
+after review foreach (count = 0) at 2020-09-10T18:06:36.581Z
+before review cluster at 2020-09-10T18:06:36.592Z
+before review foreach at 2020-09-10T18:06:36.614Z
+after review foreach (count = 1669) at 2020-09-10T18:06:38.207Z
+before review cluster at 2020-09-10T18:06:38.220Z
+before review foreach at 2020-09-10T18:06:38.243Z
+after review foreach (count = 46422) at 2020-09-10T18:06:52.364Z
+before review cluster at 2020-09-10T18:06:52.374Z
+before review foreach at 2020-09-10T18:06:52.399Z
+after review foreach (count = 84362) at 2020-09-10T18:07:17.879Z
+before review cluster at 2020-09-10T18:07:17.891Z
+before review foreach at 2020-09-10T18:07:17.917Z
+after review foreach (count = 0) at 2020-09-10T18:07:18.940Z
+before review cluster at 2020-09-10T18:07:18.953Z
+before review foreach at 2020-09-10T18:07:18.977Z
+after review foreach (count = 0) at 2020-09-10T18:07:20.001Z
+before review cluster at 2020-09-10T18:07:20.016Z
+before review foreach at 2020-09-10T18:07:20.041Z
+after review foreach (count = 1615) at 2020-09-10T18:07:21.576Z
+before review cluster at 2020-09-10T18:07:21.589Z
+before review foreach at 2020-09-10T18:07:21.626Z
+after review foreach (count = 60782) at 2020-09-10T18:07:40.560Z
+before review cluster at 2020-09-10T18:07:40.575Z
+before review foreach at 2020-09-10T18:07:40.617Z
+after review foreach (count = 58577) at 2020-09-10T18:07:59.060Z
+before review cluster at 2020-09-10T18:07:59.080Z
+before review foreach at 2020-09-10T18:07:59.109Z
+after review foreach (count = 0) at 2020-09-10T18:08:00.141Z
+before review cluster at 2020-09-10T18:08:00.153Z
+before review foreach at 2020-09-10T18:08:00.180Z
+after review foreach (count = 0) at 2020-09-10T18:08:01.215Z
+before review cluster at 2020-09-10T18:08:01.237Z
+before review foreach at 2020-09-10T18:08:01.264Z
+after review foreach (count = 11440) at 2020-09-10T18:08:05.776Z
+before review cluster at 2020-09-10T18:08:05.794Z
+before review foreach at 2020-09-10T18:08:05.846Z
+after review foreach (count = 80904) at 2020-09-10T18:08:30.182Z
+before review cluster at 2020-09-10T18:08:30.194Z
+before review foreach at 2020-09-10T18:08:30.221Z
+after review foreach (count = 26245) at 2020-09-10T18:08:38.890Z
+before review cluster at 2020-09-10T18:08:38.905Z
+before review foreach at 2020-09-10T18:08:38.944Z
+after review foreach (count = 0) at 2020-09-10T18:08:39.942Z
+before review cluster at 2020-09-10T18:08:39.957Z
+before review foreach at 2020-09-10T18:08:39.988Z
+after review foreach (count = 1737) at 2020-09-10T18:08:41.574Z
+before review cluster at 2020-09-10T18:08:41.585Z
+before review foreach at 2020-09-10T18:08:41.618Z
+after review foreach (count = 27613) at 2020-09-10T18:08:50.602Z
+before review cluster at 2020-09-10T18:08:50.614Z
+before review foreach at 2020-09-10T18:08:50.645Z
+after review foreach (count = 91533) at 2020-09-10T18:09:18.057Z
+before review cluster at 2020-09-10T18:09:18.069Z
+before review foreach at 2020-09-10T18:09:18.102Z
+after review foreach (count = 0) at 2020-09-10T18:09:19.130Z
+before review cluster at 2020-09-10T18:09:19.140Z
+before review foreach at 2020-09-10T18:09:19.169Z
+after review foreach (count = 0) at 2020-09-10T18:09:20.172Z
+before review cluster at 2020-09-10T18:09:20.182Z
+before review foreach at 2020-09-10T18:09:20.222Z
+after review foreach (count = 2577) at 2020-09-10T18:09:22.098Z
+before review cluster at 2020-09-10T18:09:22.116Z
+before review foreach at 2020-09-10T18:09:22.171Z
+after review foreach (count = 51751) at 2020-09-10T18:09:38.567Z
+before review cluster at 2020-09-10T18:09:38.583Z
+before review foreach at 2020-09-10T18:09:38.620Z
+after review foreach (count = 70074) at 2020-09-10T18:09:59.306Z
+before review cluster at 2020-09-10T18:09:59.314Z
+before review foreach at 2020-09-10T18:09:59.346Z
+after review foreach (count = 0) at 2020-09-10T18:10:00.345Z
+before review cluster at 2020-09-10T18:10:00.357Z
+before review foreach at 2020-09-10T18:10:00.389Z
+after review foreach (count = 0) at 2020-09-10T18:10:01.398Z
+before review cluster at 2020-09-10T18:10:01.410Z
+before review foreach at 2020-09-10T18:10:01.443Z
+after review foreach (count = 5432) at 2020-09-10T18:10:04.248Z
+before review cluster at 2020-09-10T18:10:04.259Z
+before review foreach at 2020-09-10T18:10:04.295Z
+after review foreach (count = 79936) at 2020-09-10T18:10:29.157Z
+before review cluster at 2020-09-10T18:10:29.169Z
+before review foreach at 2020-09-10T18:10:29.204Z
+after review foreach (count = 32082) at 2020-09-10T18:10:39.234Z
+before review cluster at 2020-09-10T18:10:39.244Z
+before review foreach at 2020-09-10T18:10:39.279Z
+after review foreach (count = 0) at 2020-09-10T18:10:40.284Z
+before review cluster at 2020-09-10T18:10:40.294Z
+before review foreach at 2020-09-10T18:10:40.333Z
+after review foreach (count = 131) at 2020-09-10T18:10:41.473Z
+before review cluster at 2020-09-10T18:10:41.481Z
+before review foreach at 2020-09-10T18:10:41.517Z
+after review foreach (count = 18786) at 2020-09-10T18:10:48.088Z
+before review cluster at 2020-09-10T18:10:48.099Z
+before review foreach at 2020-09-10T18:10:48.134Z
+after review foreach (count = 87289) at 2020-09-10T18:11:14.730Z
+before review cluster at 2020-09-10T18:11:14.739Z
+before review foreach at 2020-09-10T18:11:14.776Z
+after review foreach (count = 12710) at 2020-09-10T18:11:18.722Z
