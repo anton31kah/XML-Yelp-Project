@@ -12,7 +12,7 @@ object InsertingModel2RedisIds {
     implicit val properties: Map[String, String] = readProperties
 
     val sparkSession = SparkSession.builder
-      .appName("Inserting Model2 Redis App")
+      .appName("Inserting Model2 Redis App Getting Ids")
       .master(properties("spark.url"))
       .getOrCreate()
 
