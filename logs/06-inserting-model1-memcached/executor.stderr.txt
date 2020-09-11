@@ -1,0 +1,1463 @@
+Spark Executor Command: "/usr/local/openjdk-8/bin/java" "-cp" "/spark/conf/:/spark/jars/*" "-Xmx512M" "-Dspark.driver.port=39879" "-Dspark.rpc.askTimeout=10s" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@3f383482c4d3:39879" "--executor-id" "0" "--hostname" "172.18.0.4" "--cores" "1" "--app-id" "app-20200911185703-0000" "--worker-url" "spark://Worker@172.18.0.4:34993"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+20/09/11 18:57:05 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 55@8a559090dd97
+20/09/11 18:57:05 INFO SignalUtils: Registered signal handler for TERM
+20/09/11 18:57:05 INFO SignalUtils: Registered signal handler for HUP
+20/09/11 18:57:05 INFO SignalUtils: Registered signal handler for INT
+20/09/11 18:57:06 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+20/09/11 18:57:06 INFO SecurityManager: Changing view acls to: root
+20/09/11 18:57:06 INFO SecurityManager: Changing modify acls to: root
+20/09/11 18:57:06 INFO SecurityManager: Changing view acls groups to:
+20/09/11 18:57:06 INFO SecurityManager: Changing modify acls groups to:
+20/09/11 18:57:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+20/09/11 18:57:07 INFO TransportClientFactory: Successfully created connection to 3f383482c4d3/172.18.0.3:39879 after 140 ms (0 ms spent in bootstraps)
+20/09/11 18:57:07 INFO SecurityManager: Changing view acls to: root
+20/09/11 18:57:07 INFO SecurityManager: Changing modify acls to: root
+20/09/11 18:57:07 INFO SecurityManager: Changing view acls groups to:
+20/09/11 18:57:07 INFO SecurityManager: Changing modify acls groups to:
+20/09/11 18:57:07 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+20/09/11 18:57:07 INFO TransportClientFactory: Successfully created connection to 3f383482c4d3/172.18.0.3:39879 after 18 ms (0 ms spent in bootstraps)
+20/09/11 18:57:08 INFO DiskBlockManager: Created local directory at /tmp/spark-bacee15e-6710-4a3a-b1cb-08fd22bc2eb2/executor-d6afb10e-7c68-4010-a1c6-aac11a2e9e21/blockmgr-f603203e-59f4-48dd-a00d-ac941c281875
+20/09/11 18:57:08 INFO MemoryStore: MemoryStore started with capacity 93.3 MiB
+20/09/11 18:57:08 INFO WorkerWatcher: Connecting to worker spark://Worker@172.18.0.4:34993
+20/09/11 18:57:08 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@3f383482c4d3:39879
+20/09/11 18:57:08 INFO WorkerWatcher: Successfully connected to spark://Worker@172.18.0.4:34993
+20/09/11 18:57:08 INFO ResourceUtils: ==============================================================
+20/09/11 18:57:08 INFO ResourceUtils: Resources for spark.executor:
+
+20/09/11 18:57:08 INFO TransportClientFactory: Successfully created connection to /172.18.0.4:34993 after 29 ms (0 ms spent in bootstraps)
+20/09/11 18:57:08 INFO ResourceUtils: ==============================================================
+20/09/11 18:57:08 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+20/09/11 18:57:08 INFO Executor: Starting executor ID 0 on host 172.18.0.4
+20/09/11 18:57:08 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44343.
+20/09/11 18:57:08 INFO NettyBlockTransferService: Server created on 172.18.0.4:44343
+20/09/11 18:57:08 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+20/09/11 18:57:08 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 172.18.0.4, 44343, None)
+20/09/11 18:57:08 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 172.18.0.4, 44343, None)
+20/09/11 18:57:08 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 172.18.0.4, 44343, None)
+20/09/11 18:57:10 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+20/09/11 18:57:10 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+20/09/11 18:57:10 INFO Executor: Fetching spark://3f383482c4d3:39879/jars/XMLYelpProject-assembly-0.1.jar with timestamp 1599850623011
+20/09/11 18:57:10 INFO TransportClientFactory: Successfully created connection to 3f383482c4d3/172.18.0.3:39879 after 11 ms (0 ms spent in bootstraps)
+20/09/11 18:57:10 INFO Utils: Fetching spark://3f383482c4d3:39879/jars/XMLYelpProject-assembly-0.1.jar to /tmp/spark-bacee15e-6710-4a3a-b1cb-08fd22bc2eb2/executor-d6afb10e-7c68-4010-a1c6-aac11a2e9e21/spark-37fed18c-93f7-43c9-8253-1b22c227fe84/fetchFileTemp8268802802005796280.tmp
+20/09/11 18:57:11 INFO Utils: Copying /tmp/spark-bacee15e-6710-4a3a-b1cb-08fd22bc2eb2/executor-d6afb10e-7c68-4010-a1c6-aac11a2e9e21/spark-37fed18c-93f7-43c9-8253-1b22c227fe84/717039701599850623011_cache to /spark/work/app-20200911185703-0000/0/./XMLYelpProject-assembly-0.1.jar
+20/09/11 18:57:11 INFO Executor: Adding file:/spark/work/app-20200911185703-0000/0/./XMLYelpProject-assembly-0.1.jar to class loader
+20/09/11 18:57:11 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 18:57:11 INFO TransportClientFactory: Successfully created connection to 3f383482c4d3/172.18.0.3:38343 after 7 ms (0 ms spent in bootstraps)
+20/09/11 18:57:11 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.3 KiB, free 93.3 MiB)
+20/09/11 18:57:11 INFO TorrentBroadcast: Reading broadcast variable 1 took 144 ms
+20/09/11 18:57:12 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 12.0 KiB, free 93.3 MiB)
+20/09/11 18:57:12 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_business.json, range: 0-78546496, partition values: [empty row]
+20/09/11 18:57:13 INFO CodeGenerator: Code generated in 307.235095 ms
+20/09/11 18:57:13 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 18:57:13 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.1 KiB, free 93.2 MiB)
+20/09/11 18:57:13 INFO TorrentBroadcast: Reading broadcast variable 0 took 25 ms
+20/09/11 18:57:13 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 506.1 KiB, free 92.8 MiB)
+20/09/11 18:57:38 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 3992 bytes result sent to driver
+20/09/11 18:57:38 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+20/09/11 18:57:38 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+20/09/11 18:57:38 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_business.json, range: 78546496-152898689, partition values: [empty row]
+20/09/11 18:57:59 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 3949 bytes result sent to driver
+20/09/11 18:58:00 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+20/09/11 18:58:00 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
+20/09/11 18:58:00 INFO TorrentBroadcast: Started reading broadcast variable 3 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 18:58:00 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 6.3 KiB, free 92.7 MiB)
+20/09/11 18:58:00 INFO TorrentBroadcast: Reading broadcast variable 3 took 28 ms
+20/09/11 18:58:00 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 12.0 KiB, free 92.7 MiB)
+20/09/11 18:58:00 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 0-134217728, partition values: [empty row]
+20/09/11 18:58:00 INFO TorrentBroadcast: Started reading broadcast variable 2 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 18:58:00 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 34.1 KiB, free 92.7 MiB)
+20/09/11 18:58:00 INFO TorrentBroadcast: Reading broadcast variable 2 took 13 ms
+20/09/11 18:58:00 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 506.1 KiB, free 92.2 MiB)
+20/09/11 18:58:13 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 2252 bytes result sent to driver
+20/09/11 18:58:13 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+20/09/11 18:58:13 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
+20/09/11 18:58:13 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 134217728-268435456, partition values: [empty row]
+20/09/11 18:58:26 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 2252 bytes result sent to driver
+20/09/11 18:58:26 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+20/09/11 18:58:26 INFO Executor: Running task 2.0 in stage 1.0 (TID 4)
+20/09/11 18:58:26 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 268435456-402653184, partition values: [empty row]
+20/09/11 18:58:39 INFO Executor: Finished task 2.0 in stage 1.0 (TID 4). 2252 bytes result sent to driver
+20/09/11 18:58:39 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+20/09/11 18:58:39 INFO Executor: Running task 3.0 in stage 1.0 (TID 5)
+20/09/11 18:58:39 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 402653184-536870912, partition values: [empty row]
+20/09/11 18:58:52 INFO Executor: Finished task 3.0 in stage 1.0 (TID 5). 2252 bytes result sent to driver
+20/09/11 18:58:52 INFO CoarseGrainedExecutorBackend: Got assigned task 6
+20/09/11 18:58:52 INFO Executor: Running task 4.0 in stage 1.0 (TID 6)
+20/09/11 18:58:52 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 536870912-671088640, partition values: [empty row]
+20/09/11 18:59:04 INFO Executor: Finished task 4.0 in stage 1.0 (TID 6). 2252 bytes result sent to driver
+20/09/11 18:59:04 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+20/09/11 18:59:04 INFO Executor: Running task 5.0 in stage 1.0 (TID 7)
+20/09/11 18:59:04 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 671088640-805306368, partition values: [empty row]
+20/09/11 18:59:17 INFO Executor: Finished task 5.0 in stage 1.0 (TID 7). 2252 bytes result sent to driver
+20/09/11 18:59:17 INFO CoarseGrainedExecutorBackend: Got assigned task 8
+20/09/11 18:59:17 INFO Executor: Running task 6.0 in stage 1.0 (TID 8)
+20/09/11 18:59:17 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 805306368-939524096, partition values: [empty row]
+20/09/11 18:59:30 INFO Executor: Finished task 6.0 in stage 1.0 (TID 8). 2252 bytes result sent to driver
+20/09/11 18:59:30 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+20/09/11 18:59:30 INFO Executor: Running task 7.0 in stage 1.0 (TID 9)
+20/09/11 18:59:30 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 939524096-1073741824, partition values: [empty row]
+20/09/11 18:59:43 INFO Executor: Finished task 7.0 in stage 1.0 (TID 9). 2252 bytes result sent to driver
+20/09/11 18:59:43 INFO CoarseGrainedExecutorBackend: Got assigned task 10
+20/09/11 18:59:43 INFO Executor: Running task 8.0 in stage 1.0 (TID 10)
+20/09/11 18:59:43 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1073741824-1207959552, partition values: [empty row]
+20/09/11 18:59:56 INFO Executor: Finished task 8.0 in stage 1.0 (TID 10). 2252 bytes result sent to driver
+20/09/11 18:59:56 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+20/09/11 18:59:56 INFO Executor: Running task 9.0 in stage 1.0 (TID 11)
+20/09/11 18:59:56 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1207959552-1342177280, partition values: [empty row]
+20/09/11 19:00:09 INFO Executor: Finished task 9.0 in stage 1.0 (TID 11). 2252 bytes result sent to driver
+20/09/11 19:00:09 INFO CoarseGrainedExecutorBackend: Got assigned task 12
+20/09/11 19:00:09 INFO Executor: Running task 10.0 in stage 1.0 (TID 12)
+20/09/11 19:00:09 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1342177280-1476395008, partition values: [empty row]
+20/09/11 19:00:22 INFO Executor: Finished task 10.0 in stage 1.0 (TID 12). 2252 bytes result sent to driver
+20/09/11 19:00:22 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+20/09/11 19:00:22 INFO Executor: Running task 11.0 in stage 1.0 (TID 13)
+20/09/11 19:00:22 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1476395008-1610612736, partition values: [empty row]
+20/09/11 19:00:35 INFO Executor: Finished task 11.0 in stage 1.0 (TID 13). 2252 bytes result sent to driver
+20/09/11 19:00:35 INFO CoarseGrainedExecutorBackend: Got assigned task 14
+20/09/11 19:00:35 INFO Executor: Running task 12.0 in stage 1.0 (TID 14)
+20/09/11 19:00:35 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1610612736-1744830464, partition values: [empty row]
+20/09/11 19:00:48 INFO Executor: Finished task 12.0 in stage 1.0 (TID 14). 2252 bytes result sent to driver
+20/09/11 19:00:48 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+20/09/11 19:00:48 INFO Executor: Running task 13.0 in stage 1.0 (TID 15)
+20/09/11 19:00:48 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1744830464-1879048192, partition values: [empty row]
+20/09/11 19:01:01 INFO Executor: Finished task 13.0 in stage 1.0 (TID 15). 2252 bytes result sent to driver
+20/09/11 19:01:01 INFO CoarseGrainedExecutorBackend: Got assigned task 16
+20/09/11 19:01:01 INFO Executor: Running task 14.0 in stage 1.0 (TID 16)
+20/09/11 19:01:01 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1879048192-2013265920, partition values: [empty row]
+20/09/11 19:01:14 INFO Executor: Finished task 14.0 in stage 1.0 (TID 16). 2252 bytes result sent to driver
+20/09/11 19:01:14 INFO CoarseGrainedExecutorBackend: Got assigned task 17
+20/09/11 19:01:14 INFO Executor: Running task 15.0 in stage 1.0 (TID 17)
+20/09/11 19:01:14 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2013265920-2147483648, partition values: [empty row]
+20/09/11 19:01:27 INFO Executor: Finished task 15.0 in stage 1.0 (TID 17). 2252 bytes result sent to driver
+20/09/11 19:01:27 INFO CoarseGrainedExecutorBackend: Got assigned task 18
+20/09/11 19:01:27 INFO Executor: Running task 16.0 in stage 1.0 (TID 18)
+20/09/11 19:01:27 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2147483648-2281701376, partition values: [empty row]
+20/09/11 19:01:40 INFO Executor: Finished task 16.0 in stage 1.0 (TID 18). 2252 bytes result sent to driver
+20/09/11 19:01:40 INFO CoarseGrainedExecutorBackend: Got assigned task 19
+20/09/11 19:01:40 INFO Executor: Running task 17.0 in stage 1.0 (TID 19)
+20/09/11 19:01:40 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2281701376-2415919104, partition values: [empty row]
+20/09/11 19:01:53 INFO Executor: Finished task 17.0 in stage 1.0 (TID 19). 2295 bytes result sent to driver
+20/09/11 19:01:53 INFO CoarseGrainedExecutorBackend: Got assigned task 20
+20/09/11 19:01:53 INFO Executor: Running task 18.0 in stage 1.0 (TID 20)
+20/09/11 19:01:53 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2415919104-2550136832, partition values: [empty row]
+20/09/11 19:02:06 INFO Executor: Finished task 18.0 in stage 1.0 (TID 20). 2252 bytes result sent to driver
+20/09/11 19:02:06 INFO CoarseGrainedExecutorBackend: Got assigned task 21
+20/09/11 19:02:06 INFO Executor: Running task 19.0 in stage 1.0 (TID 21)
+20/09/11 19:02:06 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2550136832-2684354560, partition values: [empty row]
+20/09/11 19:02:19 INFO Executor: Finished task 19.0 in stage 1.0 (TID 21). 2252 bytes result sent to driver
+20/09/11 19:02:19 INFO CoarseGrainedExecutorBackend: Got assigned task 22
+20/09/11 19:02:19 INFO Executor: Running task 20.0 in stage 1.0 (TID 22)
+20/09/11 19:02:19 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2684354560-2818572288, partition values: [empty row]
+20/09/11 19:02:33 INFO Executor: Finished task 20.0 in stage 1.0 (TID 22). 2252 bytes result sent to driver
+20/09/11 19:02:33 INFO CoarseGrainedExecutorBackend: Got assigned task 23
+20/09/11 19:02:33 INFO Executor: Running task 21.0 in stage 1.0 (TID 23)
+20/09/11 19:02:33 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2818572288-2952790016, partition values: [empty row]
+20/09/11 19:02:46 INFO Executor: Finished task 21.0 in stage 1.0 (TID 23). 2252 bytes result sent to driver
+20/09/11 19:02:46 INFO CoarseGrainedExecutorBackend: Got assigned task 24
+20/09/11 19:02:46 INFO Executor: Running task 22.0 in stage 1.0 (TID 24)
+20/09/11 19:02:46 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2952790016-3087007744, partition values: [empty row]
+20/09/11 19:02:58 INFO Executor: Finished task 22.0 in stage 1.0 (TID 24). 2252 bytes result sent to driver
+20/09/11 19:02:58 INFO CoarseGrainedExecutorBackend: Got assigned task 25
+20/09/11 19:02:58 INFO Executor: Running task 23.0 in stage 1.0 (TID 25)
+20/09/11 19:02:58 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3087007744-3221225472, partition values: [empty row]
+20/09/11 19:03:11 INFO Executor: Finished task 23.0 in stage 1.0 (TID 25). 2252 bytes result sent to driver
+20/09/11 19:03:11 INFO CoarseGrainedExecutorBackend: Got assigned task 26
+20/09/11 19:03:11 INFO Executor: Running task 24.0 in stage 1.0 (TID 26)
+20/09/11 19:03:11 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3221225472-3355443200, partition values: [empty row]
+20/09/11 19:03:24 INFO Executor: Finished task 24.0 in stage 1.0 (TID 26). 2252 bytes result sent to driver
+20/09/11 19:03:24 INFO CoarseGrainedExecutorBackend: Got assigned task 27
+20/09/11 19:03:24 INFO Executor: Running task 25.0 in stage 1.0 (TID 27)
+20/09/11 19:03:24 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3355443200-3489660928, partition values: [empty row]
+20/09/11 19:03:37 INFO Executor: Finished task 25.0 in stage 1.0 (TID 27). 2252 bytes result sent to driver
+20/09/11 19:03:37 INFO CoarseGrainedExecutorBackend: Got assigned task 28
+20/09/11 19:03:37 INFO Executor: Running task 26.0 in stage 1.0 (TID 28)
+20/09/11 19:03:37 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3489660928-3623878656, partition values: [empty row]
+20/09/11 19:03:50 INFO Executor: Finished task 26.0 in stage 1.0 (TID 28). 2252 bytes result sent to driver
+20/09/11 19:03:50 INFO CoarseGrainedExecutorBackend: Got assigned task 29
+20/09/11 19:03:50 INFO Executor: Running task 27.0 in stage 1.0 (TID 29)
+20/09/11 19:03:50 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3623878656-3758096384, partition values: [empty row]
+20/09/11 19:04:03 INFO Executor: Finished task 27.0 in stage 1.0 (TID 29). 2252 bytes result sent to driver
+20/09/11 19:04:03 INFO CoarseGrainedExecutorBackend: Got assigned task 30
+20/09/11 19:04:03 INFO Executor: Running task 28.0 in stage 1.0 (TID 30)
+20/09/11 19:04:03 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3758096384-3892314112, partition values: [empty row]
+20/09/11 19:04:16 INFO Executor: Finished task 28.0 in stage 1.0 (TID 30). 2252 bytes result sent to driver
+20/09/11 19:04:16 INFO CoarseGrainedExecutorBackend: Got assigned task 31
+20/09/11 19:04:16 INFO Executor: Running task 29.0 in stage 1.0 (TID 31)
+20/09/11 19:04:16 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3892314112-4026531840, partition values: [empty row]
+20/09/11 19:04:29 INFO Executor: Finished task 29.0 in stage 1.0 (TID 31). 2252 bytes result sent to driver
+20/09/11 19:04:29 INFO CoarseGrainedExecutorBackend: Got assigned task 32
+20/09/11 19:04:29 INFO Executor: Running task 30.0 in stage 1.0 (TID 32)
+20/09/11 19:04:29 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4026531840-4160749568, partition values: [empty row]
+20/09/11 19:04:42 INFO Executor: Finished task 30.0 in stage 1.0 (TID 32). 2252 bytes result sent to driver
+20/09/11 19:04:42 INFO CoarseGrainedExecutorBackend: Got assigned task 33
+20/09/11 19:04:42 INFO Executor: Running task 31.0 in stage 1.0 (TID 33)
+20/09/11 19:04:42 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4160749568-4294967296, partition values: [empty row]
+20/09/11 19:04:54 INFO Executor: Finished task 31.0 in stage 1.0 (TID 33). 2252 bytes result sent to driver
+20/09/11 19:04:54 INFO CoarseGrainedExecutorBackend: Got assigned task 34
+20/09/11 19:04:54 INFO Executor: Running task 32.0 in stage 1.0 (TID 34)
+20/09/11 19:04:54 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4294967296-4429185024, partition values: [empty row]
+20/09/11 19:05:07 INFO Executor: Finished task 32.0 in stage 1.0 (TID 34). 2252 bytes result sent to driver
+20/09/11 19:05:07 INFO CoarseGrainedExecutorBackend: Got assigned task 35
+20/09/11 19:05:07 INFO Executor: Running task 33.0 in stage 1.0 (TID 35)
+20/09/11 19:05:07 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4429185024-4563402752, partition values: [empty row]
+20/09/11 19:05:20 INFO Executor: Finished task 33.0 in stage 1.0 (TID 35). 2252 bytes result sent to driver
+20/09/11 19:05:20 INFO CoarseGrainedExecutorBackend: Got assigned task 36
+20/09/11 19:05:20 INFO Executor: Running task 34.0 in stage 1.0 (TID 36)
+20/09/11 19:05:20 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4563402752-4697620480, partition values: [empty row]
+20/09/11 19:05:33 INFO Executor: Finished task 34.0 in stage 1.0 (TID 36). 2252 bytes result sent to driver
+20/09/11 19:05:33 INFO CoarseGrainedExecutorBackend: Got assigned task 37
+20/09/11 19:05:33 INFO Executor: Running task 35.0 in stage 1.0 (TID 37)
+20/09/11 19:05:33 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4697620480-4831838208, partition values: [empty row]
+20/09/11 19:05:46 INFO Executor: Finished task 35.0 in stage 1.0 (TID 37). 2252 bytes result sent to driver
+20/09/11 19:05:46 INFO CoarseGrainedExecutorBackend: Got assigned task 38
+20/09/11 19:05:46 INFO Executor: Running task 36.0 in stage 1.0 (TID 38)
+20/09/11 19:05:46 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4831838208-4966055936, partition values: [empty row]
+20/09/11 19:05:59 INFO Executor: Finished task 36.0 in stage 1.0 (TID 38). 2252 bytes result sent to driver
+20/09/11 19:05:59 INFO CoarseGrainedExecutorBackend: Got assigned task 39
+20/09/11 19:05:59 INFO Executor: Running task 37.0 in stage 1.0 (TID 39)
+20/09/11 19:05:59 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4966055936-5100273664, partition values: [empty row]
+20/09/11 19:06:11 INFO Executor: Finished task 37.0 in stage 1.0 (TID 39). 2252 bytes result sent to driver
+20/09/11 19:06:11 INFO CoarseGrainedExecutorBackend: Got assigned task 40
+20/09/11 19:06:11 INFO Executor: Running task 38.0 in stage 1.0 (TID 40)
+20/09/11 19:06:11 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5100273664-5234491392, partition values: [empty row]
+20/09/11 19:06:24 INFO Executor: Finished task 38.0 in stage 1.0 (TID 40). 2252 bytes result sent to driver
+20/09/11 19:06:24 INFO CoarseGrainedExecutorBackend: Got assigned task 41
+20/09/11 19:06:24 INFO Executor: Running task 39.0 in stage 1.0 (TID 41)
+20/09/11 19:06:24 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5234491392-5368709120, partition values: [empty row]
+20/09/11 19:06:37 INFO Executor: Finished task 39.0 in stage 1.0 (TID 41). 2252 bytes result sent to driver
+20/09/11 19:06:37 INFO CoarseGrainedExecutorBackend: Got assigned task 42
+20/09/11 19:06:37 INFO Executor: Running task 40.0 in stage 1.0 (TID 42)
+20/09/11 19:06:37 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5368709120-5502926848, partition values: [empty row]
+20/09/11 19:06:50 INFO Executor: Finished task 40.0 in stage 1.0 (TID 42). 2252 bytes result sent to driver
+20/09/11 19:06:50 INFO CoarseGrainedExecutorBackend: Got assigned task 43
+20/09/11 19:06:50 INFO Executor: Running task 41.0 in stage 1.0 (TID 43)
+20/09/11 19:06:50 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5502926848-5637144576, partition values: [empty row]
+20/09/11 19:07:02 INFO Executor: Finished task 41.0 in stage 1.0 (TID 43). 2252 bytes result sent to driver
+20/09/11 19:07:02 INFO CoarseGrainedExecutorBackend: Got assigned task 44
+20/09/11 19:07:02 INFO Executor: Running task 42.0 in stage 1.0 (TID 44)
+20/09/11 19:07:02 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5637144576-5771362304, partition values: [empty row]
+20/09/11 19:07:15 INFO Executor: Finished task 42.0 in stage 1.0 (TID 44). 2252 bytes result sent to driver
+20/09/11 19:07:15 INFO CoarseGrainedExecutorBackend: Got assigned task 45
+20/09/11 19:07:15 INFO Executor: Running task 43.0 in stage 1.0 (TID 45)
+20/09/11 19:07:15 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5771362304-5905580032, partition values: [empty row]
+20/09/11 19:07:28 INFO Executor: Finished task 43.0 in stage 1.0 (TID 45). 2252 bytes result sent to driver
+20/09/11 19:07:28 INFO CoarseGrainedExecutorBackend: Got assigned task 46
+20/09/11 19:07:28 INFO Executor: Running task 44.0 in stage 1.0 (TID 46)
+20/09/11 19:07:28 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5905580032-6039797760, partition values: [empty row]
+20/09/11 19:07:40 INFO Executor: Finished task 44.0 in stage 1.0 (TID 46). 2252 bytes result sent to driver
+20/09/11 19:07:40 INFO CoarseGrainedExecutorBackend: Got assigned task 47
+20/09/11 19:07:40 INFO Executor: Running task 45.0 in stage 1.0 (TID 47)
+20/09/11 19:07:40 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6039797760-6174015488, partition values: [empty row]
+20/09/11 19:07:53 INFO Executor: Finished task 45.0 in stage 1.0 (TID 47). 2252 bytes result sent to driver
+20/09/11 19:07:53 INFO CoarseGrainedExecutorBackend: Got assigned task 48
+20/09/11 19:07:53 INFO Executor: Running task 46.0 in stage 1.0 (TID 48)
+20/09/11 19:07:53 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6174015488-6308233216, partition values: [empty row]
+20/09/11 19:08:06 INFO Executor: Finished task 46.0 in stage 1.0 (TID 48). 2252 bytes result sent to driver
+20/09/11 19:08:06 INFO CoarseGrainedExecutorBackend: Got assigned task 49
+20/09/11 19:08:06 INFO Executor: Running task 47.0 in stage 1.0 (TID 49)
+20/09/11 19:08:06 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6308233216-6325565224, partition values: [empty row]
+20/09/11 19:08:07 INFO Executor: Finished task 47.0 in stage 1.0 (TID 49). 2252 bytes result sent to driver
+20/09/11 19:08:08 INFO CoarseGrainedExecutorBackend: Got assigned task 50
+20/09/11 19:08:08 INFO Executor: Running task 0.0 in stage 2.0 (TID 50)
+20/09/11 19:08:08 INFO TorrentBroadcast: Started reading broadcast variable 5 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 19:08:08 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 6.3 KiB, free 92.2 MiB)
+20/09/11 19:08:08 INFO TorrentBroadcast: Reading broadcast variable 5 took 14 ms
+20/09/11 19:08:08 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 12.0 KiB, free 92.2 MiB)
+20/09/11 19:08:08 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 0-134217728, partition values: [empty row]
+20/09/11 19:08:08 INFO TorrentBroadcast: Started reading broadcast variable 4 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 19:08:08 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 34.1 KiB, free 92.2 MiB)
+20/09/11 19:08:08 INFO TorrentBroadcast: Reading broadcast variable 4 took 12 ms
+20/09/11 19:08:08 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 506.1 KiB, free 91.7 MiB)
+20/09/11 19:08:11 INFO Executor: Finished task 0.0 in stage 2.0 (TID 50). 2713 bytes result sent to driver
+20/09/11 19:08:11 INFO CoarseGrainedExecutorBackend: Got assigned task 51
+20/09/11 19:08:11 INFO Executor: Running task 1.0 in stage 2.0 (TID 51)
+20/09/11 19:08:11 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 134217728-268435456, partition values: [empty row]
+20/09/11 19:08:15 INFO Executor: Finished task 1.0 in stage 2.0 (TID 51). 2713 bytes result sent to driver
+20/09/11 19:08:15 INFO CoarseGrainedExecutorBackend: Got assigned task 52
+20/09/11 19:08:15 INFO Executor: Running task 2.0 in stage 2.0 (TID 52)
+20/09/11 19:08:15 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 268435456-402653184, partition values: [empty row]
+20/09/11 19:08:20 INFO Executor: Finished task 2.0 in stage 2.0 (TID 52). 2713 bytes result sent to driver
+20/09/11 19:08:20 INFO CoarseGrainedExecutorBackend: Got assigned task 53
+20/09/11 19:08:20 INFO Executor: Running task 3.0 in stage 2.0 (TID 53)
+20/09/11 19:08:20 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 402653184-536870912, partition values: [empty row]
+20/09/11 19:08:26 INFO Executor: Finished task 3.0 in stage 2.0 (TID 53). 2713 bytes result sent to driver
+20/09/11 19:08:26 INFO CoarseGrainedExecutorBackend: Got assigned task 54
+20/09/11 19:08:26 INFO Executor: Running task 4.0 in stage 2.0 (TID 54)
+20/09/11 19:08:26 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 536870912-671088640, partition values: [empty row]
+20/09/11 19:08:30 INFO Executor: Finished task 4.0 in stage 2.0 (TID 54). 2713 bytes result sent to driver
+20/09/11 19:08:30 INFO CoarseGrainedExecutorBackend: Got assigned task 55
+20/09/11 19:08:30 INFO Executor: Running task 5.0 in stage 2.0 (TID 55)
+20/09/11 19:08:30 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 671088640-805306368, partition values: [empty row]
+20/09/11 19:08:37 INFO Executor: Finished task 5.0 in stage 2.0 (TID 55). 2713 bytes result sent to driver
+20/09/11 19:08:37 INFO CoarseGrainedExecutorBackend: Got assigned task 56
+20/09/11 19:08:37 INFO Executor: Running task 6.0 in stage 2.0 (TID 56)
+20/09/11 19:08:37 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 805306368-939524096, partition values: [empty row]
+20/09/11 19:08:41 INFO Executor: Finished task 6.0 in stage 2.0 (TID 56). 2713 bytes result sent to driver
+20/09/11 19:08:41 INFO CoarseGrainedExecutorBackend: Got assigned task 57
+20/09/11 19:08:41 INFO Executor: Running task 7.0 in stage 2.0 (TID 57)
+20/09/11 19:08:41 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 939524096-1073741824, partition values: [empty row]
+20/09/11 19:08:45 INFO Executor: Finished task 7.0 in stage 2.0 (TID 57). 2713 bytes result sent to driver
+20/09/11 19:08:45 INFO CoarseGrainedExecutorBackend: Got assigned task 58
+20/09/11 19:08:45 INFO Executor: Running task 8.0 in stage 2.0 (TID 58)
+20/09/11 19:08:45 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1073741824-1207959552, partition values: [empty row]
+20/09/11 19:08:52 INFO Executor: Finished task 8.0 in stage 2.0 (TID 58). 2713 bytes result sent to driver
+20/09/11 19:08:52 INFO CoarseGrainedExecutorBackend: Got assigned task 59
+20/09/11 19:08:52 INFO Executor: Running task 9.0 in stage 2.0 (TID 59)
+20/09/11 19:08:52 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1207959552-1342177280, partition values: [empty row]
+20/09/11 19:08:56 INFO Executor: Finished task 9.0 in stage 2.0 (TID 59). 2713 bytes result sent to driver
+20/09/11 19:08:56 INFO CoarseGrainedExecutorBackend: Got assigned task 60
+20/09/11 19:08:56 INFO Executor: Running task 10.0 in stage 2.0 (TID 60)
+20/09/11 19:08:56 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1342177280-1476395008, partition values: [empty row]
+20/09/11 19:09:04 INFO Executor: Finished task 10.0 in stage 2.0 (TID 60). 2713 bytes result sent to driver
+20/09/11 19:09:04 INFO CoarseGrainedExecutorBackend: Got assigned task 61
+20/09/11 19:09:04 INFO Executor: Running task 11.0 in stage 2.0 (TID 61)
+20/09/11 19:09:04 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1476395008-1610612736, partition values: [empty row]
+20/09/11 19:09:08 INFO Executor: Finished task 11.0 in stage 2.0 (TID 61). 2713 bytes result sent to driver
+20/09/11 19:09:08 INFO CoarseGrainedExecutorBackend: Got assigned task 62
+20/09/11 19:09:08 INFO Executor: Running task 12.0 in stage 2.0 (TID 62)
+20/09/11 19:09:08 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1610612736-1744830464, partition values: [empty row]
+20/09/11 19:09:13 INFO Executor: Finished task 12.0 in stage 2.0 (TID 62). 2713 bytes result sent to driver
+20/09/11 19:09:13 INFO CoarseGrainedExecutorBackend: Got assigned task 63
+20/09/11 19:09:13 INFO Executor: Running task 13.0 in stage 2.0 (TID 63)
+20/09/11 19:09:13 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1744830464-1879048192, partition values: [empty row]
+20/09/11 19:09:20 INFO Executor: Finished task 13.0 in stage 2.0 (TID 63). 2713 bytes result sent to driver
+20/09/11 19:09:20 INFO CoarseGrainedExecutorBackend: Got assigned task 64
+20/09/11 19:09:20 INFO Executor: Running task 14.0 in stage 2.0 (TID 64)
+20/09/11 19:09:20 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1879048192-2013265920, partition values: [empty row]
+20/09/11 19:09:24 INFO Executor: Finished task 14.0 in stage 2.0 (TID 64). 2713 bytes result sent to driver
+20/09/11 19:09:24 INFO CoarseGrainedExecutorBackend: Got assigned task 65
+20/09/11 19:09:24 INFO Executor: Running task 15.0 in stage 2.0 (TID 65)
+20/09/11 19:09:24 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2013265920-2147483648, partition values: [empty row]
+20/09/11 19:09:31 INFO Executor: Finished task 15.0 in stage 2.0 (TID 65). 2713 bytes result sent to driver
+20/09/11 19:09:31 INFO CoarseGrainedExecutorBackend: Got assigned task 66
+20/09/11 19:09:31 INFO Executor: Running task 16.0 in stage 2.0 (TID 66)
+20/09/11 19:09:31 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2147483648-2281701376, partition values: [empty row]
+20/09/11 19:09:36 INFO Executor: Finished task 16.0 in stage 2.0 (TID 66). 2713 bytes result sent to driver
+20/09/11 19:09:36 INFO CoarseGrainedExecutorBackend: Got assigned task 67
+20/09/11 19:09:36 INFO Executor: Running task 17.0 in stage 2.0 (TID 67)
+20/09/11 19:09:36 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2281701376-2415919104, partition values: [empty row]
+20/09/11 19:09:43 INFO Executor: Finished task 17.0 in stage 2.0 (TID 67). 2713 bytes result sent to driver
+20/09/11 19:09:43 INFO CoarseGrainedExecutorBackend: Got assigned task 68
+20/09/11 19:09:43 INFO Executor: Running task 18.0 in stage 2.0 (TID 68)
+20/09/11 19:09:43 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2415919104-2550136832, partition values: [empty row]
+20/09/11 19:09:48 INFO Executor: Finished task 18.0 in stage 2.0 (TID 68). 2713 bytes result sent to driver
+20/09/11 19:09:48 INFO CoarseGrainedExecutorBackend: Got assigned task 69
+20/09/11 19:09:48 INFO Executor: Running task 19.0 in stage 2.0 (TID 69)
+20/09/11 19:09:48 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2550136832-2684354560, partition values: [empty row]
+20/09/11 19:09:55 INFO Executor: Finished task 19.0 in stage 2.0 (TID 69). 2713 bytes result sent to driver
+20/09/11 19:09:55 INFO CoarseGrainedExecutorBackend: Got assigned task 70
+20/09/11 19:09:55 INFO Executor: Running task 20.0 in stage 2.0 (TID 70)
+20/09/11 19:09:55 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2684354560-2818572288, partition values: [empty row]
+20/09/11 19:10:00 INFO Executor: Finished task 20.0 in stage 2.0 (TID 70). 2713 bytes result sent to driver
+20/09/11 19:10:00 INFO CoarseGrainedExecutorBackend: Got assigned task 71
+20/09/11 19:10:00 INFO Executor: Running task 21.0 in stage 2.0 (TID 71)
+20/09/11 19:10:00 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2818572288-2952790016, partition values: [empty row]
+20/09/11 19:10:05 INFO Executor: Finished task 21.0 in stage 2.0 (TID 71). 2713 bytes result sent to driver
+20/09/11 19:10:05 INFO CoarseGrainedExecutorBackend: Got assigned task 72
+20/09/11 19:10:05 INFO Executor: Running task 22.0 in stage 2.0 (TID 72)
+20/09/11 19:10:05 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2952790016-3087007744, partition values: [empty row]
+20/09/11 19:10:12 INFO Executor: Finished task 22.0 in stage 2.0 (TID 72). 2713 bytes result sent to driver
+20/09/11 19:10:12 INFO CoarseGrainedExecutorBackend: Got assigned task 73
+20/09/11 19:10:12 INFO Executor: Running task 23.0 in stage 2.0 (TID 73)
+20/09/11 19:10:12 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 3087007744-3221225472, partition values: [empty row]
+20/09/11 19:10:16 INFO Executor: Finished task 23.0 in stage 2.0 (TID 73). 2713 bytes result sent to driver
+20/09/11 19:10:16 INFO CoarseGrainedExecutorBackend: Got assigned task 74
+20/09/11 19:10:16 INFO Executor: Running task 24.0 in stage 2.0 (TID 74)
+20/09/11 19:10:16 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 3221225472-3268069927, partition values: [empty row]
+20/09/11 19:10:21 INFO Executor: Finished task 24.0 in stage 2.0 (TID 74). 2713 bytes result sent to driver
+20/09/11 19:10:22 INFO CoarseGrainedExecutorBackend: Got assigned task 75
+20/09/11 19:10:22 INFO Executor: Running task 0.0 in stage 3.0 (TID 75)
+20/09/11 19:10:22 INFO TorrentBroadcast: Started reading broadcast variable 7 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 19:10:22 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 8.8 KiB, free 91.7 MiB)
+20/09/11 19:10:22 INFO TorrentBroadcast: Reading broadcast variable 7 took 17 ms
+20/09/11 19:10:22 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 18.5 KiB, free 91.6 MiB)
+20/09/11 19:10:24 INFO CodeGenerator: Code generated in 87.831191 ms
+20/09/11 19:10:24 INFO CodeGenerator: Code generated in 9.729487 ms
+20/09/11 19:10:24 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:24 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:24 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:24 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:24 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_business.json, range: 0-78546496, partition values: [empty row]
+20/09/11 19:10:24 INFO CodeGenerator: Code generated in 26.681956 ms
+20/09/11 19:10:24 INFO TorrentBroadcast: Started reading broadcast variable 6 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 19:10:24 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 34.1 KiB, free 91.6 MiB)
+20/09/11 19:10:24 INFO TorrentBroadcast: Reading broadcast variable 6 took 17 ms
+20/09/11 19:10:24 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 506.1 KiB, free 91.1 MiB)
+20/09/11 19:10:34 INFO Executor: Finished task 0.0 in stage 3.0 (TID 75). 1621 bytes result sent to driver
+20/09/11 19:10:34 INFO CoarseGrainedExecutorBackend: Got assigned task 76
+20/09/11 19:10:34 INFO Executor: Running task 1.0 in stage 3.0 (TID 76)
+20/09/11 19:10:34 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:34 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:34 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:34 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:34 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_business.json, range: 78546496-152898689, partition values: [empty row]
+20/09/11 19:10:40 INFO Executor: Finished task 1.0 in stage 3.0 (TID 76). 1621 bytes result sent to driver
+20/09/11 19:10:41 INFO CoarseGrainedExecutorBackend: Got assigned task 77
+20/09/11 19:10:41 INFO Executor: Running task 0.0 in stage 4.0 (TID 77)
+20/09/11 19:10:41 INFO TorrentBroadcast: Started reading broadcast variable 9 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 19:10:41 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 12.1 KiB, free 92.7 MiB)
+20/09/11 19:10:41 INFO TorrentBroadcast: Reading broadcast variable 9 took 54 ms
+20/09/11 19:10:41 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 29.4 KiB, free 92.7 MiB)
+20/09/11 19:10:41 INFO CodeGenerator: Code generated in 81.504812 ms
+20/09/11 19:10:41 INFO CodeGenerator: Code generated in 90.012126 ms
+20/09/11 19:10:41 INFO CodeGenerator: Code generated in 7.693933 ms
+20/09/11 19:10:41 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:41 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:41 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:41 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:41 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 0-134217728, partition values: [empty row]
+20/09/11 19:10:41 INFO CodeGenerator: Code generated in 61.379661 ms
+20/09/11 19:10:41 INFO TorrentBroadcast: Started reading broadcast variable 8 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 19:10:41 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 34.1 KiB, free 92.7 MiB)
+20/09/11 19:10:41 INFO TorrentBroadcast: Reading broadcast variable 8 took 17 ms
+20/09/11 19:10:41 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 506.1 KiB, free 92.2 MiB)
+20/09/11 19:10:42 INFO Executor: Finished task 0.0 in stage 4.0 (TID 77). 1751 bytes result sent to driver
+20/09/11 19:10:42 INFO CoarseGrainedExecutorBackend: Got assigned task 78
+20/09/11 19:10:42 INFO Executor: Running task 1.0 in stage 4.0 (TID 78)
+20/09/11 19:10:42 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:42 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:42 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:42 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:42 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 134217728-268435456, partition values: [empty row]
+20/09/11 19:10:43 INFO Executor: Finished task 1.0 in stage 4.0 (TID 78). 1751 bytes result sent to driver
+20/09/11 19:10:43 INFO CoarseGrainedExecutorBackend: Got assigned task 79
+20/09/11 19:10:43 INFO Executor: Running task 2.0 in stage 4.0 (TID 79)
+20/09/11 19:10:43 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:43 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:43 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:43 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:43 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 268435456-402653184, partition values: [empty row]
+20/09/11 19:10:44 INFO Executor: Finished task 2.0 in stage 4.0 (TID 79). 1751 bytes result sent to driver
+20/09/11 19:10:44 INFO CoarseGrainedExecutorBackend: Got assigned task 80
+20/09/11 19:10:44 INFO Executor: Running task 3.0 in stage 4.0 (TID 80)
+20/09/11 19:10:44 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:44 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:44 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:44 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:44 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 402653184-536870912, partition values: [empty row]
+20/09/11 19:10:45 INFO Executor: Finished task 3.0 in stage 4.0 (TID 80). 1751 bytes result sent to driver
+20/09/11 19:10:45 INFO CoarseGrainedExecutorBackend: Got assigned task 81
+20/09/11 19:10:45 INFO Executor: Running task 4.0 in stage 4.0 (TID 81)
+20/09/11 19:10:45 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:45 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:45 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:45 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:45 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 536870912-671088640, partition values: [empty row]
+20/09/11 19:10:46 INFO Executor: Finished task 4.0 in stage 4.0 (TID 81). 1751 bytes result sent to driver
+20/09/11 19:10:46 INFO CoarseGrainedExecutorBackend: Got assigned task 82
+20/09/11 19:10:46 INFO Executor: Running task 5.0 in stage 4.0 (TID 82)
+20/09/11 19:10:46 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:46 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:46 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:46 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:46 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 671088640-805306368, partition values: [empty row]
+20/09/11 19:10:48 INFO Executor: Finished task 5.0 in stage 4.0 (TID 82). 1751 bytes result sent to driver
+20/09/11 19:10:48 INFO CoarseGrainedExecutorBackend: Got assigned task 83
+20/09/11 19:10:48 INFO Executor: Running task 6.0 in stage 4.0 (TID 83)
+20/09/11 19:10:48 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:48 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:48 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:48 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:48 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 805306368-939524096, partition values: [empty row]
+20/09/11 19:10:49 INFO Executor: Finished task 6.0 in stage 4.0 (TID 83). 1751 bytes result sent to driver
+20/09/11 19:10:49 INFO CoarseGrainedExecutorBackend: Got assigned task 84
+20/09/11 19:10:49 INFO Executor: Running task 7.0 in stage 4.0 (TID 84)
+20/09/11 19:10:49 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:49 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:49 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:49 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:49 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 939524096-1073741824, partition values: [empty row]
+20/09/11 19:10:50 INFO Executor: Finished task 7.0 in stage 4.0 (TID 84). 1751 bytes result sent to driver
+20/09/11 19:10:50 INFO CoarseGrainedExecutorBackend: Got assigned task 85
+20/09/11 19:10:50 INFO Executor: Running task 8.0 in stage 4.0 (TID 85)
+20/09/11 19:10:50 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:50 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:50 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:50 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:50 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1073741824-1207959552, partition values: [empty row]
+20/09/11 19:10:52 INFO Executor: Finished task 8.0 in stage 4.0 (TID 85). 1751 bytes result sent to driver
+20/09/11 19:10:52 INFO CoarseGrainedExecutorBackend: Got assigned task 86
+20/09/11 19:10:52 INFO Executor: Running task 9.0 in stage 4.0 (TID 86)
+20/09/11 19:10:52 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:52 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:52 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:52 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:52 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1207959552-1342177280, partition values: [empty row]
+20/09/11 19:10:53 INFO Executor: Finished task 9.0 in stage 4.0 (TID 86). 1751 bytes result sent to driver
+20/09/11 19:10:53 INFO CoarseGrainedExecutorBackend: Got assigned task 87
+20/09/11 19:10:53 INFO Executor: Running task 10.0 in stage 4.0 (TID 87)
+20/09/11 19:10:53 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:53 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:53 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:53 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:53 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1342177280-1476395008, partition values: [empty row]
+20/09/11 19:10:55 INFO Executor: Finished task 10.0 in stage 4.0 (TID 87). 1751 bytes result sent to driver
+20/09/11 19:10:55 INFO CoarseGrainedExecutorBackend: Got assigned task 88
+20/09/11 19:10:55 INFO Executor: Running task 11.0 in stage 4.0 (TID 88)
+20/09/11 19:10:55 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:55 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:55 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:55 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:55 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1476395008-1610612736, partition values: [empty row]
+20/09/11 19:10:55 INFO Executor: Finished task 11.0 in stage 4.0 (TID 88). 1751 bytes result sent to driver
+20/09/11 19:10:56 INFO CoarseGrainedExecutorBackend: Got assigned task 89
+20/09/11 19:10:56 INFO Executor: Running task 12.0 in stage 4.0 (TID 89)
+20/09/11 19:10:56 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:56 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:56 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:56 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:56 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1610612736-1744830464, partition values: [empty row]
+20/09/11 19:10:57 INFO Executor: Finished task 12.0 in stage 4.0 (TID 89). 1794 bytes result sent to driver
+20/09/11 19:10:57 INFO CoarseGrainedExecutorBackend: Got assigned task 90
+20/09/11 19:10:57 INFO Executor: Running task 13.0 in stage 4.0 (TID 90)
+20/09/11 19:10:57 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:57 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:57 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:57 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:57 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1744830464-1879048192, partition values: [empty row]
+20/09/11 19:10:58 INFO Executor: Finished task 13.0 in stage 4.0 (TID 90). 1751 bytes result sent to driver
+20/09/11 19:10:58 INFO CoarseGrainedExecutorBackend: Got assigned task 91
+20/09/11 19:10:58 INFO Executor: Running task 14.0 in stage 4.0 (TID 91)
+20/09/11 19:10:58 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:58 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:58 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:58 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:58 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1879048192-2013265920, partition values: [empty row]
+20/09/11 19:10:59 INFO Executor: Finished task 14.0 in stage 4.0 (TID 91). 1751 bytes result sent to driver
+20/09/11 19:10:59 INFO CoarseGrainedExecutorBackend: Got assigned task 92
+20/09/11 19:10:59 INFO Executor: Running task 15.0 in stage 4.0 (TID 92)
+20/09/11 19:10:59 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:10:59 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:59 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:59 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:10:59 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2013265920-2147483648, partition values: [empty row]
+20/09/11 19:11:01 INFO Executor: Finished task 15.0 in stage 4.0 (TID 92). 1751 bytes result sent to driver
+20/09/11 19:11:01 INFO CoarseGrainedExecutorBackend: Got assigned task 93
+20/09/11 19:11:01 INFO Executor: Running task 16.0 in stage 4.0 (TID 93)
+20/09/11 19:11:01 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:01 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:01 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:01 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:01 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2147483648-2281701376, partition values: [empty row]
+20/09/11 19:11:02 INFO Executor: Finished task 16.0 in stage 4.0 (TID 93). 1751 bytes result sent to driver
+20/09/11 19:11:02 INFO CoarseGrainedExecutorBackend: Got assigned task 94
+20/09/11 19:11:02 INFO Executor: Running task 17.0 in stage 4.0 (TID 94)
+20/09/11 19:11:02 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:02 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:02 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:02 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:02 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2281701376-2415919104, partition values: [empty row]
+20/09/11 19:11:03 INFO Executor: Finished task 17.0 in stage 4.0 (TID 94). 1751 bytes result sent to driver
+20/09/11 19:11:03 INFO CoarseGrainedExecutorBackend: Got assigned task 95
+20/09/11 19:11:03 INFO Executor: Running task 18.0 in stage 4.0 (TID 95)
+20/09/11 19:11:03 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:03 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:03 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:03 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:03 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2415919104-2550136832, partition values: [empty row]
+20/09/11 19:11:04 INFO Executor: Finished task 18.0 in stage 4.0 (TID 95). 1751 bytes result sent to driver
+20/09/11 19:11:04 INFO CoarseGrainedExecutorBackend: Got assigned task 96
+20/09/11 19:11:04 INFO Executor: Running task 19.0 in stage 4.0 (TID 96)
+20/09/11 19:11:04 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:04 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:04 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:04 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:04 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2550136832-2684354560, partition values: [empty row]
+20/09/11 19:11:06 INFO Executor: Finished task 19.0 in stage 4.0 (TID 96). 1751 bytes result sent to driver
+20/09/11 19:11:06 INFO CoarseGrainedExecutorBackend: Got assigned task 97
+20/09/11 19:11:06 INFO Executor: Running task 20.0 in stage 4.0 (TID 97)
+20/09/11 19:11:06 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:06 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:06 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:06 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:06 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2684354560-2818572288, partition values: [empty row]
+20/09/11 19:11:06 INFO Executor: Finished task 20.0 in stage 4.0 (TID 97). 1751 bytes result sent to driver
+20/09/11 19:11:06 INFO CoarseGrainedExecutorBackend: Got assigned task 98
+20/09/11 19:11:06 INFO Executor: Running task 21.0 in stage 4.0 (TID 98)
+20/09/11 19:11:06 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:06 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:06 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:06 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:06 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2818572288-2952790016, partition values: [empty row]
+20/09/11 19:11:08 INFO Executor: Finished task 21.0 in stage 4.0 (TID 98). 1751 bytes result sent to driver
+20/09/11 19:11:08 INFO CoarseGrainedExecutorBackend: Got assigned task 99
+20/09/11 19:11:08 INFO Executor: Running task 22.0 in stage 4.0 (TID 99)
+20/09/11 19:11:08 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:08 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:08 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:08 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:08 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2952790016-3087007744, partition values: [empty row]
+20/09/11 19:11:09 INFO Executor: Finished task 22.0 in stage 4.0 (TID 99). 1751 bytes result sent to driver
+20/09/11 19:11:09 INFO CoarseGrainedExecutorBackend: Got assigned task 100
+20/09/11 19:11:09 INFO Executor: Running task 23.0 in stage 4.0 (TID 100)
+20/09/11 19:11:09 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:09 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:09 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:09 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:09 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 3087007744-3221225472, partition values: [empty row]
+20/09/11 19:11:10 INFO Executor: Finished task 23.0 in stage 4.0 (TID 100). 1751 bytes result sent to driver
+20/09/11 19:11:10 INFO CoarseGrainedExecutorBackend: Got assigned task 101
+20/09/11 19:11:10 INFO Executor: Running task 24.0 in stage 4.0 (TID 101)
+20/09/11 19:11:10 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:10 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:10 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:10 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:10 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 3221225472-3268069927, partition values: [empty row]
+20/09/11 19:11:12 INFO Executor: Finished task 24.0 in stage 4.0 (TID 101). 1751 bytes result sent to driver
+20/09/11 19:11:12 INFO CoarseGrainedExecutorBackend: Got assigned task 102
+20/09/11 19:11:12 INFO Executor: Running task 0.0 in stage 5.0 (TID 102)
+20/09/11 19:11:12 INFO TorrentBroadcast: Started reading broadcast variable 11 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 19:11:12 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 11.0 KiB, free 92.2 MiB)
+20/09/11 19:11:12 INFO TorrentBroadcast: Reading broadcast variable 11 took 8 ms
+20/09/11 19:11:12 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 23.7 KiB, free 92.2 MiB)
+20/09/11 19:11:12 INFO CodeGenerator: Code generated in 72.222507 ms
+20/09/11 19:11:12 INFO CodeGenerator: Code generated in 25.168674 ms
+20/09/11 19:11:12 INFO CodeGenerator: Code generated in 19.725889 ms
+20/09/11 19:11:12 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:12 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:12 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:12 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:12 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:12 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:12 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:12 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:12 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 0-134217728, partition values: [empty row]
+20/09/11 19:11:12 INFO CodeGenerator: Code generated in 13.060278 ms
+20/09/11 19:11:12 INFO TorrentBroadcast: Started reading broadcast variable 10 with 1 pieces (estimated total size 4.0 MiB)
+20/09/11 19:11:12 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 34.1 KiB, free 92.1 MiB)
+20/09/11 19:11:12 INFO TorrentBroadcast: Reading broadcast variable 10 took 21 ms
+20/09/11 19:11:12 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 506.1 KiB, free 91.6 MiB)
+20/09/11 19:11:14 INFO Executor: Finished task 0.0 in stage 5.0 (TID 102). 1751 bytes result sent to driver
+20/09/11 19:11:14 INFO CoarseGrainedExecutorBackend: Got assigned task 103
+20/09/11 19:11:14 INFO Executor: Running task 1.0 in stage 5.0 (TID 103)
+20/09/11 19:11:14 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:14 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:14 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:14 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:14 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:14 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:14 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:14 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:14 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 134217728-268435456, partition values: [empty row]
+20/09/11 19:11:15 INFO Executor: Finished task 1.0 in stage 5.0 (TID 103). 1751 bytes result sent to driver
+20/09/11 19:11:15 INFO CoarseGrainedExecutorBackend: Got assigned task 104
+20/09/11 19:11:15 INFO Executor: Running task 2.0 in stage 5.0 (TID 104)
+20/09/11 19:11:15 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:15 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:15 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:15 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:15 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:15 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:15 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:15 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:15 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 268435456-402653184, partition values: [empty row]
+20/09/11 19:11:18 INFO Executor: Finished task 2.0 in stage 5.0 (TID 104). 1751 bytes result sent to driver
+20/09/11 19:11:18 INFO CoarseGrainedExecutorBackend: Got assigned task 105
+20/09/11 19:11:18 INFO Executor: Running task 3.0 in stage 5.0 (TID 105)
+20/09/11 19:11:18 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:18 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:18 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:18 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:18 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:18 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:18 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:18 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:18 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 402653184-536870912, partition values: [empty row]
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:OYwExM0NGUjyPos0NLjLug:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:049JtTNvqEATthsJS5LwXQ:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:XTYEhwaaO_YjXcOGL_uBIQ:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:KXAD-9odnrMp0urBS4Ir-Q:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:ID5wWJ9C7G0hfbQilvlfxA:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:8vYkLL2ARRrwJSkPkgP7ew:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:Mc0XXe6bBh4-ZlsGHTfGYw:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:8n902_Wkbh2WN7x3bGxCVw:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:tInrGCzll4k9hF34Ye1rvQ:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:8t1t1OYGuThuCWTgpRnfBA:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:XTtNTWH_Nqv27RC7OtS7dQ:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:aR4IFg39qfRVe5GNz9t59Q:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:9B_lhM_Ys7AIykLMvyPypg:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:uc6HaFHD9Km7H0iHi3e7zw:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:8cjXEmuqgCbIRudb2D52qw:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:KC2M4OPl6OMP6BIecBxV9Q:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:YTCCJ3ShO-zg0dlx1nk6dw:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:t1ewB0C6tTdLGVpxRqN9_A:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:0VJ8tBxOpD2OxuioVjaAxA:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:R-pzO1ZKX1uzDbYISj1Ipw:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:7x2G9vNeN67E1LmJnSU3TA:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:fhxPwT3DgvpvOQ3ODX9lBQ:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:_WvEXsx2eZ53lTWHlIx9kg:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:U0kiORl1Gpc8K9jOWWgHzg:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:LxTruvQeT5ER0W8GfE4-Og:reviews.
+20/09/11 19:11:18 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:F2t7JewRtSXriRoBHEYmlA:reviews.
+20/09/11 19:11:24 INFO Executor: Finished task 3.0 in stage 5.0 (TID 105). 1751 bytes result sent to driver
+20/09/11 19:11:24 INFO CoarseGrainedExecutorBackend: Got assigned task 106
+20/09/11 19:11:24 INFO Executor: Running task 4.0 in stage 5.0 (TID 106)
+20/09/11 19:11:24 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:24 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:24 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:24 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:24 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:24 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:24 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:24 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:24 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 536870912-671088640, partition values: [empty row]
+20/09/11 19:11:29 INFO Executor: Finished task 4.0 in stage 5.0 (TID 106). 1751 bytes result sent to driver
+20/09/11 19:11:29 INFO CoarseGrainedExecutorBackend: Got assigned task 107
+20/09/11 19:11:29 INFO Executor: Running task 5.0 in stage 5.0 (TID 107)
+20/09/11 19:11:29 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:29 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:29 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:29 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:29 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:29 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:29 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:29 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:29 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 671088640-805306368, partition values: [empty row]
+20/09/11 19:11:30 INFO Executor: Finished task 5.0 in stage 5.0 (TID 107). 1751 bytes result sent to driver
+20/09/11 19:11:30 INFO CoarseGrainedExecutorBackend: Got assigned task 108
+20/09/11 19:11:30 INFO Executor: Running task 6.0 in stage 5.0 (TID 108)
+20/09/11 19:11:30 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:30 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:30 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:30 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:30 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:30 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:30 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:30 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:30 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 805306368-939524096, partition values: [empty row]
+20/09/11 19:11:31 INFO Executor: Finished task 6.0 in stage 5.0 (TID 108). 1751 bytes result sent to driver
+20/09/11 19:11:31 INFO CoarseGrainedExecutorBackend: Got assigned task 109
+20/09/11 19:11:31 INFO Executor: Running task 7.0 in stage 5.0 (TID 109)
+20/09/11 19:11:31 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:31 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:31 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:31 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:31 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:31 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:31 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:31 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:31 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 939524096-1073741824, partition values: [empty row]
+20/09/11 19:11:33 INFO Executor: Finished task 7.0 in stage 5.0 (TID 109). 1751 bytes result sent to driver
+20/09/11 19:11:33 INFO CoarseGrainedExecutorBackend: Got assigned task 110
+20/09/11 19:11:33 INFO Executor: Running task 8.0 in stage 5.0 (TID 110)
+20/09/11 19:11:33 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:33 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:33 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:33 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:33 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:33 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:33 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:33 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:33 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1073741824-1207959552, partition values: [empty row]
+20/09/11 19:11:39 INFO Executor: Finished task 8.0 in stage 5.0 (TID 110). 1751 bytes result sent to driver
+20/09/11 19:11:39 INFO CoarseGrainedExecutorBackend: Got assigned task 111
+20/09/11 19:11:39 INFO Executor: Running task 9.0 in stage 5.0 (TID 111)
+20/09/11 19:11:39 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:39 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:39 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:39 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:39 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:39 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:39 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:39 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:39 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1207959552-1342177280, partition values: [empty row]
+20/09/11 19:11:41 INFO Executor: Finished task 9.0 in stage 5.0 (TID 111). 1751 bytes result sent to driver
+20/09/11 19:11:41 INFO CoarseGrainedExecutorBackend: Got assigned task 112
+20/09/11 19:11:41 INFO Executor: Running task 10.0 in stage 5.0 (TID 112)
+20/09/11 19:11:41 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:41 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:41 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:41 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:41 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:41 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:41 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:41 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:41 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1342177280-1476395008, partition values: [empty row]
+20/09/11 19:11:42 INFO Executor: Finished task 10.0 in stage 5.0 (TID 112). 1751 bytes result sent to driver
+20/09/11 19:11:42 INFO CoarseGrainedExecutorBackend: Got assigned task 113
+20/09/11 19:11:42 INFO Executor: Running task 11.0 in stage 5.0 (TID 113)
+20/09/11 19:11:42 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:42 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:42 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:42 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:42 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:42 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:42 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:42 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:42 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1476395008-1610612736, partition values: [empty row]
+20/09/11 19:11:43 INFO Executor: Finished task 11.0 in stage 5.0 (TID 113). 1751 bytes result sent to driver
+20/09/11 19:11:43 INFO CoarseGrainedExecutorBackend: Got assigned task 114
+20/09/11 19:11:43 INFO Executor: Running task 12.0 in stage 5.0 (TID 114)
+20/09/11 19:11:43 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:43 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:43 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:43 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:43 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:43 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:43 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:43 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:43 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1610612736-1744830464, partition values: [empty row]
+20/09/11 19:11:47 INFO Executor: Finished task 12.0 in stage 5.0 (TID 114). 1751 bytes result sent to driver
+20/09/11 19:11:47 INFO CoarseGrainedExecutorBackend: Got assigned task 115
+20/09/11 19:11:47 INFO Executor: Running task 13.0 in stage 5.0 (TID 115)
+20/09/11 19:11:47 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:47 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:47 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:47 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:47 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:47 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:47 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:47 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:47 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1744830464-1879048192, partition values: [empty row]
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:qcDFrv2EQU9GeIAAVqdA-g:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:Fn-We5eFV5-OfnkMshttSw:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:e0CTLPxTnFEQSqQ1FJUqog:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:Jey1B1Xn27k142f8pOjDHA:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:uS5BHjGpMDQMTzLfuMVmHw:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:h9LPugJk2cpIh0gmQb5LnQ:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:y61xPS0NXp6X8N6F6OQtQg:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:os8PbZNxEJM6CURf9F3HnQ:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:n9WOZlk5k868HXRVhKp5IQ:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:F50tfGg4pqaObJ32hPycPA:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:2FfZUyA82YhQCjWNiqDCzQ:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:YKPM9UDqKzPpgekWTFezsA:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:M1MRdrMZsOasWUoHaYM4xg:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:YdYM8R573TTEoaF6imkHAQ:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:egYJLTCioSuUL1_5YCwRGQ:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:xKq3W_Bneb1DM9BTo5TjKA:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:qqE76NWrW7HQ3LjlDzw9_Q:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:DPezF3ZesMkmNkVabDIR7g:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:CU6n6XvfdZdrxhCcS2XC2g:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:BAz4q95hXJTj9e8_gOH_WQ:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:Y9Lsu_1dVNarV2wt1t5Cgw:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:SnePuTH5-3H9jq4KIMQGcg:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:XrcB7Of1KfHlkeXYpHLIrw:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:lzkj0OTbi8unqeReEYXc3w:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:85nvKTJSN8byoeGRxzGkug:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:WSRScc1yBXBf4grzj52sdg:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:L-vh2JBW7novxRpY7X9VnQ:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:MUFnPz8LQKYdJuRF-bFqiw:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:dtp3UPOH3Fig5zW2tqOGvA:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:fS0kFv5UdbQLBy1Rq3xuwA:reviews.
+20/09/11 19:11:47 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:zKw09ftu1730wEIZBZPoFg:reviews.
+20/09/11 19:11:53 INFO Executor: Finished task 13.0 in stage 5.0 (TID 115). 1751 bytes result sent to driver
+20/09/11 19:11:53 INFO CoarseGrainedExecutorBackend: Got assigned task 116
+20/09/11 19:11:53 INFO Executor: Running task 14.0 in stage 5.0 (TID 116)
+20/09/11 19:11:53 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:53 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:53 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:53 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:53 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:53 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:53 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:53 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:53 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1879048192-2013265920, partition values: [empty row]
+20/09/11 19:11:54 INFO Executor: Finished task 14.0 in stage 5.0 (TID 116). 1751 bytes result sent to driver
+20/09/11 19:11:54 INFO CoarseGrainedExecutorBackend: Got assigned task 117
+20/09/11 19:11:54 INFO Executor: Running task 15.0 in stage 5.0 (TID 117)
+20/09/11 19:11:54 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:54 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:54 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:54 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:54 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:54 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:54 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:54 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:54 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2013265920-2147483648, partition values: [empty row]
+20/09/11 19:11:55 INFO Executor: Finished task 15.0 in stage 5.0 (TID 117). 1751 bytes result sent to driver
+20/09/11 19:11:55 INFO CoarseGrainedExecutorBackend: Got assigned task 118
+20/09/11 19:11:55 INFO Executor: Running task 16.0 in stage 5.0 (TID 118)
+20/09/11 19:11:55 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:55 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:55 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:55 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:55 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:55 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:55 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:55 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:55 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2147483648-2281701376, partition values: [empty row]
+20/09/11 19:11:56 INFO Executor: Finished task 16.0 in stage 5.0 (TID 118). 1751 bytes result sent to driver
+20/09/11 19:11:56 INFO CoarseGrainedExecutorBackend: Got assigned task 119
+20/09/11 19:11:56 INFO Executor: Running task 17.0 in stage 5.0 (TID 119)
+20/09/11 19:11:56 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:56 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:56 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:56 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:56 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:56 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:56 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:56 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:56 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2281701376-2415919104, partition values: [empty row]
+20/09/11 19:11:59 INFO Executor: Finished task 17.0 in stage 5.0 (TID 119). 1751 bytes result sent to driver
+20/09/11 19:11:59 INFO CoarseGrainedExecutorBackend: Got assigned task 120
+20/09/11 19:11:59 INFO Executor: Running task 18.0 in stage 5.0 (TID 120)
+20/09/11 19:11:59 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:59 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:59 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:59 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:59 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:11:59 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:59 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:59 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:11:59 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2415919104-2550136832, partition values: [empty row]
+20/09/11 19:12:05 INFO Executor: Finished task 18.0 in stage 5.0 (TID 120). 1751 bytes result sent to driver
+20/09/11 19:12:06 INFO CoarseGrainedExecutorBackend: Got assigned task 121
+20/09/11 19:12:06 INFO Executor: Running task 19.0 in stage 5.0 (TID 121)
+20/09/11 19:12:06 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:06 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:06 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:06 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:06 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:06 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:06 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:06 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:06 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2550136832-2684354560, partition values: [empty row]
+20/09/11 19:12:07 INFO Executor: Finished task 19.0 in stage 5.0 (TID 121). 1751 bytes result sent to driver
+20/09/11 19:12:07 INFO CoarseGrainedExecutorBackend: Got assigned task 122
+20/09/11 19:12:07 INFO Executor: Running task 20.0 in stage 5.0 (TID 122)
+20/09/11 19:12:07 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:07 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:07 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:07 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:07 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:07 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:07 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:07 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:07 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2684354560-2818572288, partition values: [empty row]
+20/09/11 19:12:08 INFO Executor: Finished task 20.0 in stage 5.0 (TID 122). 1751 bytes result sent to driver
+20/09/11 19:12:08 INFO CoarseGrainedExecutorBackend: Got assigned task 123
+20/09/11 19:12:08 INFO Executor: Running task 21.0 in stage 5.0 (TID 123)
+20/09/11 19:12:08 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:08 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:08 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:08 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:08 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:08 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:08 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:08 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:08 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2818572288-2952790016, partition values: [empty row]
+20/09/11 19:12:09 INFO Executor: Finished task 21.0 in stage 5.0 (TID 123). 1751 bytes result sent to driver
+20/09/11 19:12:09 INFO CoarseGrainedExecutorBackend: Got assigned task 124
+20/09/11 19:12:09 INFO Executor: Running task 22.0 in stage 5.0 (TID 124)
+20/09/11 19:12:09 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:09 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:09 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:09 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:09 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:09 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:09 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:09 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:09 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2952790016-3087007744, partition values: [empty row]
+20/09/11 19:12:14 INFO Executor: Finished task 22.0 in stage 5.0 (TID 124). 1794 bytes result sent to driver
+20/09/11 19:12:14 INFO CoarseGrainedExecutorBackend: Got assigned task 125
+20/09/11 19:12:14 INFO Executor: Running task 23.0 in stage 5.0 (TID 125)
+20/09/11 19:12:14 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:14 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:14 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:14 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:14 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:14 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:14 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:14 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:14 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3087007744-3221225472, partition values: [empty row]
+20/09/11 19:12:19 INFO Executor: Finished task 23.0 in stage 5.0 (TID 125). 1751 bytes result sent to driver
+20/09/11 19:12:19 INFO CoarseGrainedExecutorBackend: Got assigned task 126
+20/09/11 19:12:19 INFO Executor: Running task 24.0 in stage 5.0 (TID 126)
+20/09/11 19:12:19 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:19 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:19 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:19 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:19 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:19 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:19 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:19 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:19 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3221225472-3355443200, partition values: [empty row]
+20/09/11 19:12:20 INFO Executor: Finished task 24.0 in stage 5.0 (TID 126). 1751 bytes result sent to driver
+20/09/11 19:12:20 INFO CoarseGrainedExecutorBackend: Got assigned task 127
+20/09/11 19:12:20 INFO Executor: Running task 25.0 in stage 5.0 (TID 127)
+20/09/11 19:12:20 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:20 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:20 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:20 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:20 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:20 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:20 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:20 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:20 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3355443200-3489660928, partition values: [empty row]
+20/09/11 19:12:21 INFO Executor: Finished task 25.0 in stage 5.0 (TID 127). 1751 bytes result sent to driver
+20/09/11 19:12:21 INFO CoarseGrainedExecutorBackend: Got assigned task 128
+20/09/11 19:12:21 INFO Executor: Running task 26.0 in stage 5.0 (TID 128)
+20/09/11 19:12:21 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:21 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:21 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:21 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:21 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:21 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:21 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:21 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:21 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3489660928-3623878656, partition values: [empty row]
+20/09/11 19:12:22 INFO Executor: Finished task 26.0 in stage 5.0 (TID 128). 1751 bytes result sent to driver
+20/09/11 19:12:22 INFO CoarseGrainedExecutorBackend: Got assigned task 129
+20/09/11 19:12:22 INFO Executor: Running task 27.0 in stage 5.0 (TID 129)
+20/09/11 19:12:22 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:22 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:22 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:22 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:22 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:22 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:22 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:22 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:22 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3623878656-3758096384, partition values: [empty row]
+20/09/11 19:12:28 INFO Executor: Finished task 27.0 in stage 5.0 (TID 129). 1751 bytes result sent to driver
+20/09/11 19:12:28 INFO CoarseGrainedExecutorBackend: Got assigned task 130
+20/09/11 19:12:28 INFO Executor: Running task 28.0 in stage 5.0 (TID 130)
+20/09/11 19:12:28 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:28 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:28 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:28 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:28 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:28 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:28 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:28 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:28 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3758096384-3892314112, partition values: [empty row]
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:nCJMgK00U7J3MyjLqZOSeQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:gwztaAr5gQND0UVOvk9Rqw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:MVLQkoWx-uHFVyOBBFfvyQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:2L-HGPrC5ZBkKSlJz_uYFA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:g7rQEIMiJzVqDwz9Jr1dDA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:z0PR2IUu6tPbmr7BKkYm3A:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:65-FQ1k1iV8wETXfIHFWqQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:NzBDkU11Qc7-Q9EDcNmD9w:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:ugr3e-42ZVzaVnNWOH7JDg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:gSO_NFz9zJaddMbldkfOfw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:tgzbCPuyheXPpNY_MgjZWw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:s1lfrkqM5yPVPlyx7vANyw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:_5PJ4GHIXNdUdXtohylKGQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:bWNLUpw-zko5AaIO18LuUw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:-byybpV9bP2k0aJ6-WhiBA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:TAnqAcKCiBKm5UB4b1d4xQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:4BmYqp3ERLOocWPrjl02tQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:b_1ZHDzf7Rp1uMmPY4poVg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:zuDz5HQ3-l5eeQdtob43Gw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:os9sHF2_fACkh5hEJldWHQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:D4h0fi8uVj62nkffV7Impw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:YnT7fzXSQRHOuCKZTwkQVw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:iLLzOJLU4tPAN9UUHlyZiQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:QMLK_vkDwMt3BQGKZdOS1g:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:28yYO3uXuVZbE3YsvVHahg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:dBaTFQgd9IrlSIGRKUkoRg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:qxNKPJfuklMxwPbkHLHeWQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:KpksAPHviTqWOQbsh73V-Q:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:KySj5AF4K_j4oD91ATgcGQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:O8CGjhz_EUK0SGyeKYPJCg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:uDEEYz1oWELBY1ExGHrRpg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:47k9q794riq8FBQcyi-_Zg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:z-RTeXHZ8PJCppRdCBuhAA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:9sKu5mOyo4k3kt0v_RKcdA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:CKE9s1ClMaBgCkZ5hh2SHA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:73bP13RKmez4NzUu0b61TQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:O-b5osM0NO4f31dp6_DatQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:qriuuMomcWtWBAfc1_EXPA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:vKDI9qLe1z_B4nbUwh7oNA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:ZM-O8UxfqB3sOuI52EZxLw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:dp6buLSpWWGIlsD-W9ughg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:fQAhxBkDHEVh4ptfBPw0Xg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:z9fJgTfqM8CVTAyUYE2ruA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:ppWMu36uqUI6crUX4urhFQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:is2RonWgyENNKOprcXQK6w:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:YF-Ryf1qU0wAZ7RH4jYh1w:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:Mv1K4hE5LThd-prcvWGPzQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:rxr_F2K-jns7Cr1hTGCSqg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:Z6l0-bY6TklTdr_X88LFVQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:o1XzYA4Cbv9T6rki6iFY0w:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:hNUAgb4gZbaa_E_FHA7KVA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:nj7FQhz6sD9JsqgXU5K5vw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:QDqn9XWn_B-Rbc0DDMEljw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:N3gjN7pMWThpscDgNVOKiA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:qms2KpC7A0KM3DxGqXWzaQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:asItVgPyD9584jKDkVoR1Q:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:-fZ4jE_7FKos0MQvMqoj5Q:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:bti9XFEavT6ULe4AGgpbHw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:n1AWiP49A5ROroNnbtm0ow:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:wRLIGjQcarDQls5qwuWawA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:kWQoeiibO0W59TRNcCH_ug:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:-SiIfFO4ITf0A3u0LADJBw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:4yDbirWYY2WXPG4xC72rQA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:7_HQYpJERLi6kJrS4WID8A:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:iDCAMAg7XPBx2g-82AIsgg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:jOx-fKnCeVtTMvcSrtgZvw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:_GzHBlk6YWUDPaGbhHw9JA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:X9iuhBkiRzXnjCiY6tH05A:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:3rb4-io5i9d8jyfkJ5EJ5Q:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:FEgdIdFdIjOAn2xbdLrZMA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:hSj14uqwaEG0ADONXSxNiA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:byV70bKT87SHgN0uRtow6w:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:doLob8Di9zZtrnZizYxg4g:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:PF6a6hLbjgGYkYYiCd5LYw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:wM3LNMTjCXBt-iknUvMRVw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:ULmP-9W8r7scdPJNAzksVA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:ZCtUyj4Zikm-Nzi3qRzHBQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:DCKkZyJwh0lPFDx6eNP8sg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:a6FJ9HcERvtGF4PYILF_fA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:rCeA1EcSi_fsQ1lNk7IjhA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:xE49_Gfr-qaYRjavgkkpIw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:QOUCkC5G1d5SwCQHIcjYRQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:JLbgvGM4FXh9zNP4O5ZWjQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:h49_s55X4pp_I8omwrR-Sg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:L0aSDVHNXCl6sY4cfZQ-5Q:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:xNbEEcymPtaEPtFwewsqQA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:JLbgvGM4FXh9zNP4O5ZWjQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:kckq3f7A9Guh4l1dUpEhvQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:ysv6yhVYOoH9Pf7PlMyD0g:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:7JcQqp9tkRYYhuv7JpTyQg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:hKH_hQH8cG1HmACU5r_XrA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:6OxHzs5zNUOB-OPRFr4eiQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:zArmkc8hDXpY2QMxfmv6tA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:4fQQwyJVjMGpxmVBGQxzsw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:DZwR0EIPKlmC3mMLhTkqcQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:a6zYLlLKQBwugqMNZidb8g:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:axi57Y3h5c8BxM1Xyj0KBw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:UDal9go05apkVv2uzNAY5g:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:u40rP9Fk4KWSluX9mDWiWw:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:IqoyzVoRjaed7DaISHBAmQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:IzA-r65P3EHfDNDef85kaA:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:Vr1cicM9kym0O49n76nNGQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:JBAkpL5KCK2tyomhAL6DHg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:elhxIWTUlRBV30Mz9_FXog:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:LHyj66waFlDcw9UToo27JQ:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:M1kG8Ma8v74zdZmdz5n83g:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:dCHNk6OqM-bYH9JHRZxwvg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:6JJP1JsBbrIYxYM6Y0qlkg:reviews.
+20/09/11 19:12:28 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:0sIppXHcTTOze6cH5e1ihw:reviews.
+20/09/11 19:12:31 INFO Executor: Finished task 28.0 in stage 5.0 (TID 130). 1751 bytes result sent to driver
+20/09/11 19:12:31 INFO CoarseGrainedExecutorBackend: Got assigned task 131
+20/09/11 19:12:31 INFO Executor: Running task 29.0 in stage 5.0 (TID 131)
+20/09/11 19:12:31 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:31 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:31 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:31 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:31 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:31 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:31 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:31 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:31 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3892314112-4026531840, partition values: [empty row]
+20/09/11 19:12:32 INFO Executor: Finished task 29.0 in stage 5.0 (TID 131). 1751 bytes result sent to driver
+20/09/11 19:12:32 INFO CoarseGrainedExecutorBackend: Got assigned task 132
+20/09/11 19:12:32 INFO Executor: Running task 30.0 in stage 5.0 (TID 132)
+20/09/11 19:12:32 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:32 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:32 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:32 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:32 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:32 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:32 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:32 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:32 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4026531840-4160749568, partition values: [empty row]
+20/09/11 19:12:33 INFO Executor: Finished task 30.0 in stage 5.0 (TID 132). 1751 bytes result sent to driver
+20/09/11 19:12:33 INFO CoarseGrainedExecutorBackend: Got assigned task 133
+20/09/11 19:12:33 INFO Executor: Running task 31.0 in stage 5.0 (TID 133)
+20/09/11 19:12:33 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:33 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:33 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:33 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:33 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:33 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:33 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:33 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:33 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4160749568-4294967296, partition values: [empty row]
+20/09/11 19:12:36 INFO Executor: Finished task 31.0 in stage 5.0 (TID 133). 1751 bytes result sent to driver
+20/09/11 19:12:36 INFO CoarseGrainedExecutorBackend: Got assigned task 134
+20/09/11 19:12:36 INFO Executor: Running task 32.0 in stage 5.0 (TID 134)
+20/09/11 19:12:36 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:36 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:36 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:36 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:36 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:36 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:36 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:36 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:36 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4294967296-4429185024, partition values: [empty row]
+20/09/11 19:12:42 INFO Executor: Finished task 32.0 in stage 5.0 (TID 134). 1751 bytes result sent to driver
+20/09/11 19:12:42 INFO CoarseGrainedExecutorBackend: Got assigned task 135
+20/09/11 19:12:42 INFO Executor: Running task 33.0 in stage 5.0 (TID 135)
+20/09/11 19:12:42 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:42 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:42 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:42 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:42 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:42 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:42 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:42 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:42 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4429185024-4563402752, partition values: [empty row]
+20/09/11 19:12:43 INFO Executor: Finished task 33.0 in stage 5.0 (TID 135). 1751 bytes result sent to driver
+20/09/11 19:12:43 INFO CoarseGrainedExecutorBackend: Got assigned task 136
+20/09/11 19:12:43 INFO Executor: Running task 34.0 in stage 5.0 (TID 136)
+20/09/11 19:12:43 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:43 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:43 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:43 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:43 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:43 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:43 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:43 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:43 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4563402752-4697620480, partition values: [empty row]
+20/09/11 19:12:44 INFO Executor: Finished task 34.0 in stage 5.0 (TID 136). 1751 bytes result sent to driver
+20/09/11 19:12:44 INFO CoarseGrainedExecutorBackend: Got assigned task 137
+20/09/11 19:12:44 INFO Executor: Running task 35.0 in stage 5.0 (TID 137)
+20/09/11 19:12:44 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:44 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:44 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:44 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:44 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:44 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:44 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:44 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:44 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4697620480-4831838208, partition values: [empty row]
+20/09/11 19:12:46 INFO Executor: Finished task 35.0 in stage 5.0 (TID 137). 1751 bytes result sent to driver
+20/09/11 19:12:46 INFO CoarseGrainedExecutorBackend: Got assigned task 138
+20/09/11 19:12:46 INFO Executor: Running task 36.0 in stage 5.0 (TID 138)
+20/09/11 19:12:46 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:46 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:46 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:46 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:46 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:46 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:46 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:46 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:46 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4831838208-4966055936, partition values: [empty row]
+20/09/11 19:12:50 INFO Executor: Finished task 36.0 in stage 5.0 (TID 138). 1751 bytes result sent to driver
+20/09/11 19:12:50 INFO CoarseGrainedExecutorBackend: Got assigned task 139
+20/09/11 19:12:50 INFO Executor: Running task 37.0 in stage 5.0 (TID 139)
+20/09/11 19:12:50 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:50 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:50 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:50 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:50 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:50 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:50 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:50 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:50 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4966055936-5100273664, partition values: [empty row]
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:I-5qHCVwT7k_KH67-YOx3A:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:96ChE-iBjK95BkS3wriT5A:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:f5O7v_X_jCg2itqacRfxhg:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:-bfWaKViUyyWbe2Qmo8YZg:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:yydyoWCY3LJYlPwVLKbJ3Q:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:1sGYXSkJHPhJ6wQtc-RbZw:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:nvvoRdN5My7zB-jazln6RQ:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:k9eqO_RYUs6pNq7ta7SVlA:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:_ruizXa-KyFO5mNA0p3nBA:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:Obue3xCi58G3Da5ZMSXwIA:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:qMdxujiNZGzsDNQPOD0VEA:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:aWtwch2nb4KTPWPdV29U1A:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:WI1xBMN_rEaVPOL9Ad2gpQ:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:0MOB2IkeqYD3oyJoGY7L3A:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:KvFjvYiagu-9YmcJbLd3Ew:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:QVl72czwhLa6aKNJxWO8AQ:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:pKZWMR4Pjj62cBBplVCvug:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:33ePfzjTf68IAxpywGrVZw:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:GkjCnw1FIPuABEjPjYvgCA:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:X89Cz52SJOlgzpX8yiWPwg:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:_3olhuCXhoqjy4M2rBp1YA:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:2YNziDowsKWC6Xqo1s3KeQ:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:I8DIq321Tkm-wi9z5gTv9A:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:oW4HXELkNUBdW8mSqkLQkQ:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:aVj5KBab8AtH4SdkU_1a3Q:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:TvKGMDu4Q8l5oHP6fr89Mg:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:Y_3wdqZUoi8qyW7ZugIQNw:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:fi-DWdWFWFcuP8BBuQ8K0Q:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:09LYxY5D4GcKc0Tvs4K_gw:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:qvBycvgpYXg9Jdv8UrWOKw:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:0UlMUHtEDgDMkycBQpoAew:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:fpJm-uunnYG_CLWerPf_Qw:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:TXV5mRFOGjwY7igrPjkKVA:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:JdStjV5BRgmVl84wnAYmjQ:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:ykM6nSKPZK-b65JjT7JVAg:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:BTZCzJjFmhDGhLYr2OXqeg:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:XQNA8_LSTDQNRt4G4H-07w:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:e4iXmfMxHxQVM6-ukAGynw:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:LklWSvyLZXN3tEGxT8rIfg:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:zndz5ukvtryyt5OmX6Z4Vw:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:TubbskG3TSU9TpgFFH2How:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:H3XdD-JiRVHo6oan0cDI1w:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:hVcnr0TMi500pJvghwnSOQ:reviews.
+20/09/11 19:12:50 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:tes3r9YwbjOprFAbJoRc7A:reviews.
+20/09/11 19:12:55 INFO Executor: Finished task 37.0 in stage 5.0 (TID 139). 1751 bytes result sent to driver
+20/09/11 19:12:55 INFO CoarseGrainedExecutorBackend: Got assigned task 140
+20/09/11 19:12:55 INFO Executor: Running task 38.0 in stage 5.0 (TID 140)
+20/09/11 19:12:55 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:55 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:55 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:55 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:55 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:55 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:55 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:55 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:55 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5100273664-5234491392, partition values: [empty row]
+20/09/11 19:12:56 INFO Executor: Finished task 38.0 in stage 5.0 (TID 140). 1751 bytes result sent to driver
+20/09/11 19:12:56 INFO CoarseGrainedExecutorBackend: Got assigned task 141
+20/09/11 19:12:56 INFO Executor: Running task 39.0 in stage 5.0 (TID 141)
+20/09/11 19:12:56 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:56 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:56 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:56 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:56 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:56 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:56 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:56 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:56 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5234491392-5368709120, partition values: [empty row]
+20/09/11 19:12:57 INFO Executor: Finished task 39.0 in stage 5.0 (TID 141). 1751 bytes result sent to driver
+20/09/11 19:12:57 INFO CoarseGrainedExecutorBackend: Got assigned task 142
+20/09/11 19:12:57 INFO Executor: Running task 40.0 in stage 5.0 (TID 142)
+20/09/11 19:12:57 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:57 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:57 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:57 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:57 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:57 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:57 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:57 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:57 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5368709120-5502926848, partition values: [empty row]
+20/09/11 19:12:59 INFO Executor: Finished task 40.0 in stage 5.0 (TID 142). 1751 bytes result sent to driver
+20/09/11 19:12:59 INFO CoarseGrainedExecutorBackend: Got assigned task 143
+20/09/11 19:12:59 INFO Executor: Running task 41.0 in stage 5.0 (TID 143)
+20/09/11 19:12:59 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:59 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:59 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:59 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:59 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:12:59 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:59 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:59 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:12:59 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5502926848-5637144576, partition values: [empty row]
+20/09/11 19:13:04 INFO Executor: Finished task 41.0 in stage 5.0 (TID 143). 1751 bytes result sent to driver
+20/09/11 19:13:04 INFO CoarseGrainedExecutorBackend: Got assigned task 144
+20/09/11 19:13:04 INFO Executor: Running task 42.0 in stage 5.0 (TID 144)
+20/09/11 19:13:04 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:04 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:04 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:04 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:04 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:04 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:04 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:04 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:04 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5637144576-5771362304, partition values: [empty row]
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:JWsq_5AX1vDi-cG7iMJQCA:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:YKPM9UDqKzPpgekWTFezsA:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:NmbBDuALeotUv01k7Qqr7g:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:PA9NBPtg38scxJanwTAjqw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:JmnT9TWuP9Nj87QM1YtmsQ:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:oSYZq7gZZY2_S0FwlfO8gw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:BxcpKqsaJSck2zWKbJ1a7Q:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:frImPZ_BxF5-bpAa3nO0Sw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:R9h-f0CY3a2HND4rurv_Jw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:N529xBDy-G8UZBm6zRJvvg:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:5kAQKtMwMMoPQ7f5BawVFw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:A5RC8s-n2FEbAR5GRUNHDA:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:c9zvs5QCKzdLj4BPdL1GSQ:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:KYgf0H7l5TLT5-YZd6EERg:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:r4dghMWRoFmBBFlAQvpwrA:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:CWTG2h9TIdKXCBWhJWW_sw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:fC06KIrwhj3ou47VHG13GQ:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:EdA-bHKP3JKTDDTsZn3TUQ:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:rn6a9iHooc4qM80mshJxCQ:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:MzoiLh4NAQ3IAHP30K_ZFA:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:oP_aBwupQUDJM43Mbyqatw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:RdVH6tmlCnOGsRM7CvG8Cg:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:_BurpVcmKZRovzqW4cm1qw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:b5XhO--S_vS13JQC5BzXNw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:o4WxEL-PaVsYATx1HXyunw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:Yz2EmCtssZU72cjvUxTBGg:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:AAthJ4E0qefuUKdNzeD7xQ:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:AM8ryCdezJJoWdJvnWiS1A:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:8zO1gDlfujftc6ZJr43nHA:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:oNJ3bVXo7xMwCUcQ6vAgUw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:UjQwHkVAGFJYz5nSISEJ3w:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:Kf6TUdOF0UIgWFskun3CbQ:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:Cgz5LfLohDjo1rmPL5l9Tg:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:tkiTshFlXNv7wHUiJMDRxg:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:8K5fQnv3YZIIhERyU82UBg:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:M7vDDzoPNQDN2FdTcwCq4A:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:2Q9Mgkc7iFHuKoD_z7kJkQ:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:VErg8i6nJx-dSLhTHS7hDQ:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:RwRNR4z3kY-4OsFqigY5sw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:Je9XOZD1mt9eNeU4QilORg:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:HKr5BYNVGTW33yQ1-tKgWA:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:hxprOzTZr_OkXkClANIhNw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:tlqxgoz7Cvl8-WGX7J3Vbw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:aloUbuZVpwAp0z352x99hQ:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:ys1wnjZp4vKVlTGtf8ebLw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:shFlDQN4FYVgshzlTf2TlA:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:c3c5V6v8TRarsWs2Bind5g:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:z5BZ6Pdrzp8jyiY_HoFmdw:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:IpDvhVclNRF-XaHE56hCMA:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:tI7YxxBSqf3P91Q-dq1tSA:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:ZWe_Bj1_AqudoAfqVT276g:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for user:35p1CRIBujzHOZQHxZyZGg:reviews.
+20/09/11 19:13:04 WARN MemcachedConnection: Could not redistribute to another node, retrying primary node for business:6m0bq-Zy0rXMFDkuZCranA:reviews.
+20/09/11 19:13:07 INFO Executor: Finished task 42.0 in stage 5.0 (TID 144). 1751 bytes result sent to driver
+20/09/11 19:13:07 INFO CoarseGrainedExecutorBackend: Got assigned task 145
+20/09/11 19:13:07 INFO Executor: Running task 43.0 in stage 5.0 (TID 145)
+20/09/11 19:13:07 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:07 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:07 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:07 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:07 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:07 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:07 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:07 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:07 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5771362304-5905580032, partition values: [empty row]
+20/09/11 19:13:08 INFO Executor: Finished task 43.0 in stage 5.0 (TID 145). 1751 bytes result sent to driver
+20/09/11 19:13:08 INFO CoarseGrainedExecutorBackend: Got assigned task 146
+20/09/11 19:13:08 INFO Executor: Running task 44.0 in stage 5.0 (TID 146)
+20/09/11 19:13:08 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:08 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:08 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:08 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:08 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:08 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:08 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:08 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:08 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5905580032-6039797760, partition values: [empty row]
+20/09/11 19:13:09 INFO Executor: Finished task 44.0 in stage 5.0 (TID 146). 1751 bytes result sent to driver
+20/09/11 19:13:09 INFO CoarseGrainedExecutorBackend: Got assigned task 147
+20/09/11 19:13:09 INFO Executor: Running task 45.0 in stage 5.0 (TID 147)
+20/09/11 19:13:09 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:09 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:09 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:09 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:09 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:09 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:09 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:09 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:09 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6039797760-6174015488, partition values: [empty row]
+20/09/11 19:13:11 INFO Executor: Finished task 45.0 in stage 5.0 (TID 147). 1751 bytes result sent to driver
+20/09/11 19:13:11 INFO CoarseGrainedExecutorBackend: Got assigned task 148
+20/09/11 19:13:11 INFO Executor: Running task 46.0 in stage 5.0 (TID 148)
+20/09/11 19:13:11 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:11 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:11 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:11 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:11 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:11 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:11 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:11 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:11 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6174015488-6308233216, partition values: [empty row]
+20/09/11 19:13:17 INFO Executor: Finished task 46.0 in stage 5.0 (TID 148). 1751 bytes result sent to driver
+20/09/11 19:13:17 INFO CoarseGrainedExecutorBackend: Got assigned task 149
+20/09/11 19:13:17 INFO Executor: Running task 47.0 in stage 5.0 (TID 149)
+20/09/11 19:13:17 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:17 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:17 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:17 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:17 INFO MemcachedConnection: Setting retryQueueSize to -1
+20/09/11 19:13:17 INFO MemcachedConnection: Added {QA sa=/15.161.153.91:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:17 INFO MemcachedConnection: Added {QA sa=/15.161.159.56:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:17 INFO MemcachedConnection: Added {QA sa=/15.161.189.166:11211, #Rops=0, #Wops=0, #iq=0, topRop=null, topWop=null, toWrite=0, interested=0} to connect queue
+20/09/11 19:13:17 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6308233216-6325565224, partition values: [empty row]
+20/09/11 19:13:18 INFO Executor: Finished task 47.0 in stage 5.0 (TID 149). 1751 bytes result sent to driver
+20/09/11 19:13:18 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+20/09/11 19:13:18 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown
