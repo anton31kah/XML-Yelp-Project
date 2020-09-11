@@ -16,6 +16,8 @@ case class Hours(monday: Option[String],
     "saturday" -> saturday,
     "sunday" -> sunday,
   ).filter(_._2.isDefined).mapValues(_.get)
+
+  override def toString: String = toMap.mkString(", ")
 }
 
 case class Business(business_id: String,
@@ -31,7 +33,7 @@ case class Business(business_id: String,
                     is_open: Option[String],
                     // attributes:
                     categories: Option[String],
-                    hours: Option[Hours]) extends RedisModel {
+                    hours: Option[Hours]) extends RedisModel with MemcachedModel {
   override def toMap: Map[String, String] = Map(
     "name" -> name,
     "address" -> address,
@@ -42,5 +44,19 @@ case class Business(business_id: String,
     "stars" -> stars,
     "review_count" -> review_count,
     "is_open" -> is_open
+  ).filter(_._2.isDefined).mapValues(_.get)
+
+  override def allToMap: Map[String, String] = Map(
+    "name" -> name,
+    "address" -> address,
+    "city" -> city,
+    "state" -> state,
+    "latitude" -> latitude,
+    "longitude" -> longitude,
+    "stars" -> stars,
+    "review_count" -> review_count,
+    "is_open" -> is_open,
+    "categories" -> categories,
+    "hours" -> Some(hours.toString)
   ).filter(_._2.isDefined).mapValues(_.get)
 }
