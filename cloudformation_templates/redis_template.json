@@ -345,14 +345,14 @@
             }
         },
         "Resources": {
-            "RedisSlave": {
+            "RedisMaster": {
                 "Type": "AWS::EC2::Instance",
                 "Properties": {
                     "KeyName": { "Ref": "KeyName" },
                     "BlockDeviceMappings" : [ 
                         {
-                            "DeviceName" : "/dev/xvda",
-                            "Ebs" : { "VolumeSize" : "20" }
+                            "DeviceName" : "/dev/svda1",
+                            "Ebs" : { "VolumeSize" : "10" }
                         }
                      ],
                     "ImageId": {
@@ -365,7 +365,45 @@
                     "InstanceType": { "Ref": "InstanceType" },
                     "Monitoring": "false",
                     "NetworkInterfaces" : [{
-                        "GroupSet" : [{ "Ref": "RedisSlaveSecurityGroup" }],
+                        "GroupSet" : [{ "Ref": "RedisSecurityGroup" }],
+                        "AssociatePublicIpAddress" : "true",
+                        "DeviceIndex" : "0",
+                        "DeleteOnTermination" : "true",
+                        "SubnetId" : { "Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-PublicSubnet1" } }
+                      }],
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": { "Ref": "AWS::StackName" }
+                        },
+                        {
+                            "Key": "XMLProject",
+                            "Value": "Redis Master"
+                        }
+                    ]
+                }
+            },
+            "RedisSlave1": {
+                "Type": "AWS::EC2::Instance",
+                "Properties": {
+                    "KeyName": { "Ref": "KeyName" },
+                    "BlockDeviceMappings" : [ 
+                        {
+                            "DeviceName" : "/dev/svda1",
+                            "Ebs" : { "VolumeSize" : "10" }
+                        }
+                     ],
+                    "ImageId": {
+                    "Fn::FindInMap": [
+                        "AMIRegionMap",
+                        { "Ref": "AWS::Region" },
+                        "AMILinux2"
+                        ]
+                    },
+                    "InstanceType": { "Ref": "InstanceType" },
+                    "Monitoring": "false",
+                    "NetworkInterfaces" : [{
+                        "GroupSet" : [{ "Ref": "RedisSecurityGroup" }],
                         "AssociatePublicIpAddress" : "true",
                         "DeviceIndex" : "0",
                         "DeleteOnTermination" : "true",
@@ -383,14 +421,54 @@
                     ]
                 }
             },
-            "RedisSlaveSecurityGroup" : {
+            "RedisSlave2": {
+                "Type": "AWS::EC2::Instance",
+                "Properties": {
+                    "KeyName": { "Ref": "KeyName" },
+                    "BlockDeviceMappings" : [ 
+                        {
+                            "DeviceName" : "/dev/svda1",
+                            "Ebs" : { "VolumeSize" : "10" }
+                        }
+                     ],
+                    "ImageId": {
+                    "Fn::FindInMap": [
+                        "AMIRegionMap",
+                        { "Ref": "AWS::Region" },
+                        "AMILinux2"
+                        ]
+                    },
+                    "InstanceType": { "Ref": "InstanceType" },
+                    "Monitoring": "false",
+                    "NetworkInterfaces" : [{
+                        "GroupSet" : [{ "Ref": "RedisSecurityGroup" }],
+                        "AssociatePublicIpAddress" : "true",
+                        "DeviceIndex" : "0",
+                        "DeleteOnTermination" : "true",
+                        "SubnetId" : { "Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-PublicSubnet1" } }
+                      }],
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": { "Ref": "AWS::StackName" }
+                        },
+                        {
+                            "Key": "XMLProject",
+                            "Value": "Redis Slave"
+                        }
+                    ]
+                }
+            },
+            "RedisSecurityGroup" : {
                 "Type" : "AWS::EC2::SecurityGroup",
                 "Properties" : {
                     "GroupDescription" : "RedisMasterSecurityGroup",
                     "SecurityGroupIngress" : [ 
                         {"IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22", "CidrIp" : { "Ref" : "SSHLocation"}},
                         {"IpProtocol" : "tcp", "FromPort" : "6379", "ToPort" : "6379", "CidrIp" : "0.0.0.0/0"},
-                        {"IpProtocol" : "tcp", "FromPort" : "16379", "ToPort" : "16379", "CidrIp" : "0.0.0.0/0"}
+                        {"IpProtocol" : "tcp", "FromPort" : "16379", "ToPort" : "16379", "CidrIp" : "0.0.0.0/0"},
+                        {"IpProtocol" : "tcp", "FromPort" : "6479", "ToPort" : "6479", "CidrIp" : "0.0.0.0/0"},
+                        {"IpProtocol" : "tcp", "FromPort" : "16479", "ToPort" : "16479", "CidrIp" : "0.0.0.0/0"}
                     ],
                     "VpcId" : { "Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-VPCID" } 
                     }

@@ -16,25 +16,25 @@ aws --profile ljupcho cloudformation deploy --template-file ./bastionhost_templa
  --tags XMLProject=BastionHost
 
 Deploying RedisMaster
-aws --profile ljupcho cloudformation deploy --template-file ./redis_master_template.json\
+aws --profile ljupcho cloudformation deploy --template-file ./redis_template.json\
  --stack-name XMLProject-RedisMaster\
  --parameter-overrides NetworkStackName=XMLProject-VPC\
  InstanceType=t3.micro KeyName=xmlProject\
  SSHLocation=10.0.0.0/16\
  --tags XMLProject=RedisMaster
 
-Deploying RedisSlave1
-aws --profile ljupcho cloudformation deploy --template-file ./redis_slave_template.json\
- --stack-name XMLProject-RedisSlave1\
+ Spark
+aws --profile ljupcho --region eu-south-1 cloudformation deploy --template-file ./spark_template.json\
+ --stack-name XMPProject-Spark\
  --parameter-overrides NetworkStackName=XMLProject-VPC\
- InstanceType=t3.micro KeyName=xmlProject\
- SSHLocation=10.0.0.0/16\
- --tags XMLProject=RedisSlave1
+ InstanceType=t3.medium KeyName=xmlProject\
+ SSHLocation=77.28.223.84/32\
+ --tags XMLProject=Spark
 
- Deploying RedisSlave1
-aws --profile ljupcho cloudformation deploy --template-file ./redis_slave_template.json\
- --stack-name XMLProject-RedisSlave2\
+ Memcached
+aws --profile ljupcho --region eu-south-1 cloudformation deploy --template-file ./memcached_template.json\
+ --stack-name XMPProject-Memcached\
  --parameter-overrides NetworkStackName=XMLProject-VPC\
  InstanceType=t3.micro KeyName=xmlProject\
- SSHLocation=10.0.0.0/16\
- --tags XMLProject=RedisSlave2
+ SSHLocation=79.125.164.203/32\
+ --tags XMLProject=Spark
