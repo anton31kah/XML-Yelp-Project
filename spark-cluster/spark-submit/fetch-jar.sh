@@ -6,5 +6,5 @@ cd "$DIR"
 
 cd ..
 
-rm -f spark-apps/xmlyelpproject_2.12-0.1.jar
-cp ../target/scala-2.12/xmlyelpproject_2.12-0.1.jar spark-apps/
+rm -f spark-apps/XMLYelpProject-assembly-0.1.jar
+cp ../target/scala-2.12/XMLYelpProject-assembly-0.1.jar spark-apps/

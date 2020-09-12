@@ -17,24 +17,24 @@ bash docker-build.sh
 # cd to project root dir
 cd spark-cluster/docker-compose/xml-yelp-spark-cluster
 docker-compose up --scale spark-worker=2
+# or for Anton
+docker-compose -f docker-compose-win.yml up --scale spark-worker=2
 ```
 
 ## Open Spark UI
 
 - Launch Spark Master UI & Workers UIs:
     - Master: http://localhost:9090/
-    - Workers: (2 of those should work)
+    - Workers:
         - http://localhost:8081/
         - http://localhost:8082/
-        - http://localhost:8083/
-        - http://localhost:8084/
 
 ## Build Project
 - Launch a PowerShell terminal (you can use the Intellij one) in the `project root dir`:
 
 ```shell script
 # cd to project root dir
-sbt package
+sbt assembly
 ```
 
 ## Submit the Application
@@ -44,6 +44,7 @@ sbt package
 # cd to project root dir
 cd spark-cluster/spark-submit
 bash fetch-jar.sh
+bash fetch-properties.sh
 bash test-aws.sh
 ```
 

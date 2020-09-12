@@ -1,0 +1,709 @@
+Spark Executor Command: "/usr/local/openjdk-8/bin/java" "-cp" "/spark/conf/:/spark/jars/*" "-Xmx512M" "-Dspark.driver.port=44389" "-Dspark.rpc.askTimeout=10s" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@d8d0d20a8970:44389" "--executor-id" "0" "--hostname" "172.18.0.3" "--cores" "1" "--app-id" "app-20200910154217-0000" "--worker-url" "spark://Worker@172.18.0.3:32781"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+20/09/10 15:42:19 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 54@fe39b87aa175
+20/09/10 15:42:19 INFO SignalUtils: Registered signal handler for TERM
+20/09/10 15:42:19 INFO SignalUtils: Registered signal handler for HUP
+20/09/10 15:42:19 INFO SignalUtils: Registered signal handler for INT
+20/09/10 15:42:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+20/09/10 15:42:20 INFO SecurityManager: Changing view acls to: root
+20/09/10 15:42:20 INFO SecurityManager: Changing modify acls to: root
+20/09/10 15:42:20 INFO SecurityManager: Changing view acls groups to:
+20/09/10 15:42:20 INFO SecurityManager: Changing modify acls groups to:
+20/09/10 15:42:20 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+20/09/10 15:42:20 INFO TransportClientFactory: Successfully created connection to d8d0d20a8970/172.18.0.5:44389 after 196 ms (0 ms spent in bootstraps)
+20/09/10 15:42:21 INFO SecurityManager: Changing view acls to: root
+20/09/10 15:42:21 INFO SecurityManager: Changing modify acls to: root
+20/09/10 15:42:21 INFO SecurityManager: Changing view acls groups to:
+20/09/10 15:42:21 INFO SecurityManager: Changing modify acls groups to:
+20/09/10 15:42:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+20/09/10 15:42:21 INFO TransportClientFactory: Successfully created connection to d8d0d20a8970/172.18.0.5:44389 after 20 ms (0 ms spent in bootstraps)
+20/09/10 15:42:21 INFO DiskBlockManager: Created local directory at /tmp/spark-6dd8b15e-2c78-46a0-8bff-ccd1d711772b/executor-116bfbd3-05e1-4b0a-b502-6747bd257104/blockmgr-b3849dd2-284b-4c82-8bc4-6026e01aa761
+20/09/10 15:42:21 INFO MemoryStore: MemoryStore started with capacity 93.3 MiB
+20/09/10 15:42:21 INFO WorkerWatcher: Connecting to worker spark://Worker@172.18.0.3:32781
+20/09/10 15:42:21 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@d8d0d20a8970:44389
+20/09/10 15:42:21 INFO WorkerWatcher: Successfully connected to spark://Worker@172.18.0.3:32781
+20/09/10 15:42:21 INFO TransportClientFactory: Successfully created connection to /172.18.0.3:32781 after 36 ms (0 ms spent in bootstraps)
+20/09/10 15:42:21 INFO ResourceUtils: ==============================================================
+20/09/10 15:42:21 INFO ResourceUtils: Resources for spark.executor:
+
+20/09/10 15:42:21 INFO ResourceUtils: ==============================================================
+20/09/10 15:42:21 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+20/09/10 15:42:21 INFO Executor: Starting executor ID 0 on host 172.18.0.3
+20/09/10 15:42:22 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37631.
+20/09/10 15:42:22 INFO NettyBlockTransferService: Server created on 172.18.0.3:37631
+20/09/10 15:42:22 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+20/09/10 15:42:22 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 172.18.0.3, 37631, None)
+20/09/10 15:42:22 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 172.18.0.3, 37631, None)
+20/09/10 15:42:22 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 172.18.0.3, 37631, None)
+20/09/10 15:42:23 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+20/09/10 15:42:23 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+20/09/10 15:42:23 INFO Executor: Fetching spark://d8d0d20a8970:44389/jars/XMLYelpProject-assembly-0.1.jar with timestamp 1599752536689
+20/09/10 15:42:24 INFO TransportClientFactory: Successfully created connection to d8d0d20a8970/172.18.0.5:44389 after 4 ms (0 ms spent in bootstraps)
+20/09/10 15:42:24 INFO Utils: Fetching spark://d8d0d20a8970:44389/jars/XMLYelpProject-assembly-0.1.jar to /tmp/spark-6dd8b15e-2c78-46a0-8bff-ccd1d711772b/executor-116bfbd3-05e1-4b0a-b502-6747bd257104/spark-ec1d7497-051e-43af-8609-3bd98fd9f7ad/fetchFileTemp6140397203653063034.tmp
+20/09/10 15:42:24 INFO Utils: Copying /tmp/spark-6dd8b15e-2c78-46a0-8bff-ccd1d711772b/executor-116bfbd3-05e1-4b0a-b502-6747bd257104/spark-ec1d7497-051e-43af-8609-3bd98fd9f7ad/12519132761599752536689_cache to /spark/work/app-20200910154217-0000/0/./XMLYelpProject-assembly-0.1.jar
+20/09/10 15:42:24 INFO Executor: Adding file:/spark/work/app-20200910154217-0000/0/./XMLYelpProject-assembly-0.1.jar to class loader
+20/09/10 15:42:24 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:42:24 INFO TransportClientFactory: Successfully created connection to d8d0d20a8970/172.18.0.5:43291 after 2 ms (0 ms spent in bootstraps)
+20/09/10 15:42:24 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.3 KiB, free 93.3 MiB)
+20/09/10 15:42:24 INFO TorrentBroadcast: Reading broadcast variable 1 took 108 ms
+20/09/10 15:42:25 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 11.9 KiB, free 93.3 MiB)
+20/09/10 15:42:25 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_business.json, range: 0-78546496, partition values: [empty row]
+20/09/10 15:42:26 INFO CodeGenerator: Code generated in 368.348807 ms
+20/09/10 15:42:26 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:42:26 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.0 KiB, free 93.2 MiB)
+20/09/10 15:42:26 INFO TorrentBroadcast: Reading broadcast variable 0 took 22 ms
+20/09/10 15:42:26 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 506.1 KiB, free 92.8 MiB)
+20/09/10 15:42:50 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 3992 bytes result sent to driver
+20/09/10 15:42:50 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+20/09/10 15:42:50 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+20/09/10 15:42:50 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_business.json, range: 78546496-152898689, partition values: [empty row]
+20/09/10 15:43:11 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 3992 bytes result sent to driver
+20/09/10 15:43:12 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+20/09/10 15:43:12 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
+20/09/10 15:43:12 INFO TorrentBroadcast: Started reading broadcast variable 3 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:43:12 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 6.3 KiB, free 92.7 MiB)
+20/09/10 15:43:12 INFO TorrentBroadcast: Reading broadcast variable 3 took 28 ms
+20/09/10 15:43:12 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 11.9 KiB, free 92.7 MiB)
+20/09/10 15:43:12 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 0-134217728, partition values: [empty row]
+20/09/10 15:43:12 INFO TorrentBroadcast: Started reading broadcast variable 2 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:43:12 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 34.0 KiB, free 92.7 MiB)
+20/09/10 15:43:12 INFO TorrentBroadcast: Reading broadcast variable 2 took 20 ms
+20/09/10 15:43:12 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 506.1 KiB, free 92.2 MiB)
+20/09/10 15:43:25 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 2252 bytes result sent to driver
+20/09/10 15:43:25 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+20/09/10 15:43:25 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
+20/09/10 15:43:25 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 134217728-268435456, partition values: [empty row]
+20/09/10 15:43:38 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 2252 bytes result sent to driver
+20/09/10 15:43:38 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+20/09/10 15:43:38 INFO Executor: Running task 2.0 in stage 1.0 (TID 4)
+20/09/10 15:43:38 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 268435456-402653184, partition values: [empty row]
+20/09/10 15:43:51 INFO Executor: Finished task 2.0 in stage 1.0 (TID 4). 2252 bytes result sent to driver
+20/09/10 15:43:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+20/09/10 15:43:51 INFO Executor: Running task 3.0 in stage 1.0 (TID 5)
+20/09/10 15:43:51 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 402653184-536870912, partition values: [empty row]
+20/09/10 15:44:03 INFO Executor: Finished task 3.0 in stage 1.0 (TID 5). 2252 bytes result sent to driver
+20/09/10 15:44:03 INFO CoarseGrainedExecutorBackend: Got assigned task 6
+20/09/10 15:44:03 INFO Executor: Running task 4.0 in stage 1.0 (TID 6)
+20/09/10 15:44:03 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 536870912-671088640, partition values: [empty row]
+20/09/10 15:44:16 INFO Executor: Finished task 4.0 in stage 1.0 (TID 6). 2252 bytes result sent to driver
+20/09/10 15:44:16 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+20/09/10 15:44:16 INFO Executor: Running task 5.0 in stage 1.0 (TID 7)
+20/09/10 15:44:16 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 671088640-805306368, partition values: [empty row]
+20/09/10 15:44:29 INFO Executor: Finished task 5.0 in stage 1.0 (TID 7). 2252 bytes result sent to driver
+20/09/10 15:44:29 INFO CoarseGrainedExecutorBackend: Got assigned task 8
+20/09/10 15:44:29 INFO Executor: Running task 6.0 in stage 1.0 (TID 8)
+20/09/10 15:44:29 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 805306368-939524096, partition values: [empty row]
+20/09/10 15:44:41 INFO Executor: Finished task 6.0 in stage 1.0 (TID 8). 2252 bytes result sent to driver
+20/09/10 15:44:41 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+20/09/10 15:44:41 INFO Executor: Running task 7.0 in stage 1.0 (TID 9)
+20/09/10 15:44:41 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 939524096-1073741824, partition values: [empty row]
+20/09/10 15:44:54 INFO Executor: Finished task 7.0 in stage 1.0 (TID 9). 2252 bytes result sent to driver
+20/09/10 15:44:54 INFO CoarseGrainedExecutorBackend: Got assigned task 10
+20/09/10 15:44:54 INFO Executor: Running task 8.0 in stage 1.0 (TID 10)
+20/09/10 15:44:54 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1073741824-1207959552, partition values: [empty row]
+20/09/10 15:45:06 INFO Executor: Finished task 8.0 in stage 1.0 (TID 10). 2252 bytes result sent to driver
+20/09/10 15:45:06 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+20/09/10 15:45:06 INFO Executor: Running task 9.0 in stage 1.0 (TID 11)
+20/09/10 15:45:06 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1207959552-1342177280, partition values: [empty row]
+20/09/10 15:45:19 INFO Executor: Finished task 9.0 in stage 1.0 (TID 11). 2252 bytes result sent to driver
+20/09/10 15:45:19 INFO CoarseGrainedExecutorBackend: Got assigned task 12
+20/09/10 15:45:19 INFO Executor: Running task 10.0 in stage 1.0 (TID 12)
+20/09/10 15:45:19 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1342177280-1476395008, partition values: [empty row]
+20/09/10 15:45:32 INFO Executor: Finished task 10.0 in stage 1.0 (TID 12). 2252 bytes result sent to driver
+20/09/10 15:45:32 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+20/09/10 15:45:32 INFO Executor: Running task 11.0 in stage 1.0 (TID 13)
+20/09/10 15:45:32 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1476395008-1610612736, partition values: [empty row]
+20/09/10 15:45:44 INFO Executor: Finished task 11.0 in stage 1.0 (TID 13). 2252 bytes result sent to driver
+20/09/10 15:45:44 INFO CoarseGrainedExecutorBackend: Got assigned task 14
+20/09/10 15:45:44 INFO Executor: Running task 12.0 in stage 1.0 (TID 14)
+20/09/10 15:45:45 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1610612736-1744830464, partition values: [empty row]
+20/09/10 15:45:57 INFO Executor: Finished task 12.0 in stage 1.0 (TID 14). 2252 bytes result sent to driver
+20/09/10 15:45:57 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+20/09/10 15:45:57 INFO Executor: Running task 13.0 in stage 1.0 (TID 15)
+20/09/10 15:45:57 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1744830464-1879048192, partition values: [empty row]
+20/09/10 15:46:09 INFO Executor: Finished task 13.0 in stage 1.0 (TID 15). 2252 bytes result sent to driver
+20/09/10 15:46:09 INFO CoarseGrainedExecutorBackend: Got assigned task 16
+20/09/10 15:46:09 INFO Executor: Running task 14.0 in stage 1.0 (TID 16)
+20/09/10 15:46:09 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1879048192-2013265920, partition values: [empty row]
+20/09/10 15:46:22 INFO Executor: Finished task 14.0 in stage 1.0 (TID 16). 2252 bytes result sent to driver
+20/09/10 15:46:22 INFO CoarseGrainedExecutorBackend: Got assigned task 17
+20/09/10 15:46:22 INFO Executor: Running task 15.0 in stage 1.0 (TID 17)
+20/09/10 15:46:22 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2013265920-2147483648, partition values: [empty row]
+20/09/10 15:46:35 INFO Executor: Finished task 15.0 in stage 1.0 (TID 17). 2252 bytes result sent to driver
+20/09/10 15:46:35 INFO CoarseGrainedExecutorBackend: Got assigned task 18
+20/09/10 15:46:35 INFO Executor: Running task 16.0 in stage 1.0 (TID 18)
+20/09/10 15:46:35 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2147483648-2281701376, partition values: [empty row]
+20/09/10 15:46:48 INFO Executor: Finished task 16.0 in stage 1.0 (TID 18). 2252 bytes result sent to driver
+20/09/10 15:46:48 INFO CoarseGrainedExecutorBackend: Got assigned task 19
+20/09/10 15:46:48 INFO Executor: Running task 17.0 in stage 1.0 (TID 19)
+20/09/10 15:46:48 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2281701376-2415919104, partition values: [empty row]
+20/09/10 15:47:00 INFO Executor: Finished task 17.0 in stage 1.0 (TID 19). 2252 bytes result sent to driver
+20/09/10 15:47:00 INFO CoarseGrainedExecutorBackend: Got assigned task 20
+20/09/10 15:47:00 INFO Executor: Running task 18.0 in stage 1.0 (TID 20)
+20/09/10 15:47:00 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2415919104-2550136832, partition values: [empty row]
+20/09/10 15:47:13 INFO Executor: Finished task 18.0 in stage 1.0 (TID 20). 2252 bytes result sent to driver
+20/09/10 15:47:13 INFO CoarseGrainedExecutorBackend: Got assigned task 21
+20/09/10 15:47:13 INFO Executor: Running task 19.0 in stage 1.0 (TID 21)
+20/09/10 15:47:13 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2550136832-2684354560, partition values: [empty row]
+20/09/10 15:47:26 INFO Executor: Finished task 19.0 in stage 1.0 (TID 21). 2252 bytes result sent to driver
+20/09/10 15:47:26 INFO CoarseGrainedExecutorBackend: Got assigned task 22
+20/09/10 15:47:26 INFO Executor: Running task 20.0 in stage 1.0 (TID 22)
+20/09/10 15:47:26 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2684354560-2818572288, partition values: [empty row]
+20/09/10 15:47:38 INFO Executor: Finished task 20.0 in stage 1.0 (TID 22). 2252 bytes result sent to driver
+20/09/10 15:47:38 INFO CoarseGrainedExecutorBackend: Got assigned task 23
+20/09/10 15:47:38 INFO Executor: Running task 21.0 in stage 1.0 (TID 23)
+20/09/10 15:47:38 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2818572288-2952790016, partition values: [empty row]
+20/09/10 15:47:51 INFO Executor: Finished task 21.0 in stage 1.0 (TID 23). 2252 bytes result sent to driver
+20/09/10 15:47:51 INFO CoarseGrainedExecutorBackend: Got assigned task 24
+20/09/10 15:47:51 INFO Executor: Running task 22.0 in stage 1.0 (TID 24)
+20/09/10 15:47:51 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2952790016-3087007744, partition values: [empty row]
+20/09/10 15:48:03 INFO Executor: Finished task 22.0 in stage 1.0 (TID 24). 2252 bytes result sent to driver
+20/09/10 15:48:03 INFO CoarseGrainedExecutorBackend: Got assigned task 25
+20/09/10 15:48:03 INFO Executor: Running task 23.0 in stage 1.0 (TID 25)
+20/09/10 15:48:03 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3087007744-3221225472, partition values: [empty row]
+20/09/10 15:48:17 INFO Executor: Finished task 23.0 in stage 1.0 (TID 25). 2252 bytes result sent to driver
+20/09/10 15:48:17 INFO CoarseGrainedExecutorBackend: Got assigned task 26
+20/09/10 15:48:17 INFO Executor: Running task 24.0 in stage 1.0 (TID 26)
+20/09/10 15:48:17 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3221225472-3355443200, partition values: [empty row]
+20/09/10 15:48:30 INFO Executor: Finished task 24.0 in stage 1.0 (TID 26). 2252 bytes result sent to driver
+20/09/10 15:48:30 INFO CoarseGrainedExecutorBackend: Got assigned task 27
+20/09/10 15:48:30 INFO Executor: Running task 25.0 in stage 1.0 (TID 27)
+20/09/10 15:48:30 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3355443200-3489660928, partition values: [empty row]
+20/09/10 15:48:43 INFO Executor: Finished task 25.0 in stage 1.0 (TID 27). 2252 bytes result sent to driver
+20/09/10 15:48:43 INFO CoarseGrainedExecutorBackend: Got assigned task 28
+20/09/10 15:48:43 INFO Executor: Running task 26.0 in stage 1.0 (TID 28)
+20/09/10 15:48:43 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3489660928-3623878656, partition values: [empty row]
+20/09/10 15:48:55 INFO Executor: Finished task 26.0 in stage 1.0 (TID 28). 2252 bytes result sent to driver
+20/09/10 15:48:55 INFO CoarseGrainedExecutorBackend: Got assigned task 29
+20/09/10 15:48:55 INFO Executor: Running task 27.0 in stage 1.0 (TID 29)
+20/09/10 15:48:55 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3623878656-3758096384, partition values: [empty row]
+20/09/10 15:49:08 INFO Executor: Finished task 27.0 in stage 1.0 (TID 29). 2252 bytes result sent to driver
+20/09/10 15:49:08 INFO CoarseGrainedExecutorBackend: Got assigned task 30
+20/09/10 15:49:08 INFO Executor: Running task 28.0 in stage 1.0 (TID 30)
+20/09/10 15:49:08 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3758096384-3892314112, partition values: [empty row]
+20/09/10 15:49:20 INFO Executor: Finished task 28.0 in stage 1.0 (TID 30). 2252 bytes result sent to driver
+20/09/10 15:49:20 INFO CoarseGrainedExecutorBackend: Got assigned task 31
+20/09/10 15:49:20 INFO Executor: Running task 29.0 in stage 1.0 (TID 31)
+20/09/10 15:49:20 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3892314112-4026531840, partition values: [empty row]
+20/09/10 15:49:33 INFO Executor: Finished task 29.0 in stage 1.0 (TID 31). 2252 bytes result sent to driver
+20/09/10 15:49:33 INFO CoarseGrainedExecutorBackend: Got assigned task 32
+20/09/10 15:49:33 INFO Executor: Running task 30.0 in stage 1.0 (TID 32)
+20/09/10 15:49:33 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4026531840-4160749568, partition values: [empty row]
+20/09/10 15:49:46 INFO Executor: Finished task 30.0 in stage 1.0 (TID 32). 2252 bytes result sent to driver
+20/09/10 15:49:46 INFO CoarseGrainedExecutorBackend: Got assigned task 33
+20/09/10 15:49:46 INFO Executor: Running task 31.0 in stage 1.0 (TID 33)
+20/09/10 15:49:46 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4160749568-4294967296, partition values: [empty row]
+20/09/10 15:49:58 INFO Executor: Finished task 31.0 in stage 1.0 (TID 33). 2252 bytes result sent to driver
+20/09/10 15:49:58 INFO CoarseGrainedExecutorBackend: Got assigned task 34
+20/09/10 15:49:58 INFO Executor: Running task 32.0 in stage 1.0 (TID 34)
+20/09/10 15:49:58 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4294967296-4429185024, partition values: [empty row]
+20/09/10 15:50:10 INFO Executor: Finished task 32.0 in stage 1.0 (TID 34). 2252 bytes result sent to driver
+20/09/10 15:50:10 INFO CoarseGrainedExecutorBackend: Got assigned task 35
+20/09/10 15:50:10 INFO Executor: Running task 33.0 in stage 1.0 (TID 35)
+20/09/10 15:50:10 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4429185024-4563402752, partition values: [empty row]
+20/09/10 15:50:23 INFO Executor: Finished task 33.0 in stage 1.0 (TID 35). 2252 bytes result sent to driver
+20/09/10 15:50:23 INFO CoarseGrainedExecutorBackend: Got assigned task 36
+20/09/10 15:50:23 INFO Executor: Running task 34.0 in stage 1.0 (TID 36)
+20/09/10 15:50:23 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4563402752-4697620480, partition values: [empty row]
+20/09/10 15:50:36 INFO Executor: Finished task 34.0 in stage 1.0 (TID 36). 2252 bytes result sent to driver
+20/09/10 15:50:36 INFO CoarseGrainedExecutorBackend: Got assigned task 37
+20/09/10 15:50:36 INFO Executor: Running task 35.0 in stage 1.0 (TID 37)
+20/09/10 15:50:36 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4697620480-4831838208, partition values: [empty row]
+20/09/10 15:50:49 INFO Executor: Finished task 35.0 in stage 1.0 (TID 37). 2252 bytes result sent to driver
+20/09/10 15:50:49 INFO CoarseGrainedExecutorBackend: Got assigned task 38
+20/09/10 15:50:49 INFO Executor: Running task 36.0 in stage 1.0 (TID 38)
+20/09/10 15:50:49 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4831838208-4966055936, partition values: [empty row]
+20/09/10 15:51:01 INFO Executor: Finished task 36.0 in stage 1.0 (TID 38). 2252 bytes result sent to driver
+20/09/10 15:51:01 INFO CoarseGrainedExecutorBackend: Got assigned task 39
+20/09/10 15:51:01 INFO Executor: Running task 37.0 in stage 1.0 (TID 39)
+20/09/10 15:51:01 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4966055936-5100273664, partition values: [empty row]
+20/09/10 15:51:14 INFO Executor: Finished task 37.0 in stage 1.0 (TID 39). 2252 bytes result sent to driver
+20/09/10 15:51:14 INFO CoarseGrainedExecutorBackend: Got assigned task 40
+20/09/10 15:51:14 INFO Executor: Running task 38.0 in stage 1.0 (TID 40)
+20/09/10 15:51:14 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5100273664-5234491392, partition values: [empty row]
+20/09/10 15:51:26 INFO Executor: Finished task 38.0 in stage 1.0 (TID 40). 2252 bytes result sent to driver
+20/09/10 15:51:26 INFO CoarseGrainedExecutorBackend: Got assigned task 41
+20/09/10 15:51:26 INFO Executor: Running task 39.0 in stage 1.0 (TID 41)
+20/09/10 15:51:26 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5234491392-5368709120, partition values: [empty row]
+20/09/10 15:51:39 INFO Executor: Finished task 39.0 in stage 1.0 (TID 41). 2252 bytes result sent to driver
+20/09/10 15:51:39 INFO CoarseGrainedExecutorBackend: Got assigned task 42
+20/09/10 15:51:39 INFO Executor: Running task 40.0 in stage 1.0 (TID 42)
+20/09/10 15:51:39 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5368709120-5502926848, partition values: [empty row]
+20/09/10 15:51:51 INFO Executor: Finished task 40.0 in stage 1.0 (TID 42). 2252 bytes result sent to driver
+20/09/10 15:51:51 INFO CoarseGrainedExecutorBackend: Got assigned task 43
+20/09/10 15:51:51 INFO Executor: Running task 41.0 in stage 1.0 (TID 43)
+20/09/10 15:51:51 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5502926848-5637144576, partition values: [empty row]
+20/09/10 15:52:04 INFO Executor: Finished task 41.0 in stage 1.0 (TID 43). 2252 bytes result sent to driver
+20/09/10 15:52:04 INFO CoarseGrainedExecutorBackend: Got assigned task 44
+20/09/10 15:52:04 INFO Executor: Running task 42.0 in stage 1.0 (TID 44)
+20/09/10 15:52:04 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5637144576-5771362304, partition values: [empty row]
+20/09/10 15:52:16 INFO Executor: Finished task 42.0 in stage 1.0 (TID 44). 2252 bytes result sent to driver
+20/09/10 15:52:16 INFO CoarseGrainedExecutorBackend: Got assigned task 45
+20/09/10 15:52:16 INFO Executor: Running task 43.0 in stage 1.0 (TID 45)
+20/09/10 15:52:16 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5771362304-5905580032, partition values: [empty row]
+20/09/10 15:52:29 INFO Executor: Finished task 43.0 in stage 1.0 (TID 45). 2252 bytes result sent to driver
+20/09/10 15:52:29 INFO CoarseGrainedExecutorBackend: Got assigned task 46
+20/09/10 15:52:29 INFO Executor: Running task 44.0 in stage 1.0 (TID 46)
+20/09/10 15:52:29 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5905580032-6039797760, partition values: [empty row]
+20/09/10 15:52:42 INFO Executor: Finished task 44.0 in stage 1.0 (TID 46). 2252 bytes result sent to driver
+20/09/10 15:52:42 INFO CoarseGrainedExecutorBackend: Got assigned task 47
+20/09/10 15:52:42 INFO Executor: Running task 45.0 in stage 1.0 (TID 47)
+20/09/10 15:52:42 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6039797760-6174015488, partition values: [empty row]
+20/09/10 15:52:54 INFO Executor: Finished task 45.0 in stage 1.0 (TID 47). 2252 bytes result sent to driver
+20/09/10 15:52:54 INFO CoarseGrainedExecutorBackend: Got assigned task 48
+20/09/10 15:52:54 INFO Executor: Running task 46.0 in stage 1.0 (TID 48)
+20/09/10 15:52:54 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6174015488-6308233216, partition values: [empty row]
+20/09/10 15:53:07 INFO Executor: Finished task 46.0 in stage 1.0 (TID 48). 2252 bytes result sent to driver
+20/09/10 15:53:07 INFO CoarseGrainedExecutorBackend: Got assigned task 49
+20/09/10 15:53:07 INFO Executor: Running task 47.0 in stage 1.0 (TID 49)
+20/09/10 15:53:07 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6308233216-6325565224, partition values: [empty row]
+20/09/10 15:53:08 INFO Executor: Finished task 47.0 in stage 1.0 (TID 49). 2252 bytes result sent to driver
+20/09/10 15:53:09 INFO CoarseGrainedExecutorBackend: Got assigned task 50
+20/09/10 15:53:09 INFO Executor: Running task 0.0 in stage 2.0 (TID 50)
+20/09/10 15:53:09 INFO TorrentBroadcast: Started reading broadcast variable 5 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:53:09 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 6.3 KiB, free 92.2 MiB)
+20/09/10 15:53:09 INFO TorrentBroadcast: Reading broadcast variable 5 took 14 ms
+20/09/10 15:53:09 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 11.9 KiB, free 92.2 MiB)
+20/09/10 15:53:09 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 0-134217728, partition values: [empty row]
+20/09/10 15:53:09 INFO TorrentBroadcast: Started reading broadcast variable 4 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:53:09 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 34.0 KiB, free 92.2 MiB)
+20/09/10 15:53:09 INFO TorrentBroadcast: Reading broadcast variable 4 took 15 ms
+20/09/10 15:53:09 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 506.1 KiB, free 91.7 MiB)
+20/09/10 15:53:12 INFO Executor: Finished task 0.0 in stage 2.0 (TID 50). 2713 bytes result sent to driver
+20/09/10 15:53:12 INFO CoarseGrainedExecutorBackend: Got assigned task 51
+20/09/10 15:53:12 INFO Executor: Running task 1.0 in stage 2.0 (TID 51)
+20/09/10 15:53:12 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 134217728-268435456, partition values: [empty row]
+20/09/10 15:53:16 INFO Executor: Finished task 1.0 in stage 2.0 (TID 51). 2713 bytes result sent to driver
+20/09/10 15:53:16 INFO CoarseGrainedExecutorBackend: Got assigned task 52
+20/09/10 15:53:16 INFO Executor: Running task 2.0 in stage 2.0 (TID 52)
+20/09/10 15:53:16 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 268435456-402653184, partition values: [empty row]
+20/09/10 15:53:21 INFO Executor: Finished task 2.0 in stage 2.0 (TID 52). 2713 bytes result sent to driver
+20/09/10 15:53:21 INFO CoarseGrainedExecutorBackend: Got assigned task 53
+20/09/10 15:53:21 INFO Executor: Running task 3.0 in stage 2.0 (TID 53)
+20/09/10 15:53:21 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 402653184-536870912, partition values: [empty row]
+20/09/10 15:53:26 INFO Executor: Finished task 3.0 in stage 2.0 (TID 53). 2713 bytes result sent to driver
+20/09/10 15:53:26 INFO CoarseGrainedExecutorBackend: Got assigned task 54
+20/09/10 15:53:26 INFO Executor: Running task 4.0 in stage 2.0 (TID 54)
+20/09/10 15:53:26 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 536870912-671088640, partition values: [empty row]
+20/09/10 15:53:31 INFO Executor: Finished task 4.0 in stage 2.0 (TID 54). 2713 bytes result sent to driver
+20/09/10 15:53:31 INFO CoarseGrainedExecutorBackend: Got assigned task 55
+20/09/10 15:53:31 INFO Executor: Running task 5.0 in stage 2.0 (TID 55)
+20/09/10 15:53:31 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 671088640-805306368, partition values: [empty row]
+20/09/10 15:53:38 INFO Executor: Finished task 5.0 in stage 2.0 (TID 55). 2713 bytes result sent to driver
+20/09/10 15:53:38 INFO CoarseGrainedExecutorBackend: Got assigned task 56
+20/09/10 15:53:38 INFO Executor: Running task 6.0 in stage 2.0 (TID 56)
+20/09/10 15:53:38 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 805306368-939524096, partition values: [empty row]
+20/09/10 15:53:42 INFO Executor: Finished task 6.0 in stage 2.0 (TID 56). 2713 bytes result sent to driver
+20/09/10 15:53:42 INFO CoarseGrainedExecutorBackend: Got assigned task 57
+20/09/10 15:53:42 INFO Executor: Running task 7.0 in stage 2.0 (TID 57)
+20/09/10 15:53:42 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 939524096-1073741824, partition values: [empty row]
+20/09/10 15:53:46 INFO Executor: Finished task 7.0 in stage 2.0 (TID 57). 2713 bytes result sent to driver
+20/09/10 15:53:46 INFO CoarseGrainedExecutorBackend: Got assigned task 58
+20/09/10 15:53:46 INFO Executor: Running task 8.0 in stage 2.0 (TID 58)
+20/09/10 15:53:46 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1073741824-1207959552, partition values: [empty row]
+20/09/10 15:53:53 INFO Executor: Finished task 8.0 in stage 2.0 (TID 58). 2713 bytes result sent to driver
+20/09/10 15:53:53 INFO CoarseGrainedExecutorBackend: Got assigned task 59
+20/09/10 15:53:53 INFO Executor: Running task 9.0 in stage 2.0 (TID 59)
+20/09/10 15:53:53 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1207959552-1342177280, partition values: [empty row]
+20/09/10 15:53:57 INFO Executor: Finished task 9.0 in stage 2.0 (TID 59). 2713 bytes result sent to driver
+20/09/10 15:53:57 INFO CoarseGrainedExecutorBackend: Got assigned task 60
+20/09/10 15:53:57 INFO Executor: Running task 10.0 in stage 2.0 (TID 60)
+20/09/10 15:53:57 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1342177280-1476395008, partition values: [empty row]
+20/09/10 15:54:04 INFO Executor: Finished task 10.0 in stage 2.0 (TID 60). 2713 bytes result sent to driver
+20/09/10 15:54:04 INFO CoarseGrainedExecutorBackend: Got assigned task 61
+20/09/10 15:54:04 INFO Executor: Running task 11.0 in stage 2.0 (TID 61)
+20/09/10 15:54:04 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1476395008-1610612736, partition values: [empty row]
+20/09/10 15:54:09 INFO Executor: Finished task 11.0 in stage 2.0 (TID 61). 2713 bytes result sent to driver
+20/09/10 15:54:09 INFO CoarseGrainedExecutorBackend: Got assigned task 62
+20/09/10 15:54:09 INFO Executor: Running task 12.0 in stage 2.0 (TID 62)
+20/09/10 15:54:09 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1610612736-1744830464, partition values: [empty row]
+20/09/10 15:54:13 INFO Executor: Finished task 12.0 in stage 2.0 (TID 62). 2713 bytes result sent to driver
+20/09/10 15:54:13 INFO CoarseGrainedExecutorBackend: Got assigned task 63
+20/09/10 15:54:13 INFO Executor: Running task 13.0 in stage 2.0 (TID 63)
+20/09/10 15:54:13 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1744830464-1879048192, partition values: [empty row]
+20/09/10 15:54:20 INFO Executor: Finished task 13.0 in stage 2.0 (TID 63). 2713 bytes result sent to driver
+20/09/10 15:54:20 INFO CoarseGrainedExecutorBackend: Got assigned task 64
+20/09/10 15:54:20 INFO Executor: Running task 14.0 in stage 2.0 (TID 64)
+20/09/10 15:54:20 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1879048192-2013265920, partition values: [empty row]
+20/09/10 15:54:24 INFO Executor: Finished task 14.0 in stage 2.0 (TID 64). 2713 bytes result sent to driver
+20/09/10 15:54:24 INFO CoarseGrainedExecutorBackend: Got assigned task 65
+20/09/10 15:54:24 INFO Executor: Running task 15.0 in stage 2.0 (TID 65)
+20/09/10 15:54:24 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2013265920-2147483648, partition values: [empty row]
+20/09/10 15:54:32 INFO Executor: Finished task 15.0 in stage 2.0 (TID 65). 2713 bytes result sent to driver
+20/09/10 15:54:32 INFO CoarseGrainedExecutorBackend: Got assigned task 66
+20/09/10 15:54:32 INFO Executor: Running task 16.0 in stage 2.0 (TID 66)
+20/09/10 15:54:32 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2147483648-2281701376, partition values: [empty row]
+20/09/10 15:54:36 INFO Executor: Finished task 16.0 in stage 2.0 (TID 66). 2713 bytes result sent to driver
+20/09/10 15:54:36 INFO CoarseGrainedExecutorBackend: Got assigned task 67
+20/09/10 15:54:36 INFO Executor: Running task 17.0 in stage 2.0 (TID 67)
+20/09/10 15:54:36 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2281701376-2415919104, partition values: [empty row]
+20/09/10 15:54:43 INFO Executor: Finished task 17.0 in stage 2.0 (TID 67). 2713 bytes result sent to driver
+20/09/10 15:54:43 INFO CoarseGrainedExecutorBackend: Got assigned task 68
+20/09/10 15:54:43 INFO Executor: Running task 18.0 in stage 2.0 (TID 68)
+20/09/10 15:54:43 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2415919104-2550136832, partition values: [empty row]
+20/09/10 15:54:48 INFO Executor: Finished task 18.0 in stage 2.0 (TID 68). 2713 bytes result sent to driver
+20/09/10 15:54:48 INFO CoarseGrainedExecutorBackend: Got assigned task 69
+20/09/10 15:54:48 INFO Executor: Running task 19.0 in stage 2.0 (TID 69)
+20/09/10 15:54:48 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2550136832-2684354560, partition values: [empty row]
+20/09/10 15:54:55 INFO Executor: Finished task 19.0 in stage 2.0 (TID 69). 2713 bytes result sent to driver
+20/09/10 15:54:55 INFO CoarseGrainedExecutorBackend: Got assigned task 70
+20/09/10 15:54:55 INFO Executor: Running task 20.0 in stage 2.0 (TID 70)
+20/09/10 15:54:55 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2684354560-2818572288, partition values: [empty row]
+20/09/10 15:54:59 INFO Executor: Finished task 20.0 in stage 2.0 (TID 70). 2713 bytes result sent to driver
+20/09/10 15:54:59 INFO CoarseGrainedExecutorBackend: Got assigned task 71
+20/09/10 15:54:59 INFO Executor: Running task 21.0 in stage 2.0 (TID 71)
+20/09/10 15:54:59 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2818572288-2952790016, partition values: [empty row]
+20/09/10 15:55:05 INFO Executor: Finished task 21.0 in stage 2.0 (TID 71). 2713 bytes result sent to driver
+20/09/10 15:55:05 INFO CoarseGrainedExecutorBackend: Got assigned task 72
+20/09/10 15:55:05 INFO Executor: Running task 22.0 in stage 2.0 (TID 72)
+20/09/10 15:55:05 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2952790016-3087007744, partition values: [empty row]
+20/09/10 15:55:12 INFO Executor: Finished task 22.0 in stage 2.0 (TID 72). 2713 bytes result sent to driver
+20/09/10 15:55:12 INFO CoarseGrainedExecutorBackend: Got assigned task 73
+20/09/10 15:55:12 INFO Executor: Running task 23.0 in stage 2.0 (TID 73)
+20/09/10 15:55:12 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 3087007744-3221225472, partition values: [empty row]
+20/09/10 15:55:16 INFO Executor: Finished task 23.0 in stage 2.0 (TID 73). 2713 bytes result sent to driver
+20/09/10 15:55:16 INFO CoarseGrainedExecutorBackend: Got assigned task 74
+20/09/10 15:55:16 INFO Executor: Running task 24.0 in stage 2.0 (TID 74)
+20/09/10 15:55:16 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 3221225472-3268069927, partition values: [empty row]
+20/09/10 15:55:21 INFO Executor: Finished task 24.0 in stage 2.0 (TID 74). 2713 bytes result sent to driver
+20/09/10 15:55:21 INFO CoarseGrainedExecutorBackend: Got assigned task 75
+20/09/10 15:55:21 INFO Executor: Running task 0.0 in stage 3.0 (TID 75)
+20/09/10 15:55:21 INFO TorrentBroadcast: Started reading broadcast variable 7 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:55:21 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 8.7 KiB, free 91.7 MiB)
+20/09/10 15:55:21 INFO TorrentBroadcast: Reading broadcast variable 7 took 22 ms
+20/09/10 15:55:21 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 18.2 KiB, free 91.6 MiB)
+20/09/10 15:55:23 INFO CodeGenerator: Code generated in 77.216803 ms
+20/09/10 15:55:23 INFO CodeGenerator: Code generated in 8.300726 ms
+20/09/10 15:55:23 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_business.json, range: 0-78546496, partition values: [empty row]
+20/09/10 15:55:24 INFO CodeGenerator: Code generated in 60.388396 ms
+20/09/10 15:55:24 INFO TorrentBroadcast: Started reading broadcast variable 6 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:55:24 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 34.0 KiB, free 91.6 MiB)
+20/09/10 15:55:24 INFO TorrentBroadcast: Reading broadcast variable 6 took 20 ms
+20/09/10 15:55:24 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 506.1 KiB, free 91.1 MiB)
+20/09/10 15:56:07 INFO Executor: Finished task 0.0 in stage 3.0 (TID 75). 1621 bytes result sent to driver
+20/09/10 15:56:07 INFO CoarseGrainedExecutorBackend: Got assigned task 76
+20/09/10 15:56:07 INFO Executor: Running task 1.0 in stage 3.0 (TID 76)
+20/09/10 15:56:07 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_business.json, range: 78546496-152898689, partition values: [empty row]
+20/09/10 15:56:47 INFO Executor: Finished task 1.0 in stage 3.0 (TID 76). 1621 bytes result sent to driver
+20/09/10 15:56:48 INFO CoarseGrainedExecutorBackend: Got assigned task 77
+20/09/10 15:56:48 INFO Executor: Running task 0.0 in stage 4.0 (TID 77)
+20/09/10 15:56:48 INFO TorrentBroadcast: Started reading broadcast variable 9 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:56:48 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 12.0 KiB, free 92.8 MiB)
+20/09/10 15:56:48 INFO TorrentBroadcast: Reading broadcast variable 9 took 16 ms
+20/09/10 15:56:48 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 29.1 KiB, free 92.7 MiB)
+20/09/10 15:56:48 INFO CodeGenerator: Code generated in 111.066089 ms
+20/09/10 15:56:48 INFO CodeGenerator: Code generated in 110.281254 ms
+20/09/10 15:56:48 INFO CodeGenerator: Code generated in 20.196619 ms
+20/09/10 15:56:49 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 0-134217728, partition values: [empty row]
+20/09/10 15:56:49 INFO CodeGenerator: Code generated in 54.282735 ms
+20/09/10 15:56:49 INFO TorrentBroadcast: Started reading broadcast variable 8 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:56:49 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 34.0 KiB, free 92.7 MiB)
+20/09/10 15:56:49 INFO TorrentBroadcast: Reading broadcast variable 8 took 10 ms
+20/09/10 15:56:49 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 506.1 KiB, free 92.2 MiB)
+20/09/10 15:56:50 INFO Executor: Finished task 0.0 in stage 4.0 (TID 77). 1751 bytes result sent to driver
+20/09/10 15:56:50 INFO CoarseGrainedExecutorBackend: Got assigned task 78
+20/09/10 15:56:50 INFO Executor: Running task 1.0 in stage 4.0 (TID 78)
+20/09/10 15:56:50 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 134217728-268435456, partition values: [empty row]
+20/09/10 15:56:51 INFO Executor: Finished task 1.0 in stage 4.0 (TID 78). 1751 bytes result sent to driver
+20/09/10 15:56:51 INFO CoarseGrainedExecutorBackend: Got assigned task 79
+20/09/10 15:56:51 INFO Executor: Running task 2.0 in stage 4.0 (TID 79)
+20/09/10 15:56:51 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 268435456-402653184, partition values: [empty row]
+20/09/10 15:56:52 INFO Executor: Finished task 2.0 in stage 4.0 (TID 79). 1751 bytes result sent to driver
+20/09/10 15:56:52 INFO CoarseGrainedExecutorBackend: Got assigned task 80
+20/09/10 15:56:52 INFO Executor: Running task 3.0 in stage 4.0 (TID 80)
+20/09/10 15:56:52 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 402653184-536870912, partition values: [empty row]
+20/09/10 15:56:53 INFO Executor: Finished task 3.0 in stage 4.0 (TID 80). 1751 bytes result sent to driver
+20/09/10 15:56:53 INFO CoarseGrainedExecutorBackend: Got assigned task 81
+20/09/10 15:56:53 INFO Executor: Running task 4.0 in stage 4.0 (TID 81)
+20/09/10 15:56:53 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 536870912-671088640, partition values: [empty row]
+20/09/10 15:56:54 INFO Executor: Finished task 4.0 in stage 4.0 (TID 81). 1751 bytes result sent to driver
+20/09/10 15:56:54 INFO CoarseGrainedExecutorBackend: Got assigned task 82
+20/09/10 15:56:54 INFO Executor: Running task 5.0 in stage 4.0 (TID 82)
+20/09/10 15:56:54 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 671088640-805306368, partition values: [empty row]
+20/09/10 15:56:57 INFO Executor: Finished task 5.0 in stage 4.0 (TID 82). 1751 bytes result sent to driver
+20/09/10 15:56:57 INFO CoarseGrainedExecutorBackend: Got assigned task 83
+20/09/10 15:56:57 INFO Executor: Running task 6.0 in stage 4.0 (TID 83)
+20/09/10 15:56:57 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 805306368-939524096, partition values: [empty row]
+20/09/10 15:56:58 INFO Executor: Finished task 6.0 in stage 4.0 (TID 83). 1751 bytes result sent to driver
+20/09/10 15:56:58 INFO CoarseGrainedExecutorBackend: Got assigned task 84
+20/09/10 15:56:58 INFO Executor: Running task 7.0 in stage 4.0 (TID 84)
+20/09/10 15:56:58 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 939524096-1073741824, partition values: [empty row]
+20/09/10 15:56:59 INFO Executor: Finished task 7.0 in stage 4.0 (TID 84). 1751 bytes result sent to driver
+20/09/10 15:56:59 INFO CoarseGrainedExecutorBackend: Got assigned task 85
+20/09/10 15:56:59 INFO Executor: Running task 8.0 in stage 4.0 (TID 85)
+20/09/10 15:56:59 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1073741824-1207959552, partition values: [empty row]
+20/09/10 15:57:03 INFO Executor: Finished task 8.0 in stage 4.0 (TID 85). 1751 bytes result sent to driver
+20/09/10 15:57:03 INFO CoarseGrainedExecutorBackend: Got assigned task 86
+20/09/10 15:57:03 INFO Executor: Running task 9.0 in stage 4.0 (TID 86)
+20/09/10 15:57:03 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1207959552-1342177280, partition values: [empty row]
+20/09/10 15:57:04 INFO Executor: Finished task 9.0 in stage 4.0 (TID 86). 1751 bytes result sent to driver
+20/09/10 15:57:04 INFO CoarseGrainedExecutorBackend: Got assigned task 87
+20/09/10 15:57:04 INFO Executor: Running task 10.0 in stage 4.0 (TID 87)
+20/09/10 15:57:04 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1342177280-1476395008, partition values: [empty row]
+20/09/10 15:57:08 INFO Executor: Finished task 10.0 in stage 4.0 (TID 87). 1751 bytes result sent to driver
+20/09/10 15:57:08 INFO CoarseGrainedExecutorBackend: Got assigned task 88
+20/09/10 15:57:08 INFO Executor: Running task 11.0 in stage 4.0 (TID 88)
+20/09/10 15:57:08 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1476395008-1610612736, partition values: [empty row]
+20/09/10 15:57:09 INFO Executor: Finished task 11.0 in stage 4.0 (TID 88). 1751 bytes result sent to driver
+20/09/10 15:57:09 INFO CoarseGrainedExecutorBackend: Got assigned task 89
+20/09/10 15:57:09 INFO Executor: Running task 12.0 in stage 4.0 (TID 89)
+20/09/10 15:57:09 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1610612736-1744830464, partition values: [empty row]
+20/09/10 15:57:10 INFO Executor: Finished task 12.0 in stage 4.0 (TID 89). 1751 bytes result sent to driver
+20/09/10 15:57:10 INFO CoarseGrainedExecutorBackend: Got assigned task 90
+20/09/10 15:57:10 INFO Executor: Running task 13.0 in stage 4.0 (TID 90)
+20/09/10 15:57:10 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1744830464-1879048192, partition values: [empty row]
+20/09/10 15:57:14 INFO Executor: Finished task 13.0 in stage 4.0 (TID 90). 1751 bytes result sent to driver
+20/09/10 15:57:14 INFO CoarseGrainedExecutorBackend: Got assigned task 91
+20/09/10 15:57:14 INFO Executor: Running task 14.0 in stage 4.0 (TID 91)
+20/09/10 15:57:14 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 1879048192-2013265920, partition values: [empty row]
+20/09/10 15:57:14 INFO Executor: Finished task 14.0 in stage 4.0 (TID 91). 1751 bytes result sent to driver
+20/09/10 15:57:14 INFO CoarseGrainedExecutorBackend: Got assigned task 92
+20/09/10 15:57:14 INFO Executor: Running task 15.0 in stage 4.0 (TID 92)
+20/09/10 15:57:14 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2013265920-2147483648, partition values: [empty row]
+20/09/10 15:57:18 INFO Executor: Finished task 15.0 in stage 4.0 (TID 92). 1751 bytes result sent to driver
+20/09/10 15:57:18 INFO CoarseGrainedExecutorBackend: Got assigned task 93
+20/09/10 15:57:18 INFO Executor: Running task 16.0 in stage 4.0 (TID 93)
+20/09/10 15:57:18 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2147483648-2281701376, partition values: [empty row]
+20/09/10 15:57:19 INFO Executor: Finished task 16.0 in stage 4.0 (TID 93). 1751 bytes result sent to driver
+20/09/10 15:57:19 INFO CoarseGrainedExecutorBackend: Got assigned task 94
+20/09/10 15:57:19 INFO Executor: Running task 17.0 in stage 4.0 (TID 94)
+20/09/10 15:57:19 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2281701376-2415919104, partition values: [empty row]
+20/09/10 15:57:23 INFO Executor: Finished task 17.0 in stage 4.0 (TID 94). 1751 bytes result sent to driver
+20/09/10 15:57:23 INFO CoarseGrainedExecutorBackend: Got assigned task 95
+20/09/10 15:57:23 INFO Executor: Running task 18.0 in stage 4.0 (TID 95)
+20/09/10 15:57:23 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2415919104-2550136832, partition values: [empty row]
+20/09/10 15:57:24 INFO Executor: Finished task 18.0 in stage 4.0 (TID 95). 1751 bytes result sent to driver
+20/09/10 15:57:24 INFO CoarseGrainedExecutorBackend: Got assigned task 96
+20/09/10 15:57:24 INFO Executor: Running task 19.0 in stage 4.0 (TID 96)
+20/09/10 15:57:24 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2550136832-2684354560, partition values: [empty row]
+20/09/10 15:57:27 INFO Executor: Finished task 19.0 in stage 4.0 (TID 96). 1751 bytes result sent to driver
+20/09/10 15:57:27 INFO CoarseGrainedExecutorBackend: Got assigned task 97
+20/09/10 15:57:27 INFO Executor: Running task 20.0 in stage 4.0 (TID 97)
+20/09/10 15:57:27 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2684354560-2818572288, partition values: [empty row]
+20/09/10 15:57:28 INFO Executor: Finished task 20.0 in stage 4.0 (TID 97). 1751 bytes result sent to driver
+20/09/10 15:57:28 INFO CoarseGrainedExecutorBackend: Got assigned task 98
+20/09/10 15:57:28 INFO Executor: Running task 21.0 in stage 4.0 (TID 98)
+20/09/10 15:57:28 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2818572288-2952790016, partition values: [empty row]
+20/09/10 15:57:31 INFO Executor: Finished task 21.0 in stage 4.0 (TID 98). 1751 bytes result sent to driver
+20/09/10 15:57:31 INFO CoarseGrainedExecutorBackend: Got assigned task 99
+20/09/10 15:57:31 INFO Executor: Running task 22.0 in stage 4.0 (TID 99)
+20/09/10 15:57:31 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 2952790016-3087007744, partition values: [empty row]
+20/09/10 15:57:34 INFO Executor: Finished task 22.0 in stage 4.0 (TID 99). 1751 bytes result sent to driver
+20/09/10 15:57:34 INFO CoarseGrainedExecutorBackend: Got assigned task 100
+20/09/10 15:57:34 INFO Executor: Running task 23.0 in stage 4.0 (TID 100)
+20/09/10 15:57:34 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 3087007744-3221225472, partition values: [empty row]
+20/09/10 15:57:35 INFO Executor: Finished task 23.0 in stage 4.0 (TID 100). 1751 bytes result sent to driver
+20/09/10 15:57:35 INFO CoarseGrainedExecutorBackend: Got assigned task 101
+20/09/10 15:57:35 INFO Executor: Running task 24.0 in stage 4.0 (TID 101)
+20/09/10 15:57:35 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_user.json, range: 3221225472-3268069927, partition values: [empty row]
+20/09/10 15:57:39 INFO Executor: Finished task 24.0 in stage 4.0 (TID 101). 1751 bytes result sent to driver
+20/09/10 15:57:39 INFO CoarseGrainedExecutorBackend: Got assigned task 102
+20/09/10 15:57:39 INFO Executor: Running task 0.0 in stage 5.0 (TID 102)
+20/09/10 15:57:39 INFO TorrentBroadcast: Started reading broadcast variable 11 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:57:39 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 92.2 MiB)
+20/09/10 15:57:39 INFO TorrentBroadcast: Reading broadcast variable 11 took 7 ms
+20/09/10 15:57:39 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 23.4 KiB, free 92.2 MiB)
+20/09/10 15:57:39 INFO CodeGenerator: Code generated in 17.728271 ms
+20/09/10 15:57:39 INFO CodeGenerator: Code generated in 18.734396 ms
+20/09/10 15:57:39 INFO CodeGenerator: Code generated in 11.129394 ms
+20/09/10 15:57:39 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 0-134217728, partition values: [empty row]
+20/09/10 15:57:39 INFO CodeGenerator: Code generated in 33.542929 ms
+20/09/10 15:57:39 INFO TorrentBroadcast: Started reading broadcast variable 10 with 1 pieces (estimated total size 4.0 MiB)
+20/09/10 15:57:39 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 34.0 KiB, free 92.2 MiB)
+20/09/10 15:57:39 INFO TorrentBroadcast: Reading broadcast variable 10 took 13 ms
+20/09/10 15:57:39 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 506.1 KiB, free 91.7 MiB)
+20/09/10 15:57:41 INFO Executor: Finished task 0.0 in stage 5.0 (TID 102). 1751 bytes result sent to driver
+20/09/10 15:57:41 INFO CoarseGrainedExecutorBackend: Got assigned task 103
+20/09/10 15:57:41 INFO Executor: Running task 1.0 in stage 5.0 (TID 103)
+20/09/10 15:57:41 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 134217728-268435456, partition values: [empty row]
+20/09/10 15:57:42 INFO Executor: Finished task 1.0 in stage 5.0 (TID 103). 1751 bytes result sent to driver
+20/09/10 15:57:42 INFO CoarseGrainedExecutorBackend: Got assigned task 104
+20/09/10 15:57:42 INFO Executor: Running task 2.0 in stage 5.0 (TID 104)
+20/09/10 15:57:42 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 268435456-402653184, partition values: [empty row]
+20/09/10 15:57:47 INFO Executor: Finished task 2.0 in stage 5.0 (TID 104). 1751 bytes result sent to driver
+20/09/10 15:57:47 INFO CoarseGrainedExecutorBackend: Got assigned task 105
+20/09/10 15:57:47 INFO Executor: Running task 3.0 in stage 5.0 (TID 105)
+20/09/10 15:57:47 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 402653184-536870912, partition values: [empty row]
+20/09/10 15:58:11 INFO Executor: Finished task 3.0 in stage 5.0 (TID 105). 1751 bytes result sent to driver
+20/09/10 15:58:11 INFO CoarseGrainedExecutorBackend: Got assigned task 106
+20/09/10 15:58:11 INFO Executor: Running task 4.0 in stage 5.0 (TID 106)
+20/09/10 15:58:11 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 536870912-671088640, partition values: [empty row]
+20/09/10 15:58:34 INFO Executor: Finished task 4.0 in stage 5.0 (TID 106). 1751 bytes result sent to driver
+20/09/10 15:58:34 INFO CoarseGrainedExecutorBackend: Got assigned task 107
+20/09/10 15:58:34 INFO Executor: Running task 5.0 in stage 5.0 (TID 107)
+20/09/10 15:58:34 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 671088640-805306368, partition values: [empty row]
+20/09/10 15:58:35 INFO Executor: Finished task 5.0 in stage 5.0 (TID 107). 1751 bytes result sent to driver
+20/09/10 15:58:35 INFO CoarseGrainedExecutorBackend: Got assigned task 108
+20/09/10 15:58:35 INFO Executor: Running task 6.0 in stage 5.0 (TID 108)
+20/09/10 15:58:35 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 805306368-939524096, partition values: [empty row]
+20/09/10 15:58:36 INFO Executor: Finished task 6.0 in stage 5.0 (TID 108). 1751 bytes result sent to driver
+20/09/10 15:58:36 INFO CoarseGrainedExecutorBackend: Got assigned task 109
+20/09/10 15:58:36 INFO Executor: Running task 7.0 in stage 5.0 (TID 109)
+20/09/10 15:58:36 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 939524096-1073741824, partition values: [empty row]
+20/09/10 15:58:47 INFO Executor: Finished task 7.0 in stage 5.0 (TID 109). 1751 bytes result sent to driver
+20/09/10 15:58:47 INFO CoarseGrainedExecutorBackend: Got assigned task 110
+20/09/10 15:58:47 INFO Executor: Running task 8.0 in stage 5.0 (TID 110)
+20/09/10 15:58:47 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1073741824-1207959552, partition values: [empty row]
+20/09/10 15:59:21 INFO Executor: Finished task 8.0 in stage 5.0 (TID 110). 1751 bytes result sent to driver
+20/09/10 15:59:21 INFO CoarseGrainedExecutorBackend: Got assigned task 111
+20/09/10 15:59:21 INFO Executor: Running task 9.0 in stage 5.0 (TID 111)
+20/09/10 15:59:21 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1207959552-1342177280, partition values: [empty row]
+20/09/10 15:59:32 INFO Executor: Finished task 9.0 in stage 5.0 (TID 111). 1751 bytes result sent to driver
+20/09/10 15:59:32 INFO CoarseGrainedExecutorBackend: Got assigned task 112
+20/09/10 15:59:32 INFO Executor: Running task 10.0 in stage 5.0 (TID 112)
+20/09/10 15:59:32 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1342177280-1476395008, partition values: [empty row]
+20/09/10 15:59:33 INFO Executor: Finished task 10.0 in stage 5.0 (TID 112). 1751 bytes result sent to driver
+20/09/10 15:59:33 INFO CoarseGrainedExecutorBackend: Got assigned task 113
+20/09/10 15:59:33 INFO Executor: Running task 11.0 in stage 5.0 (TID 113)
+20/09/10 15:59:33 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1476395008-1610612736, partition values: [empty row]
+20/09/10 15:59:34 INFO Executor: Finished task 11.0 in stage 5.0 (TID 113). 1751 bytes result sent to driver
+20/09/10 15:59:34 INFO CoarseGrainedExecutorBackend: Got assigned task 114
+20/09/10 15:59:34 INFO Executor: Running task 12.0 in stage 5.0 (TID 114)
+20/09/10 15:59:34 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1610612736-1744830464, partition values: [empty row]
+20/09/10 15:59:52 INFO Executor: Finished task 12.0 in stage 5.0 (TID 114). 1751 bytes result sent to driver
+20/09/10 15:59:52 INFO CoarseGrainedExecutorBackend: Got assigned task 115
+20/09/10 15:59:52 INFO Executor: Running task 13.0 in stage 5.0 (TID 115)
+20/09/10 15:59:52 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1744830464-1879048192, partition values: [empty row]
+20/09/10 16:00:26 INFO Executor: Finished task 13.0 in stage 5.0 (TID 115). 1751 bytes result sent to driver
+20/09/10 16:00:26 INFO CoarseGrainedExecutorBackend: Got assigned task 116
+20/09/10 16:00:26 INFO Executor: Running task 14.0 in stage 5.0 (TID 116)
+20/09/10 16:00:26 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 1879048192-2013265920, partition values: [empty row]
+20/09/10 16:00:27 INFO Executor: Finished task 14.0 in stage 5.0 (TID 116). 1751 bytes result sent to driver
+20/09/10 16:00:27 INFO CoarseGrainedExecutorBackend: Got assigned task 117
+20/09/10 16:00:27 INFO Executor: Running task 15.0 in stage 5.0 (TID 117)
+20/09/10 16:00:27 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2013265920-2147483648, partition values: [empty row]
+20/09/10 16:00:28 INFO Executor: Finished task 15.0 in stage 5.0 (TID 117). 1751 bytes result sent to driver
+20/09/10 16:00:28 INFO CoarseGrainedExecutorBackend: Got assigned task 118
+20/09/10 16:00:28 INFO Executor: Running task 16.0 in stage 5.0 (TID 118)
+20/09/10 16:00:28 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2147483648-2281701376, partition values: [empty row]
+20/09/10 16:00:30 INFO Executor: Finished task 16.0 in stage 5.0 (TID 118). 1751 bytes result sent to driver
+20/09/10 16:00:30 INFO CoarseGrainedExecutorBackend: Got assigned task 119
+20/09/10 16:00:30 INFO Executor: Running task 17.0 in stage 5.0 (TID 119)
+20/09/10 16:00:30 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2281701376-2415919104, partition values: [empty row]
+20/09/10 16:00:50 INFO Executor: Finished task 17.0 in stage 5.0 (TID 119). 1751 bytes result sent to driver
+20/09/10 16:00:50 INFO CoarseGrainedExecutorBackend: Got assigned task 120
+20/09/10 16:00:50 INFO Executor: Running task 18.0 in stage 5.0 (TID 120)
+20/09/10 16:00:50 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2415919104-2550136832, partition values: [empty row]
+20/09/10 16:01:25 INFO Executor: Finished task 18.0 in stage 5.0 (TID 120). 1751 bytes result sent to driver
+20/09/10 16:01:25 INFO CoarseGrainedExecutorBackend: Got assigned task 121
+20/09/10 16:01:25 INFO Executor: Running task 19.0 in stage 5.0 (TID 121)
+20/09/10 16:01:25 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2550136832-2684354560, partition values: [empty row]
+20/09/10 16:01:26 INFO Executor: Finished task 19.0 in stage 5.0 (TID 121). 1751 bytes result sent to driver
+20/09/10 16:01:26 INFO CoarseGrainedExecutorBackend: Got assigned task 122
+20/09/10 16:01:26 INFO Executor: Running task 20.0 in stage 5.0 (TID 122)
+20/09/10 16:01:26 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2684354560-2818572288, partition values: [empty row]
+20/09/10 16:01:27 INFO Executor: Finished task 20.0 in stage 5.0 (TID 122). 1751 bytes result sent to driver
+20/09/10 16:01:27 INFO CoarseGrainedExecutorBackend: Got assigned task 123
+20/09/10 16:01:27 INFO Executor: Running task 21.0 in stage 5.0 (TID 123)
+20/09/10 16:01:27 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2818572288-2952790016, partition values: [empty row]
+20/09/10 16:01:29 INFO Executor: Finished task 21.0 in stage 5.0 (TID 123). 1751 bytes result sent to driver
+20/09/10 16:01:29 INFO CoarseGrainedExecutorBackend: Got assigned task 124
+20/09/10 16:01:29 INFO Executor: Running task 22.0 in stage 5.0 (TID 124)
+20/09/10 16:01:29 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 2952790016-3087007744, partition values: [empty row]
+20/09/10 16:01:56 INFO Executor: Finished task 22.0 in stage 5.0 (TID 124). 1751 bytes result sent to driver
+20/09/10 16:01:56 INFO CoarseGrainedExecutorBackend: Got assigned task 125
+20/09/10 16:01:56 INFO Executor: Running task 23.0 in stage 5.0 (TID 125)
+20/09/10 16:01:57 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3087007744-3221225472, partition values: [empty row]
+20/09/10 16:02:22 INFO Executor: Finished task 23.0 in stage 5.0 (TID 125). 1751 bytes result sent to driver
+20/09/10 16:02:22 INFO CoarseGrainedExecutorBackend: Got assigned task 126
+20/09/10 16:02:22 INFO Executor: Running task 24.0 in stage 5.0 (TID 126)
+20/09/10 16:02:22 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3221225472-3355443200, partition values: [empty row]
+20/09/10 16:02:23 INFO Executor: Finished task 24.0 in stage 5.0 (TID 126). 1751 bytes result sent to driver
+20/09/10 16:02:23 INFO CoarseGrainedExecutorBackend: Got assigned task 127
+20/09/10 16:02:23 INFO Executor: Running task 25.0 in stage 5.0 (TID 127)
+20/09/10 16:02:23 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3355443200-3489660928, partition values: [empty row]
+20/09/10 16:02:24 INFO Executor: Finished task 25.0 in stage 5.0 (TID 127). 1751 bytes result sent to driver
+20/09/10 16:02:24 INFO CoarseGrainedExecutorBackend: Got assigned task 128
+20/09/10 16:02:24 INFO Executor: Running task 26.0 in stage 5.0 (TID 128)
+20/09/10 16:02:24 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3489660928-3623878656, partition values: [empty row]
+20/09/10 16:02:30 INFO Executor: Finished task 26.0 in stage 5.0 (TID 128). 1751 bytes result sent to driver
+20/09/10 16:02:30 INFO CoarseGrainedExecutorBackend: Got assigned task 129
+20/09/10 16:02:30 INFO Executor: Running task 27.0 in stage 5.0 (TID 129)
+20/09/10 16:02:30 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3623878656-3758096384, partition values: [empty row]
+20/09/10 16:03:04 INFO Executor: Finished task 27.0 in stage 5.0 (TID 129). 1751 bytes result sent to driver
+20/09/10 16:03:04 INFO CoarseGrainedExecutorBackend: Got assigned task 130
+20/09/10 16:03:04 INFO Executor: Running task 28.0 in stage 5.0 (TID 130)
+20/09/10 16:03:04 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3758096384-3892314112, partition values: [empty row]
+20/09/10 16:03:16 INFO Executor: Finished task 28.0 in stage 5.0 (TID 130). 1751 bytes result sent to driver
+20/09/10 16:03:16 INFO CoarseGrainedExecutorBackend: Got assigned task 131
+20/09/10 16:03:16 INFO Executor: Running task 29.0 in stage 5.0 (TID 131)
+20/09/10 16:03:16 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 3892314112-4026531840, partition values: [empty row]
+20/09/10 16:03:17 INFO Executor: Finished task 29.0 in stage 5.0 (TID 131). 1751 bytes result sent to driver
+20/09/10 16:03:17 INFO CoarseGrainedExecutorBackend: Got assigned task 132
+20/09/10 16:03:17 INFO Executor: Running task 30.0 in stage 5.0 (TID 132)
+20/09/10 16:03:17 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4026531840-4160749568, partition values: [empty row]
+20/09/10 16:03:19 INFO Executor: Finished task 30.0 in stage 5.0 (TID 132). 1751 bytes result sent to driver
+20/09/10 16:03:19 INFO CoarseGrainedExecutorBackend: Got assigned task 133
+20/09/10 16:03:19 INFO Executor: Running task 31.0 in stage 5.0 (TID 133)
+20/09/10 16:03:19 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4160749568-4294967296, partition values: [empty row]
+20/09/10 16:03:32 INFO Executor: Finished task 31.0 in stage 5.0 (TID 133). 1751 bytes result sent to driver
+20/09/10 16:03:32 INFO CoarseGrainedExecutorBackend: Got assigned task 134
+20/09/10 16:03:32 INFO Executor: Running task 32.0 in stage 5.0 (TID 134)
+20/09/10 16:03:32 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4294967296-4429185024, partition values: [empty row]
+20/09/10 16:04:11 INFO Executor: Finished task 32.0 in stage 5.0 (TID 134). 1751 bytes result sent to driver
+20/09/10 16:04:11 INFO CoarseGrainedExecutorBackend: Got assigned task 135
+20/09/10 16:04:11 INFO Executor: Running task 33.0 in stage 5.0 (TID 135)
+20/09/10 16:04:11 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4429185024-4563402752, partition values: [empty row]
+20/09/10 16:04:12 INFO Executor: Finished task 33.0 in stage 5.0 (TID 135). 1751 bytes result sent to driver
+20/09/10 16:04:12 INFO CoarseGrainedExecutorBackend: Got assigned task 136
+20/09/10 16:04:12 INFO Executor: Running task 34.0 in stage 5.0 (TID 136)
+20/09/10 16:04:12 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4563402752-4697620480, partition values: [empty row]
+20/09/10 16:04:13 INFO Executor: Finished task 34.0 in stage 5.0 (TID 136). 1751 bytes result sent to driver
+20/09/10 16:04:13 INFO CoarseGrainedExecutorBackend: Got assigned task 137
+20/09/10 16:04:13 INFO Executor: Running task 35.0 in stage 5.0 (TID 137)
+20/09/10 16:04:13 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4697620480-4831838208, partition values: [empty row]
+20/09/10 16:04:16 INFO Executor: Finished task 35.0 in stage 5.0 (TID 137). 1751 bytes result sent to driver
+20/09/10 16:04:16 INFO CoarseGrainedExecutorBackend: Got assigned task 138
+20/09/10 16:04:16 INFO Executor: Running task 36.0 in stage 5.0 (TID 138)
+20/09/10 16:04:16 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4831838208-4966055936, partition values: [empty row]
+20/09/10 16:04:38 INFO Executor: Finished task 36.0 in stage 5.0 (TID 138). 1751 bytes result sent to driver
+20/09/10 16:04:38 INFO CoarseGrainedExecutorBackend: Got assigned task 139
+20/09/10 16:04:38 INFO Executor: Running task 37.0 in stage 5.0 (TID 139)
+20/09/10 16:04:38 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 4966055936-5100273664, partition values: [empty row]
+20/09/10 16:05:09 INFO Executor: Finished task 37.0 in stage 5.0 (TID 139). 1751 bytes result sent to driver
+20/09/10 16:05:09 INFO CoarseGrainedExecutorBackend: Got assigned task 140
+20/09/10 16:05:09 INFO Executor: Running task 38.0 in stage 5.0 (TID 140)
+20/09/10 16:05:09 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5100273664-5234491392, partition values: [empty row]
+20/09/10 16:05:10 INFO Executor: Finished task 38.0 in stage 5.0 (TID 140). 1751 bytes result sent to driver
+20/09/10 16:05:10 INFO CoarseGrainedExecutorBackend: Got assigned task 141
+20/09/10 16:05:10 INFO Executor: Running task 39.0 in stage 5.0 (TID 141)
+20/09/10 16:05:10 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5234491392-5368709120, partition values: [empty row]
+20/09/10 16:05:11 INFO Executor: Finished task 39.0 in stage 5.0 (TID 141). 1751 bytes result sent to driver
+20/09/10 16:05:11 INFO CoarseGrainedExecutorBackend: Got assigned task 142
+20/09/10 16:05:11 INFO Executor: Running task 40.0 in stage 5.0 (TID 142)
+20/09/10 16:05:11 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5368709120-5502926848, partition values: [empty row]
+20/09/10 16:05:14 INFO Executor: Finished task 40.0 in stage 5.0 (TID 142). 1751 bytes result sent to driver
+20/09/10 16:05:14 INFO CoarseGrainedExecutorBackend: Got assigned task 143
+20/09/10 16:05:14 INFO Executor: Running task 41.0 in stage 5.0 (TID 143)
+20/09/10 16:05:14 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5502926848-5637144576, partition values: [empty row]
+20/09/10 16:05:49 INFO Executor: Finished task 41.0 in stage 5.0 (TID 143). 1751 bytes result sent to driver
+20/09/10 16:05:49 INFO CoarseGrainedExecutorBackend: Got assigned task 144
+20/09/10 16:05:49 INFO Executor: Running task 42.0 in stage 5.0 (TID 144)
+20/09/10 16:05:49 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5637144576-5771362304, partition values: [empty row]
+20/09/10 16:06:04 INFO Executor: Finished task 42.0 in stage 5.0 (TID 144). 1751 bytes result sent to driver
+20/09/10 16:06:04 INFO CoarseGrainedExecutorBackend: Got assigned task 145
+20/09/10 16:06:04 INFO Executor: Running task 43.0 in stage 5.0 (TID 145)
+20/09/10 16:06:04 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5771362304-5905580032, partition values: [empty row]
+20/09/10 16:06:05 INFO Executor: Finished task 43.0 in stage 5.0 (TID 145). 1751 bytes result sent to driver
+20/09/10 16:06:05 INFO CoarseGrainedExecutorBackend: Got assigned task 146
+20/09/10 16:06:05 INFO Executor: Running task 44.0 in stage 5.0 (TID 146)
+20/09/10 16:06:05 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 5905580032-6039797760, partition values: [empty row]
+20/09/10 16:06:06 INFO Executor: Finished task 44.0 in stage 5.0 (TID 146). 1751 bytes result sent to driver
+20/09/10 16:06:06 INFO CoarseGrainedExecutorBackend: Got assigned task 147
+20/09/10 16:06:06 INFO Executor: Running task 45.0 in stage 5.0 (TID 147)
+20/09/10 16:06:06 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6039797760-6174015488, partition values: [empty row]
+20/09/10 16:06:16 INFO Executor: Finished task 45.0 in stage 5.0 (TID 147). 1751 bytes result sent to driver
+20/09/10 16:06:16 INFO CoarseGrainedExecutorBackend: Got assigned task 148
+20/09/10 16:06:16 INFO Executor: Running task 46.0 in stage 5.0 (TID 148)
+20/09/10 16:06:16 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6174015488-6308233216, partition values: [empty row]
+20/09/10 16:06:53 INFO Executor: Finished task 46.0 in stage 5.0 (TID 148). 1751 bytes result sent to driver
+20/09/10 16:06:53 INFO CoarseGrainedExecutorBackend: Got assigned task 149
+20/09/10 16:06:53 INFO Executor: Running task 47.0 in stage 5.0 (TID 149)
+20/09/10 16:06:54 INFO FileScanRDD: Reading File path: file:///opt/spark-data/real-data/yelp_academic_dataset_review.json, range: 6308233216-6325565224, partition values: [empty row]
+20/09/10 16:06:59 INFO Executor: Finished task 47.0 in stage 5.0 (TID 149). 1751 bytes result sent to driver
+20/09/10 16:06:59 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+20/09/10 16:06:59 INFO MemoryStore: MemoryStore cleared
+20/09/10 16:06:59 INFO BlockManager: BlockManager stopped
+20/09/10 16:06:59 ERROR CoarseGrainedExecutorBackend: RECE
