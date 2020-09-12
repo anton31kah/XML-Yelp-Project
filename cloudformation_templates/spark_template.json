@@ -351,7 +351,7 @@
                     "KeyName": { "Ref": "KeyName" },
                     "BlockDeviceMappings" : [ 
                         {
-                            "DeviceName" : "/dev/xvda",
+                            "DeviceName" : "/dev/sda1",
                             "Ebs" : { "VolumeSize" : "20" }
                         }
                      ],
@@ -388,7 +388,12 @@
                 "Properties" : {
                     "GroupDescription" : "RedisMasterSecurityGroup",
                     "SecurityGroupIngress" : [ 
-                        {"IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22", "CidrIp" : { "Ref" : "SSHLocation"}}
+                        {"IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22", "CidrIp" : { "Ref" : "SSHLocation"}},
+                        {"IpProtocol" : "tcp", "FromPort" : "9090", "ToPort" : "9090", "CidrIp" : "0.0.0.0/0"},
+                        {"IpProtocol" : "tcp", "FromPort" : "8081", "ToPort" : "8081", "CidrIp" : "0.0.0.0/0"},
+                        {"IpProtocol" : "tcp", "FromPort" : "8082", "ToPort" : "8082", "CidrIp" : "0.0.0.0/0"},
+                        {"IpProtocol" : "tcp", "FromPort" : "7077", "ToPort" : "7077", "CidrIp" : "0.0.0.0/0"}
+
                     ],
                     "VpcId" : { "Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-VPCID" } 
                     }

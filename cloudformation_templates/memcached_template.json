@@ -345,16 +345,10 @@
             }
         },
         "Resources": {
-            "RedisMaster": {
+            "Memcached1": {
                 "Type": "AWS::EC2::Instance",
                 "Properties": {
                     "KeyName": { "Ref": "KeyName" },
-                    "BlockDeviceMappings" : [ 
-                        {
-                            "DeviceName" : "/dev/xvda",
-                            "Ebs" : { "VolumeSize" : "20" }
-                        }
-                     ],
                     "ImageId": {
                     "Fn::FindInMap": [
                         "AMIRegionMap",
@@ -365,7 +359,7 @@
                     "InstanceType": { "Ref": "InstanceType" },
                     "Monitoring": "false",
                     "NetworkInterfaces" : [{
-                        "GroupSet" : [{ "Ref": "RedisMasterSecurityGroup" }],
+                        "GroupSet" : [{ "Ref": "MemcacedSecurityGroup" }],
                         "AssociatePublicIpAddress" : "true",
                         "DeviceIndex" : "0",
                         "DeleteOnTermination" : "true",
@@ -378,19 +372,83 @@
                         },
                         {
                             "Key": "XMLProject",
-                            "Value": "Redis Master"
+                            "Value": "Memcached"
                         }
                     ]
                 }
             },
-            "RedisMasterSecurityGroup" : {
+            "Memcached2": {
+                "Type": "AWS::EC2::Instance",
+                "Properties": {
+                    "KeyName": { "Ref": "KeyName" },
+                    "ImageId": {
+                    "Fn::FindInMap": [
+                        "AMIRegionMap",
+                        { "Ref": "AWS::Region" },
+                        "AMILinux2"
+                        ]
+                    },
+                    "InstanceType": { "Ref": "InstanceType" },
+                    "Monitoring": "false",
+                    "NetworkInterfaces" : [{
+                        "GroupSet" : [{ "Ref": "MemcacedSecurityGroup" }],
+                        "AssociatePublicIpAddress" : "true",
+                        "DeviceIndex" : "0",
+                        "DeleteOnTermination" : "true",
+                        "SubnetId" : { "Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-PublicSubnet1" } }
+                      }],
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": { "Ref": "AWS::StackName" }
+                        },
+                        {
+                            "Key": "XMLProject",
+                            "Value": "Memcached"
+                        }
+                    ]
+                }
+            },
+            "Memcached3": {
+                "Type": "AWS::EC2::Instance",
+                "Properties": {
+                    "KeyName": { "Ref": "KeyName" },
+                    "ImageId": {
+                    "Fn::FindInMap": [
+                        "AMIRegionMap",
+                        { "Ref": "AWS::Region" },
+                        "AMILinux2"
+                        ]
+                    },
+                    "InstanceType": { "Ref": "InstanceType" },
+                    "Monitoring": "false",
+                    "NetworkInterfaces" : [{
+                        "GroupSet" : [{ "Ref": "MemcacedSecurityGroup" }],
+                        "AssociatePublicIpAddress" : "true",
+                        "DeviceIndex" : "0",
+                        "DeleteOnTermination" : "true",
+                        "SubnetId" : { "Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-PublicSubnet1" } }
+                      }],
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": { "Ref": "AWS::StackName" }
+                        },
+                        {
+                            "Key": "XMLProject",
+                            "Value": "Memcached"
+                        }
+                    ]
+                }
+            },
+            "MemcacedSecurityGroup" : {
                 "Type" : "AWS::EC2::SecurityGroup",
                 "Properties" : {
                     "GroupDescription" : "RedisMasterSecurityGroup",
                     "SecurityGroupIngress" : [ 
                         {"IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22", "CidrIp" : { "Ref" : "SSHLocation"}},
-                        {"IpProtocol" : "tcp", "FromPort" : "6379", "ToPort" : "6379", "CidrIp" : "0.0.0.0/0"},
-                        {"IpProtocol" : "tcp", "FromPort" : "16379", "ToPort" : "16379", "CidrIp" : "0.0.0.0/0"}
+                        {"IpProtocol" : "tcp", "FromPort" : "11211", "ToPort" : "11211", "CidrIp" : "0.0.0.0/0"},
+                        {"IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22", "CidrIp" : "79.125.206.237/0"}
                     ],
                     "VpcId" : { "Fn::ImportValue" : {"Fn::Sub": "${NetworkStackName}-VPCID" } 
                     }
