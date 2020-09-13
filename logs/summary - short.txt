@@ -1,0 +1,23 @@
+memcached:
+	model2:
+		started 20:46:30
+		reading the files took half the time
+		finished 21:02:12
+
+
+model1 redis
+	business count=209393 seconds=83,6 in_1_second=2505
+	user count=75728 seconds=38,0 in_1_second=1993
+	review count=1215836 seconds=540,9 in_1_second=2248
+model2 redis
+    business count=209393 seconds=86,7 in_1_second=2415
+	user count=75728 seconds=38,7 in_1_second=1957
+	review count=1215836 seconds=387,1 in_1_second=3141
+model1 memcached
+    business count=209393 seconds=15,6 in_1_second=13423
+	user count=75728 seconds=19,2 in_1_second=3944
+	review count=1215836 seconds=107,5 in_1_second=11310
+model2 memcached
+    business count=209393 seconds=16,5 in_1_second=12691
+	user count=75728 seconds=20,7 in_1_second=3658
+	review count=1215836 seconds=99,8 in_1_second=12183
